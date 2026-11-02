@@ -3,240 +3,238 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080808">
 <title>ONLINE TV | Official</title>
-<meta name="description" content="ONLINE TV — সংবাদ, বিনোদন ও মানুষের গল্পের বিশ্বস্ত ঠিকানা।">
+<meta name="description" content="সংবাদ, বিনোদন ও মানুষের গল্পের বিশ্বস্ত ঠিকানা।">
 
 <style>
-:root{
-  --red:#e5092b;
-  --bg:#080808;
-  --glass:rgba(255,255,255,.055);
-  --border:rgba(255,255,255,.12);
-  --white:#fff;
-  --muted:#aaa;
+:root {
+  --red: #e5092b;
+  --bg: #080808;
+  --glass: rgba(255,255,255,.055);
+  --border: rgba(255,255,255,.13);
 }
 
-*{box-sizing:border-box}
+* { box-sizing: border-box; }
 
-body{
-  margin:0;
-  min-height:100vh;
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 38px 16px 22px;
+  color: #fff;
   background:
-    radial-gradient(ellipse at 50% 0%,rgba(229,9,43,.18),transparent 45%),
-    radial-gradient(ellipse at 10% 65%,rgba(229,9,43,.07),transparent 35%),
+    radial-gradient(ellipse at 50% 0%, rgba(229,9,43,.19), transparent 48%),
+    radial-gradient(ellipse at 0% 65%, rgba(229,9,43,.07), transparent 35%),
     var(--bg);
-  color:var(--white);
-  font-family:Arial,"Noto Sans Bengali",sans-serif;
-  display:flex;
-  justify-content:center;
-  padding:35px 16px 20px;
+  font-family: Arial, "Noto Sans Bengali", sans-serif;
 }
 
-.container{
-  width:100%;
-  max-width:490px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+.container {
+  width: 100%;
+  max-width: 480px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.profile{
-  width:112px;
-  height:112px;
-  padding:4px;
-  border-radius:50%;
-  background:linear-gradient(145deg,#ff526b,#e5092b,#650013);
-  box-shadow:0 0 35px rgba(229,9,43,.3);
+.profile {
+  width: 112px;
+  height: 112px;
+  padding: 4px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, #ff526b, #e5092b, #650013);
+  box-shadow: 0 0 35px rgba(229,9,43,.3);
 }
 
-.profile img{
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  object-fit:cover;
-  background:#191919;
-  border:3px solid #111;
+.profile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #111;
+  background: #191919;
 }
 
-h1{
-  margin:17px 0 7px;
-  font-size:27px;
-  font-weight:800;
-  letter-spacing:1.5px;
-  text-align:center;
+h1 {
+  margin: 17px 0 7px;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-align: center;
 }
 
-.tagline{
-  max-width:400px;
-  text-align:center;
-  color:#c8c8c8;
-  font-size:14px;
-  line-height:1.8;
-  margin:0 0 18px;
+.tagline {
+  max-width: 400px;
+  margin: 0 0 19px;
+  color: #c8c8c8;
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: center;
 }
 
-.socials{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:19px;
-  margin:0 0 26px;
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 19px;
+  margin-bottom: 27px;
 }
 
-.socials a{
-  width:39px;
-  height:39px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:var(--glass);
-  border:1px solid var(--border);
-  color:white;
-  text-decoration:none;
-  transition:.25s;
+.socials a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  transition: .25s;
 }
 
-.socials a:hover{
-  border-color:var(--red);
-  background:rgba(229,9,43,.18);
-  transform:translateY(-3px);
+.socials a:hover {
+  transform: translateY(-3px);
+  border-color: var(--red);
+  background: rgba(229,9,43,.2);
 }
 
-.socials svg{
-  width:19px;
-  height:19px;
-  fill:currentColor;
+.socials svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
 }
 
-.video-section{
-  width:100%;
-  margin-bottom:23px;
+.video-section {
+  width: 100%;
+  margin-bottom: 24px;
 }
 
-.section-label{
-  font-size:12px;
-  letter-spacing:2px;
-  color:#aaa;
-  text-align:center;
-  margin:0 0 12px;
+.section-label {
+  margin: 0 0 12px;
+  color: #aaa;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-align: center;
 }
 
-.video-box{
-  width:100%;
-  aspect-ratio:16/9;
-  overflow:hidden;
-  border-radius:17px;
-  background:#151515;
-  border:1px solid rgba(255,255,255,.13);
-  box-shadow:0 10px 35px rgba(0,0,0,.35);
+.video-box {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #151515;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  box-shadow: 0 10px 35px rgba(0,0,0,.35);
 }
 
-.video-box iframe{
-  width:100%;
-  height:100%;
-  border:0;
+.video-box iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
-.buttons{
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  gap:13px;
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
 }
 
-.action-btn{
-  min-height:65px;
-  width:100%;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px 55px;
-  text-align:center;
-  text-decoration:none;
-  color:white;
-  font-size:15px;
-  font-weight:700;
-  letter-spacing:.2px;
-  background:linear-gradient(120deg,rgba(255,255,255,.085),rgba(255,255,255,.025));
-  border:1px solid rgba(255,255,255,.13);
-  border-radius:15px;
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  box-shadow:inset 0 1px rgba(255,255,255,.06),0 8px 25px rgba(0,0,0,.22);
-  transition:transform .25s,border-color .25s,background .25s;
+.action-btn {
+  position: relative;
+  width: 100%;
+  min-height: 65px;
+  padding: 12px 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  background: linear-gradient(120deg,
+    rgba(255,255,255,.085),
+    rgba(255,255,255,.025));
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: inset 0 1px rgba(255,255,255,.06),
+              0 8px 25px rgba(0,0,0,.22);
+  transition: .25s;
 }
 
-.action-btn:hover{
-  transform:translateY(-3px);
-  border-color:rgba(229,9,43,.7);
-  background:linear-gradient(120deg,rgba(229,9,43,.2),rgba(255,255,255,.04));
+.action-btn:hover {
+  transform: translateY(-3px);
+  border-color: rgba(229,9,43,.7);
+  background: linear-gradient(120deg,
+    rgba(229,9,43,.2),
+    rgba(255,255,255,.04));
 }
 
-.action-btn .btn-icon{
-  position:absolute;
-  left:19px;
-  width:29px;
-  height:29px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:23px;
+.btn-icon {
+  position: absolute;
+  left: 19px;
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
 }
 
-.footer{
-  margin-top:36px;
-  text-align:center;
-  padding-bottom:5px;
+.footer {
+  margin-top: 36px;
+  text-align: center;
 }
 
-.footer strong{
-  display:block;
-  font-size:9px;
-  letter-spacing:3px;
-  color:#aaa;
-  font-weight:500;
+.footer strong {
+  display: block;
+  color: #aaa;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 3px;
 }
 
-.footer small{
-  display:block;
-  margin-top:5px;
-  font-size:7px;
-  letter-spacing:2px;
-  color:var(--red);
+.footer small {
+  display: block;
+  margin-top: 5px;
+  color: var(--red);
+  font-size: 7px;
+  letter-spacing: 2px;
 }
 
-.loading{
-  color:#888;
-  text-align:center;
-  font-size:13px;
-  padding:18px;
+.loading {
+  padding: 18px;
+  color: #999;
+  font-size: 13px;
+  text-align: center;
 }
 
-@media(min-width:700px){
-  body{padding-top:48px}
-  .container{max-width:470px}
-  .profile{width:120px;height:120px}
-  h1{font-size:30px}
+@media (min-width: 700px) {
+  body { padding-top: 48px; }
+  .profile { width: 120px; height: 120px; }
+  h1 { font-size: 30px; }
 }
 
-@media(max-width:380px){
-  body{padding-left:13px;padding-right:13px}
-  h1{font-size:24px}
-  .action-btn{font-size:14px;min-height:61px}
+@media (max-width: 380px) {
+  body { padding-left: 13px; padding-right: 13px; }
+  h1 { font-size: 24px; }
+  .action-btn { min-height: 61px; font-size: 14px; }
 }
 </style>
 </head>
 
 <body>
-
 <main class="container">
 
   <div class="profile">
-    <img id="profileImage" src="" alt="ONLINE TV Profile">
+    <img id="profileImage" src="" alt="ONLINE TV">
   </div>
 
   <h1 id="title">ONLINE TV</h1>
@@ -246,11 +244,10 @@ h1{
 
   <nav class="socials" id="socials"></nav>
 
-  <section class="video-section" id="videoSection" style="display:none">
+  <section class="video-section" id="videoSection" hidden>
     <p class="section-label">LATEST VIDEO</p>
     <div class="video-box">
       <iframe id="latestVideo"
-        src=""
         title="ONLINE TV Latest Video"
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -275,106 +272,147 @@ const APPS_SCRIPT_URL =
 'https://script.google.com/macros/s/AKfycbzgL3ny0vCH63zTNxbmzEbcGTpqiS-FiUWgpeURyNyuBVXVEH5Jm172kI_Y0gcwrpjs/exec';
 
 const socialIcons = {
-  facebook: '<svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.6V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.2v3h2.8v8z"/></svg>',
-  instagram: '<svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>',
-  youtube: '<svg viewBox="0 0 24 24"><path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0-.5 5 31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 .5-5 31 31 0 0 0-.5-5zM9.6 15.5v-7l6 3.5z"/></svg>',
-  whatsapp: '<svg viewBox="0 0 24 24"><path d="M12 2a9.8 9.8 0 0 0-8.4 14.8L2 22l5.4-1.5A9.8 9.8 0 1 0 12 2zm0 17.8a8 8 0 0 1-4.1-1.1l-.3-.2-3.2.9.9-3.1-.2-.3A8 8 0 1 1 12 19.8zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8.9-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.5l.4-.4.2-.4c.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.8 3.4 1.4.6 1.9.6 2.6.5.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3z"/></svg>'
+  facebook:
+  '<svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.6V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.2v3h2.8v8z"/></svg>',
+
+  instagram:
+  '<svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>',
+
+  youtube:
+  '<svg viewBox="0 0 24 24"><path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0-.5 5 31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 .5-5 31 31 0 0 0-.5-5zM9.6 15.5v-7l6 3.5z"/></svg>',
+
+  whatsapp:
+  '<svg viewBox="0 0 24 24"><path d="M12 2a9.8 9.8 0 0 0-8.4 14.8L2 22l5.4-1.5A9.8 9.8 0 1 0 12 2zm0 17.8a8 8 0 0 1-4.1-1.1l-.3-.2-3.2.9.9-3.1-.2-.3A8 8 0 1 1 12 19.8zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8.9-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.5l.4-.4.2-.4c.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.8 3.4 1.4.6 1.9.6 2.6.5.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3z"/></svg>'
 };
 
-function safeUrl(value){
-  try{
-    const u = new URL(value);
-    return ['http:','https:'].includes(u.protocol) ? u.href : '';
-  }catch(e){return '';}
+function safeUrl(value) {
+  try {
+    const url = new URL(String(value || '').trim());
+    return ['https:', 'http:'].includes(url.protocol)
+      ? url.href
+      : '';
+  } catch (error) {
+    return '';
+  }
 }
 
-function addSocial(name,url){
-  const valid = safeUrl(url);
-  if(!valid || !socialIcons[name]) return;
+function addSocial(name, url) {
+  const validUrl = safeUrl(url);
+  if (!validUrl || !socialIcons[name]) return;
 
-  const a = document.createElement('a');
-  a.href = valid;
-  a.target = '_blank';
-  a.rel = 'noopener noreferrer';
-  a.setAttribute('aria-label',name);
-  a.innerHTML = socialIcons[name];
-  document.getElementById('socials').appendChild(a);
+  const link = document.createElement('a');
+  link.href = validUrl;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.setAttribute('aria-label', name);
+  link.innerHTML = socialIcons[name];
+
+  document.getElementById('socials').appendChild(link);
 }
 
-function addButton(icon,label,url){
-  const valid = safeUrl(url);
-  if(!valid || !label) return;
+function addButton(icon, label, url) {
+  const validUrl = safeUrl(url);
+  if (!validUrl || !String(label || '').trim()) return;
 
-  const a = document.createElement('a');
-  a.className = 'action-btn';
-  a.href = valid;
-  a.target = '_blank';
-  a.rel = 'noopener noreferrer';
+  const link = document.createElement('a');
+  link.className = 'action-btn';
+  link.href = validUrl;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
 
-  const span = document.createElement('span');
-  span.className = 'btn-icon';
-  span.textContent = icon || '🔗';
+  const iconElement = document.createElement('span');
+  iconElement.className = 'btn-icon';
+  iconElement.textContent = icon || '🔗';
 
-  const text = document.createElement('span');
-  text.textContent = label;
+  const labelElement = document.createElement('span');
+  labelElement.textContent = label;
 
-  a.appendChild(span);
-  a.appendChild(text);
+  link.appendChild(iconElement);
+  link.appendChild(labelElement);
 
-  document.getElementById('buttons').appendChild(a);
+  document.getElementById('buttons').appendChild(link);
 }
 
-async function loadProfile(){
+// JSONP callback: GitHub Pages থেকে Google Apps Script-এর তথ্য আনে
+window.onlineTVProfileCallback = function(data) {
   const buttons = document.getElementById('buttons');
 
-  try{
-    const response = await fetch(APPS_SCRIPT_URL);
-    if(!response.ok) throw new Error('Server error');
-
-    const data = await response.json();
-
-    document.getElementById('title').textContent =
-      data.title || 'ONLINE TV';
-
-    document.getElementById('tagline').textContent =
-      data.tagline || '';
-
-    const image = safeUrl(data.profileImage || data.logoText);
-    if(image){
-      document.getElementById('profileImage').src = image;
-    }
-
-    document.getElementById('socials').innerHTML = '';
-    ['facebook','instagram','youtube','whatsapp'].forEach(function(name){
-      addSocial(name,data[name]);
-    });
-
-    const videoUrl = safeUrl(data.latestVideoUrl || data.videoUrl);
-    if(videoUrl){
-      document.getElementById('latestVideo').src = videoUrl;
-      document.getElementById('videoSection').style.display = 'block';
-    }
-
-    buttons.innerHTML = '';
-
-    for(let i=1;i<=4;i++){
-      addButton(
-        data['button'+i+'Icon'],
-        data['button'+i+'Text'],
-        data['button'+i+'Url']
-      );
-    }
-
-    if(!buttons.children.length){
-      buttons.innerHTML =
-        '<p class="loading">কাস্টম বাটন এখনো যোগ করা হয়নি।</p>';
-    }
-
-  }catch(error){
+  if (!data || typeof data !== 'object') {
     buttons.innerHTML =
-      '<p class="loading">তথ্য লোড হয়নি। কিছুক্ষণ পরে আবার চেষ্টা করুন।</p>';
-    console.error(error);
+      '<p class="loading">সঠিক তথ্য পাওয়া যায়নি।</p>';
+    return;
   }
+
+  document.getElementById('title').textContent =
+    data.title || 'ONLINE TV';
+
+  document.getElementById('tagline').textContent =
+    data.tagline || '';
+
+  const imageUrl = safeUrl(data.profileImage || data.logoText);
+
+  if (imageUrl) {
+    document.getElementById('profileImage').src = imageUrl;
+  }
+
+  document.getElementById('socials').innerHTML = '';
+
+  ['facebook', 'instagram', 'youtube', 'whatsapp'].forEach(function(name) {
+    addSocial(name, data[name]);
+  });
+
+  const videoUrl = safeUrl(data.latestVideoUrl || data.videoUrl);
+
+  if (videoUrl) {
+    document.getElementById('latestVideo').src = videoUrl;
+    document.getElementById('videoSection').hidden = false;
+  }
+
+  buttons.innerHTML = '';
+
+  for (let i = 1; i <= 4; i++) {
+    addButton(
+      data['button' + i + 'Icon'],
+      data['button' + i + 'Text'],
+      data['button' + i + 'Url']
+    );
+  }
+
+  if (!buttons.children.length) {
+    buttons.innerHTML =
+      '<p class="loading">কাস্টম বাটন এখনো যোগ করা হয়নি।</p>';
+  }
+};
+
+function loadProfile() {
+  const buttons = document.getElementById('buttons');
+  const script = document.createElement('script');
+
+  const timeout = setTimeout(function() {
+    if (!window.profileLoaded) {
+      buttons.innerHTML =
+        '<p class="loading">তথ্য লোড হয়নি। Apps Script সংযোগ পরীক্ষা করুন।</p>';
+    }
+  }, 15000);
+
+  const originalCallback = window.onlineTVProfileCallback;
+
+  window.onlineTVProfileCallback = function(data) {
+    window.profileLoaded = true;
+    clearTimeout(timeout);
+    originalCallback(data);
+  };
+
+  script.src = APPS_SCRIPT_URL +
+    '?callback=onlineTVProfileCallback&t=' + Date.now();
+
+  script.onerror = function() {
+    clearTimeout(timeout);
+    buttons.innerHTML =
+      '<p class="loading">Google Apps Script-এর সঙ্গে সংযোগ হয়নি।</p>';
+  };
+
+  document.body.appendChild(script);
 }
 
 loadProfile();
