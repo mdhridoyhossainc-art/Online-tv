@@ -238,6 +238,7 @@ h1 {
   </div>
 
   <h1 id="title">ONLINE TV</h1>
+
   <p class="tagline" id="tagline">
     সংবাদ • বিনোদন • মানুষের গল্প
   </p>
@@ -269,7 +270,7 @@ h1 {
 
 <script>
 const APPS_SCRIPT_URL =
-'https://script.google.com/macros/s/AKfycbyKwrPxeHhpwAwQX31jEYwE_iurxo_XozuvXihCsO3hazMJKEbYc5gHuBmcxHX65Xs7/exec';
+'https://script.google.com/macros/s/AKfycbzA5VHTZL0Izp_9yi3_eI99Ju0Fwz_Eb8KHYY-ENXR8GKbcfRL7uBDVu_yju_nBw4mX/exec';
 
 const socialIcons = {
   facebook:
@@ -288,9 +289,7 @@ const socialIcons = {
 function safeUrl(value) {
   try {
     const url = new URL(String(value || '').trim());
-    return ['https:', 'http:'].includes(url.protocol)
-      ? url.href
-      : '';
+    return ['https:', 'http:'].includes(url.protocol) ? url.href : '';
   } catch (error) {
     return '';
   }
@@ -333,18 +332,21 @@ function addButton(icon, label, url) {
   document.getElementById('buttons').appendChild(link);
 }
 
-// JSONP callback: GitHub Pages থেকে Google Apps Script-এর তথ্য আনে
-window.onlineTVProfileCallback = function(data) {
-  const buttons = document.getElementById('buttons');
+function showError(message) {
+  document.getElementById('buttons').innerHTML =
+    '<p class="loading">' + message + '</p>';
+}
 
+function renderProfile(data) {
   if (!data || typeof data !== 'object') {
-    buttons.innerHTML =
-      '<p class="loading">সঠিক তথ্য পাওয়া যায়নি।</p>';
+    showError('সঠিক তথ্য পাওয়া যায়নি।');
     return;
   }
 
+  document.title = (data.title || 'ONLINE TV') + ' | Official';
+
   document.getElementById('title').textContent =
-    data.title || 'ONLINE TV';
+    String(data.title || 'ONLINE TV').replace(/:$/, '').trim();
 
   document.getElementById('tagline').textContent =
     data.tagline || '';
@@ -366,8 +368,11 @@ window.onlineTVProfileCallback = function(data) {
   if (videoUrl) {
     document.getElementById('latestVideo').src = videoUrl;
     document.getElementById('videoSection').hidden = false;
+  } else {
+    document.getElementById('videoSection').hidden = true;
   }
 
+  const buttons = document.getElementById('buttons');
   buttons.innerHTML = '';
 
   for (let i = 1; i <= 4; i++) {
@@ -379,38 +384,59 @@ window.onlineTVProfileCallback = function(data) {
   }
 
   if (!buttons.children.length) {
-    buttons.innerHTML =
-      '<p class="loading">কাস্টম বাটন এখনো যোগ করা হয়নি।</p>';
+    showError('কাস্টম বাটন এখনো যোগ করা হয়নি।');
   }
-};
+}
 
 function loadProfile() {
   const buttons = document.getElementById('buttons');
+  const callbackName = 'onlineTVCallback_' + Date.now();
+
+  let finished = false;
+
   const script = document.createElement('script');
 
   const timeout = setTimeout(function() {
-    if (!window.profileLoaded) {
-      buttons.innerHTML =
-        '<p class="loading">তথ্য লোড হয়নি। Apps Script সংযোগ পরীক্ষা করুন।</p>';
-    }
-  }, 15000);
+    if (finished) return;
 
-  const originalCallback = window.onlineTVProfileCallback;
+    finished = true;
+    delete window[callbackName];
+    script.remove();
 
-  window.onlineTVProfileCallback = function(data) {
-    window.profileLoaded = true;
+    showError('তথ্য লোড হয়নি। আবার চেষ্টা করুন।');
+  }, 20000);
+
+  window[callbackName] = function(data) {
+    if (finished) return;
+
+    finished = true;
     clearTimeout(timeout);
-    originalCallback(data);
+
+    try {
+      renderProfile(data);
+    } catch (error) {
+      console.error('Profile display error:', error);
+      showError('প্রোফাইল দেখাতে সমস্যা হয়েছে।');
+    }
+
+    delete window[callbackName];
+    script.remove();
+  };
+
+  script.onerror = function() {
+    if (finished) return;
+
+    finished = true;
+    clearTimeout(timeout);
+    delete window[callbackName];
+
+    showError('Google Apps Script-এর সঙ্গে সংযোগ হয়নি।');
+    script.remove();
   };
 
   script.src = APPS_SCRIPT_URL +
-    '?callback=onlineTVProfileCallback&t=' + Date.now();
-
-  script.onerror = function() {
-    clearTimeout(timeout);
-    buttons.innerHTML =
-      '<p class="loading">Google Apps Script-এর সঙ্গে সংযোগ হয়নি।</p>';
-  };
+    '?callback=' + encodeURIComponent(callbackName) +
+    '&t=' + Date.now();
 
   document.body.appendChild(script);
 }
