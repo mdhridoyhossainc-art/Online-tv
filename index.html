@@ -12,8 +12,6 @@
 :root {
   --red: #e5092b;
   --bg: #080808;
-  --glass: rgba(255,255,255,.075);
-  --border: rgba(255,255,255,.20);
 }
 
 * { box-sizing: border-box; }
@@ -24,10 +22,11 @@ body {
   padding: 38px 16px 22px;
   color: #fff;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(229,9,43,.34), transparent 48%),
-    radial-gradient(ellipse at 0% 55%, rgba(229,9,43,.20), transparent 42%),
-    radial-gradient(ellipse at 100% 85%, rgba(150,0,25,.18), transparent 42%),
-    linear-gradient(145deg, #080808 20%, #160308 55%, #080808 100%);
+    radial-gradient(ellipse at 50% 0%, rgba(229,9,43,.42), transparent 48%),
+    radial-gradient(ellipse at 0% 55%, rgba(229,9,43,.27), transparent 42%),
+    radial-gradient(ellipse at 100% 85%, rgba(150,0,25,.24), transparent 42%),
+    linear-gradient(145deg, #080808 15%, #20030a 55%, #080808 100%);
+  background-attachment: fixed;
   font-family: Arial, "Noto Sans Bengali", sans-serif;
 }
 
@@ -49,13 +48,8 @@ body {
   padding: 4px;
   border-radius: 50%;
   background: conic-gradient(
-    #ff3155,
-    #ff9b36,
-    #ffe45e,
-    #25d8a0,
-    #28a8ff,
-    #a65cff,
-    #ff3155
+    #ff3155, #ff9b36, #ffe45e, #25d8a0,
+    #28a8ff, #a65cff, #ff3155
   );
   box-shadow:
     0 0 14px rgba(255,65,100,.42),
@@ -78,16 +72,14 @@ body {
 
 @keyframes neonGlow {
   from {
-    box-shadow:
-      0 0 12px rgba(255,65,100,.35),
-      0 0 28px rgba(40,168,255,.20),
-      0 0 42px rgba(255,155,54,.15);
+    box-shadow: 0 0 12px rgba(255,65,100,.35),
+                0 0 28px rgba(40,168,255,.20),
+                0 0 42px rgba(255,155,54,.15);
   }
   to {
-    box-shadow:
-      0 0 20px rgba(255,65,100,.60),
-      0 0 38px rgba(40,168,255,.34),
-      0 0 52px rgba(255,155,54,.28);
+    box-shadow: 0 0 20px rgba(255,65,100,.60),
+                0 0 38px rgba(40,168,255,.34),
+                0 0 52px rgba(255,155,54,.28);
   }
 }
 
@@ -108,7 +100,7 @@ h1 {
   text-align: center;
 }
 
-/* Colorful Social Icons */
+/* Social Icons */
 .socials {
   display: flex;
   align-items: center;
@@ -126,14 +118,13 @@ h1 {
   background: rgba(0,0,0,.55);
   border: 1px solid rgba(255,255,255,.19);
   border-radius: 50%;
-  transition: transform .25s ease, box-shadow .25s ease,
-              border-color .25s ease, background .25s ease;
+  transition: .25s ease;
   box-shadow: inset 0 1px rgba(255,255,255,.08);
 }
 
 .socials svg {
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
   fill: currentColor;
 }
 
@@ -144,28 +135,11 @@ h1 {
 .socials a.social-whatsapp { color: #25D366; }
 
 .socials a:hover {
-  transform: translateY(-4px) scale(1.07);
-  background: rgba(255,255,255,.09);
+  transform: translateY(-4px) scale(1.09);
+  background: rgba(255,255,255,.12);
 }
 
-.socials a.social-facebook:hover {
-  border-color: #1877F2;
-  box-shadow: 0 0 16px rgba(24,119,242,.35);
-}
-.socials a.social-instagram:hover {
-  border-color: #E4405F;
-  box-shadow: 0 0 16px rgba(228,64,95,.35);
-}
-.socials a.social-youtube:hover {
-  border-color: #FF0033;
-  box-shadow: 0 0 16px rgba(255,0,51,.35);
-}
-.socials a.social-whatsapp:hover {
-  border-color: #25D366;
-  box-shadow: 0 0 16px rgba(37,211,102,.35);
-}
-
-/* Latest Video - Liquid Glass Bezel */
+/* Video Glass */
 .video-section {
   width: 100%;
   margin-bottom: 25px;
@@ -184,15 +158,16 @@ h1 {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: #151515;
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: 19px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 20px;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.18),
-    0 0 0 1px rgba(229,9,43,.16),
-    0 0 22px rgba(229,9,43,.20),
-    0 10px 35px rgba(0,0,0,.40);
-  transition: box-shadow .3s ease, border-color .3s ease;
+    inset 0 1px 3px rgba(255,255,255,.3),
+    inset 0 -2px 12px rgba(229,9,43,.2),
+    0 0 0 1px rgba(229,9,43,.2),
+    0 0 30px rgba(229,9,43,.28),
+    0 12px 35px rgba(0,0,0,.45);
+  transition: .3s ease;
 }
 
 .video-box::after {
@@ -200,19 +175,18 @@ h1 {
   position: absolute;
   inset: 0;
   z-index: 2;
-  border: 1px solid rgba(255,255,255,.19);
+  border: 1px solid rgba(255,255,255,.24);
   border-radius: inherit;
   pointer-events: none;
-  box-shadow: inset 0 1px 7px rgba(255,255,255,.13);
+  box-shadow: inset 0 2px 12px rgba(255,255,255,.15);
 }
 
 .video-box:hover {
-  border-color: rgba(229,9,43,.65);
+  border-color: rgba(255,255,255,.6);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.20),
-    0 0 0 1px rgba(229,9,43,.22),
-    0 0 30px rgba(229,9,43,.30),
-    0 12px 38px rgba(0,0,0,.45);
+    inset 0 1px 3px rgba(255,255,255,.35),
+    0 0 35px rgba(229,9,43,.4),
+    0 12px 38px rgba(0,0,0,.5);
 }
 
 .video-link {
@@ -231,9 +205,7 @@ h1 {
   transition: transform .4s ease;
 }
 
-.video-link:hover .video-thumbnail {
-  transform: scale(1.04);
-}
+.video-link:hover .video-thumbnail { transform: scale(1.04); }
 
 .play-button {
   position: absolute;
@@ -247,8 +219,8 @@ h1 {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background: rgba(229,9,43,.95);
-  box-shadow: 0 0 30px rgba(229,9,43,.50);
-  transition: transform .25s ease, box-shadow .25s ease;
+  box-shadow: 0 0 30px rgba(229,9,43,.5);
+  transition: .25s ease;
 }
 
 .play-button::after {
@@ -261,7 +233,7 @@ h1 {
 
 .video-link:hover .play-button {
   transform: translate(-50%, -50%) scale(1.12);
-  box-shadow: 0 0 38px rgba(229,9,43,.70);
+  box-shadow: 0 0 38px rgba(229,9,43,.7);
 }
 
 .video-caption {
@@ -276,12 +248,12 @@ h1 {
   text-align: center;
 }
 
-/* Red Liquid Glass Buttons */
+/* Premium Liquid Glass Buttons */
 .buttons {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: 16px;
 }
 
 .action-btn {
@@ -289,101 +261,135 @@ h1 {
   isolation: isolate;
   overflow: hidden;
   width: 100%;
-  min-height: 66px;
-  padding: 12px 55px;
+  min-height: 78px;
+  padding: 14px 65px;
   display: flex;
   align-items: center;
   justify-content: center;
+
   color: #fff;
   text-align: center;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
+  letter-spacing: .3px;
 
   background:
-    linear-gradient(115deg,
-      rgba(229,9,43,.25),
-      rgba(255,255,255,.085) 48%,
-      rgba(120,0,20,.25));
+    linear-gradient(125deg,
+      rgba(255,255,255,.20) 0%,
+      rgba(229,9,43,.24) 30%,
+      rgba(255,255,255,.075) 58%,
+      rgba(100,0,20,.35) 100%);
 
-  border: 1px solid rgba(255,255,255,.24);
-  border-radius: 17px;
+  border: 1px solid rgba(255,255,255,.48);
+  border-radius: 20px;
 
-  backdrop-filter: blur(22px) saturate(150%);
-  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
 
   box-shadow:
-    inset 0 1px 1px rgba(255,255,255,.22),
-    inset 0 -1px rgba(229,9,43,.18),
-    0 8px 25px rgba(0,0,0,.32),
-    0 0 18px rgba(229,9,43,.13);
+    inset 0 2px 3px rgba(255,255,255,.35),
+    inset 0 -3px 12px rgba(229,9,43,.25),
+    inset 2px 0 8px rgba(255,255,255,.10),
+    0 9px 28px rgba(0,0,0,.48),
+    0 0 24px rgba(229,9,43,.26);
 
-  transition: transform .3s ease, border-color .3s ease,
-              box-shadow .3s ease, background .3s ease;
+  transition: transform .3s ease, box-shadow .3s ease,
+              border-color .3s ease, background .3s ease;
 }
 
+/* Glass reflection */
 .action-btn::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: 1px;
   z-index: 0;
-  border-radius: inherit;
+  border-radius: 19px;
   background:
-    linear-gradient(125deg,
-      rgba(255,255,255,.14),
+    linear-gradient(115deg,
+      rgba(255,255,255,.30) 0%,
+      rgba(255,255,255,.10) 16%,
       transparent 38%,
-      rgba(229,9,43,.13));
+      rgba(229,9,43,.12) 78%,
+      transparent 100%);
+  pointer-events: none;
+}
+
+/* Top glass shine */
+.action-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+  background: rgba(255,255,255,.85);
+  box-shadow: 0 0 9px rgba(255,255,255,.55);
+  z-index: 1;
   pointer-events: none;
 }
 
 .action-btn:hover {
   transform: translateY(-4px);
-  border-color: rgba(229,9,43,.78);
-
+  border-color: rgba(255,255,255,.8);
   background:
-    linear-gradient(115deg,
-      rgba(229,9,43,.36),
-      rgba(255,255,255,.12),
-      rgba(120,0,20,.30));
+    linear-gradient(120deg,
+      rgba(255,255,255,.28),
+      rgba(229,9,43,.38),
+      rgba(255,255,255,.14));
 
   box-shadow:
-    inset 0 1px rgba(255,255,255,.25),
-    0 12px 30px rgba(0,0,0,.38),
-    0 0 26px rgba(229,9,43,.25);
+    inset 0 2px 5px rgba(255,255,255,.4),
+    inset 0 -3px 14px rgba(229,9,43,.3),
+    0 13px 35px rgba(0,0,0,.5),
+    0 0 35px rgba(229,9,43,.48);
 }
 
 .action-btn:active {
   transform: translateY(-1px) scale(.99);
 }
 
+/* Large Brand Icon Tiles */
 .btn-icon {
   position: absolute;
-  z-index: 1;
-  left: 19px;
-  width: 29px;
-  height: 29px;
+  z-index: 2;
+  left: 17px;
+  width: 49px;
+  height: 49px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
-  opacity: 1;
+  border-radius: 14px;
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,.5),
+    0 4px 12px rgba(0,0,0,.3);
 }
 
 .btn-icon svg {
-  width: 25px;
-  height: 25px;
+  width: 34px;
+  height: 34px;
   display: block;
-  fill: currentColor;
 }
 
-.btn-icon-facebook { color: #1877F2; }
-.btn-icon-youtube { color: #FF0033; }
-.btn-icon-whatsapp { color: #25D366; }
-.btn-icon-instagram { color: #E4405F; }
+.btn-icon-facebook {
+  background: #1877F2;
+}
 
-.action-btn > span:last-child {
+.btn-icon-instagram {
+  background: linear-gradient(135deg,#FFD600,#FF7A00,#FF0169,#7638FA);
+}
+
+.btn-icon-youtube {
+  background: #FF0033;
+}
+
+.btn-icon-whatsapp {
+  background: #25D366;
+}
+
+.btn-label {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Footer */
@@ -424,7 +430,9 @@ h1 {
 @media (max-width: 380px) {
   body { padding-left: 13px; padding-right: 13px; }
   h1 { font-size: 24px; }
-  .action-btn { min-height: 61px; font-size: 14px; }
+  .action-btn { min-height: 72px; font-size: 14px; }
+  .btn-icon { width: 44px; height: 44px; left: 13px; }
+  .btn-icon svg { width: 30px; height: 30px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -492,17 +500,23 @@ const APPS_SCRIPT_URL =
 'https://script.google.com/macros/s/AKfycbzA5VHTZL0Izp_9yi3_eI99Ju0Fwz_Eb8KHYY-ENXR8GKbcfRL7uBDVu_yju_nBw4mX/exec';
 
 const socialIcons = {
-  facebook:
-  '<svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.6V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.2v3h2.8v8z"/></svg>',
+  facebook: `<svg viewBox="0 0 24 24" fill="white">
+    <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.6V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.2v3h2.8v8z"/>
+  </svg>`,
 
-  instagram:
-  '<svg viewBox="0 0 24 24"><defs><linearGradient id="instagramGradient" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFD600"/><stop offset="35%" stop-color="#FF7A00"/><stop offset="65%" stop-color="#FF0169"/><stop offset="100%" stop-color="#7638FA"/></linearGradient></defs><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z" fill="url(#instagramGradient)"/></svg>',
+  instagram: `<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+    <rect x="3" y="3" width="18" height="18" rx="5"/>
+    <circle cx="12" cy="12" r="4"/>
+    <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
+  </svg>`,
 
-  youtube:
-  '<svg viewBox="0 0 24 24"><path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0-.5 5 31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 .5-5 31 31 0 0 0-.5-5zM9.6 15.5v-7l6 3.5z"/></svg>',
+  youtube: `<svg viewBox="0 0 24 24" fill="white">
+    <path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0-.5 5 31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 .5-5 31 31 0 0 0-.5-5zM9.6 15.5v-7l6 3.5z"/>
+  </svg>`,
 
-  whatsapp:
-  '<svg viewBox="0 0 24 24"><path d="M12 2a9.8 9.8 0 0 0-8.4 14.8L2 22l5.4-1.5A9.8 9.8 0 1 0 12 2zm0 17.8a8 8 0 0 1-4.1-1.1l-.3-.2-3.2.9.9-3.1-.2-.3A8 8 0 1 1 12 19.8zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8.9-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.5l.4-.4.2-.4c.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.8 3.4 1.4.6 1.9.6 2.6.5.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3z"/></svg>'
+  whatsapp: `<svg viewBox="0 0 24 24" fill="white">
+    <path d="M12 2a9.8 9.8 0 0 0-8.4 14.8L2 22l5.4-1.5A9.8 9.8 0 1 0 12 2zm0 17.8a8 8 0 0 1-4.1-1.1l-.3-.2-3.2.9.9-3.1-.2-.3A8 8 0 1 1 12 19.8zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8.9-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.5l.4-.4.2-.4c.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.8 3.4 1.4.6 1.9.6 2.6.5.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3z"/>
+  </svg>`
 };
 
 function safeUrl(value) {
@@ -551,12 +565,18 @@ function addSocial(name, url) {
 }
 
 function detectBrand(label, url) {
+  let host = '';
+
+  try {
+    host = new URL(url).hostname.toLowerCase();
+  } catch (error) {}
+
   const text = (String(label || '') + ' ' + String(url || '')).toLowerCase();
 
-  if (text.includes('facebook') || text.includes('fb.com')) return 'facebook';
-  if (text.includes('instagram') || text.includes('instagr.am')) return 'instagram';
-  if (text.includes('whatsapp') || text.includes('wa.me')) return 'whatsapp';
-  if (text.includes('youtube') || text.includes('youtu.be')) return 'youtube';
+  if (host.includes('facebook.com') || host.includes('fb.com') || text.includes('facebook')) return 'facebook';
+  if (host.includes('instagram.com') || host.includes('instagr.am') || text.includes('instagram')) return 'instagram';
+  if (host.includes('whatsapp.com') || host.includes('wa.me') || text.includes('whatsapp')) return 'whatsapp';
+  if (host.includes('youtube.com') || host.includes('youtu.be') || text.includes('youtube')) return 'youtube';
 
   return '';
 }
@@ -571,27 +591,20 @@ function addButton(icon, label, url) {
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
 
-  const brand = detectBrand(label, url);
+  const brand = detectBrand(label, validUrl);
 
   const iconElement = document.createElement('span');
   iconElement.className = 'btn-icon';
 
   if (brand && socialIcons[brand]) {
     iconElement.classList.add('btn-icon-' + brand);
-
-    if (brand === 'instagram') {
-      iconElement.innerHTML = socialIcons.instagram.replaceAll(
-        'instagramGradient',
-        'buttonInstagramGradient'
-      );
-    } else {
-      iconElement.innerHTML = socialIcons[brand];
-    }
+    iconElement.innerHTML = socialIcons[brand];
   } else {
     iconElement.textContent = icon || '🔗';
   }
 
   const labelElement = document.createElement('span');
+  labelElement.className = 'btn-label';
   labelElement.textContent = label;
 
   link.appendChild(iconElement);
@@ -636,7 +649,6 @@ function renderProfile(data) {
     addSocial(name, data[name]);
   });
 
-  // সর্বশেষ YouTube ভিডিওর Thumbnail
   const videoUrl = safeUrl(data.latestVideoUrl || data.videoUrl);
   const videoId = videoUrl ? getYouTubeVideoId(videoUrl) : '';
 
@@ -654,7 +666,6 @@ function renderProfile(data) {
     videoSection.hidden = true;
   }
 
-  // চারটি কাস্টম বাটন
   const buttons = document.getElementById('buttons');
   buttons.innerHTML = '';
 
