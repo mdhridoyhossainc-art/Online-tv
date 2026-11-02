@@ -113,8 +113,8 @@
   </div>
 
   <script>
-    // Ekhane thik Apps Script-er notun Web App URL-ti dewa holo
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzgL3ny0vCH63zTNxbmzEbcGTpqiS-FiUWgpeURyNyuBVXVEH5Jm172kI_Y0gcwrpjs/exec';
+    // Apnar notun Apps Script Web App URL-ti ekhane bosano holo
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKwrPxeHhpwAwQX31jEYwE_iurxo_XozuvXihCsO3hazMJKEbYc5gHuBmcxHX65Xs7/exec';
 
     async function loadSheetData() {
       if (!APPS_SCRIPT_URL) return;
@@ -125,7 +125,7 @@
         if (data.title) document.getElementById('title').innerText = data.title;
         if (data.tagline) document.getElementById('tagline').innerHTML = data.tagline.replace(/\n/g, '<br>');
         
-        // Logo Image handle korar jonno (B6 cell er link)
+        // Logo Image handle korar jonno (B6 cell er ImgBB direct link)
         if (data.logoText) {
           let logoImg = document.getElementById('logo-img');
           logoImg.src = data.logoText;
