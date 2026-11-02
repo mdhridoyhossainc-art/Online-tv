@@ -22,12 +22,11 @@ body {
   padding: 38px 16px 22px;
   color: #fff;
   background:
-    radial-gradient(ellipse at 12% 12%, rgba(120,65,255,.30), transparent 42%),
-    radial-gradient(ellipse at 88% 25%, rgba(35,130,255,.25), transparent 42%),
-    radial-gradient(ellipse at 50% 0%, rgba(229,9,43,.42), transparent 52%),
-    radial-gradient(ellipse at 0% 65%, rgba(229,9,43,.32), transparent 46%),
-    radial-gradient(ellipse at 100% 85%, rgba(150,0,25,.32), transparent 46%),
-    linear-gradient(145deg, #080808 10%, #260914 55%, #080808 100%);
+    radial-gradient(ellipse at 15% 15%, rgba(100,65,180,.20), transparent 45%),
+    radial-gradient(ellipse at 85% 25%, rgba(35,100,160,.16), transparent 45%),
+    radial-gradient(ellipse at 50% 0%, rgba(180,20,50,.20), transparent 52%),
+    radial-gradient(ellipse at 0% 75%, rgba(120,15,35,.18), transparent 48%),
+    linear-gradient(145deg, #080b12, #190c15 55%, #080808);
   background-attachment: fixed;
   font-family: Arial, "Noto Sans Bengali", sans-serif;
 }
@@ -227,41 +226,45 @@ h1 {
   transform: scale(1.04);
 }
 
-/* Soft White-Red Glass Play Button */
+/* Small White Liquid Glass Play Button */
 .play-button {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 65px;
-  height: 65px;
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: rgba(255,255,255,.16);
-  border: 1px solid rgba(255,255,255,.72);
-  backdrop-filter: blur(20px) saturate(125%);
-  -webkit-backdrop-filter: blur(20px) saturate(125%);
+
+  background: rgba(255,255,255,.13);
+  border: 1px solid rgba(255,255,255,.75);
+
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+
   box-shadow:
-    inset 0 1px 5px rgba(255,255,255,.55),
-    0 0 12px rgba(255,255,255,.10);
+    inset 0 1px 4px rgba(255,255,255,.55),
+    0 4px 15px rgba(0,0,0,.25);
+
   transition: .25s ease;
 }
 
 .play-button::after {
   content: "";
-  margin-left: 5px;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  border-left: 18px solid rgba(255,255,255,.95);
+  margin-left: 3px;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 14px solid rgba(255,255,255,.95);
   filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
 }
 
 .video-link:hover .play-button {
-  transform: translate(-50%, -50%) scale(1.10);
-  background: rgba(255,255,255,.24);
-  box-shadow: 0 0 18px rgba(255,255,255,.20);
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(255,255,255,.22);
+  box-shadow: 0 0 16px rgba(255,255,255,.18);
 }
 
 .video-caption {
@@ -276,7 +279,7 @@ h1 {
   text-align: center;
 }
 
-/* Red Liquid Glass Buttons */
+/* Transparent Red Liquid Glass Buttons */
 .buttons {
   width: 100%;
   display: flex;
@@ -291,9 +294,11 @@ h1 {
   width: 100%;
   min-height: 78px;
   padding: 14px 65px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -302,24 +307,23 @@ h1 {
   letter-spacing: .3px;
 
   background: linear-gradient(
-    125deg,
-    rgba(229,9,43,.72) 0%,
-    rgba(190,0,35,.62) 45%,
-    rgba(229,9,43,.55) 100%
+    135deg,
+    rgba(255,255,255,.20),
+    rgba(229,9,43,.13),
+    rgba(255,255,255,.07)
   );
 
-  border: 1px solid rgba(255,255,255,.75);
+  border: 1px solid rgba(255,255,255,.58);
   border-radius: 22px;
 
-  backdrop-filter: blur(45px) saturate(280%);
-  -webkit-backdrop-filter: blur(45px) saturate(280%);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
 
   box-shadow:
-    inset 0 2px 7px rgba(255,255,255,.65),
-    inset 0 -3px 15px rgba(229,9,43,.48),
-    inset 0 0 30px rgba(255,255,255,.18),
-    0 8px 28px rgba(0,0,0,.35),
-    0 0 28px rgba(229,9,43,.42);
+    inset 0 1px 3px rgba(255,255,255,.72),
+    inset 0 -1px 4px rgba(255,255,255,.12),
+    0 8px 25px rgba(0,0,0,.30),
+    0 0 16px rgba(229,9,43,.13);
 
   transition:
     transform .35s ease,
@@ -334,14 +338,15 @@ h1 {
   inset: 1px;
   z-index: 0;
   border-radius: 21px;
+
   background: linear-gradient(
     125deg,
-    rgba(255,255,255,.55) 0%,
-    rgba(255,255,255,.20) 18%,
-    transparent 42%,
-    rgba(255,255,255,.10) 72%,
-    transparent 100%
+    rgba(255,255,255,.42) 0%,
+    rgba(255,255,255,.12) 25%,
+    transparent 55%,
+    rgba(255,255,255,.12) 100%
   );
+
   pointer-events: none;
 }
 
@@ -349,31 +354,32 @@ h1 {
   content: "";
   position: absolute;
   top: 0;
-  left: 10%;
-  width: 80%;
+  left: 12%;
+  width: 76%;
   height: 1px;
+
   background: rgba(255,255,255,.95);
-  box-shadow: 0 0 12px rgba(255,255,255,.75);
+  box-shadow: 0 0 10px rgba(255,255,255,.55);
+
   z-index: 1;
   pointer-events: none;
 }
 
 .action-btn:hover {
   transform: translateY(-4px);
-  border-color: rgba(255,255,255,1);
+  border-color: rgba(255,255,255,.95);
 
   background: linear-gradient(
-    125deg,
-    rgba(255,35,75,.82),
-    rgba(210,0,45,.72),
-    rgba(229,9,43,.68)
+    135deg,
+    rgba(255,255,255,.28),
+    rgba(229,9,43,.20),
+    rgba(255,255,255,.12)
   );
 
   box-shadow:
-    inset 0 2px 8px rgba(255,255,255,.75),
-    inset 0 0 28px rgba(255,255,255,.20),
-    0 13px 35px rgba(0,0,0,.4),
-    0 0 35px rgba(229,9,43,.48);
+    inset 0 1px 4px rgba(255,255,255,.8),
+    0 12px 30px rgba(0,0,0,.35),
+    0 0 22px rgba(229,9,43,.20);
 }
 
 .action-btn:active {
