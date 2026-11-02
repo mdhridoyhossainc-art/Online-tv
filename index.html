@@ -80,28 +80,18 @@
       border-color: #e50914;
       transform: translateY(-2px);
     }
-    #video-container {
-      margin: 20px 0;
-      display: none;
-    }
   </style>
 </head>
 <body>
 
   <div class="container">
     <div class="profile-card">
-      <!-- Logo Image Section -->
       <div class="logo-container">
         <img id="logo-img" src="" alt="Logo" style="display:none;">
       </div>
 
       <h1 id="title">Online TV</h1>
       <p id="tagline">Loading...</p>
-      
-      <!-- Video Section -->
-      <div id="video-container">
-        <iframe id="featured-video" width="100%" height="200" src="" frameborder="0" allowfullscreen style="border-radius: 10px;"></iframe>
-      </div>
 
       <div class="social-links">
         <a id="youtube-btn" href="#" target="_blank" class="btn" style="display:none;">YouTube</a>
@@ -113,7 +103,6 @@
   </div>
 
   <script>
-    // Apnar notun Apps Script Web App URL-ti ekhane bosano holo
     const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKwrPxeHhpwAwQX31jEYwE_iurxo_XozuvXihCsO3hazMJKEbYc5gHuBmcxHX65Xs7/exec';
 
     async function loadSheetData() {
@@ -125,7 +114,6 @@
         if (data.title) document.getElementById('title').innerText = data.title;
         if (data.tagline) document.getElementById('tagline').innerHTML = data.tagline.replace(/\n/g, '<br>');
         
-        // Logo Image handle korar jonno (B6 cell er ImgBB direct link)
         if (data.logoText) {
           let logoImg = document.getElementById('logo-img');
           logoImg.src = data.logoText;
@@ -151,10 +139,6 @@
           let waBtn = document.getElementById('whatsapp-btn');
           waBtn.href = data.whatsapp;
           waBtn.style.display = 'block';
-        }
-        if (data.videoUrl) {
-          document.getElementById('featured-video').src = data.videoUrl;
-          document.getElementById('video-container').style.display = 'block';
         }
       } catch (err) {
         console.error('Error loading data:', err);
