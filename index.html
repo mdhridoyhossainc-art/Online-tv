@@ -24,8 +24,9 @@ body {
   padding: 38px 16px 22px;
   color: #fff;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(229,9,43,.19), transparent 48%),
-    radial-gradient(ellipse at 0% 65%, rgba(229,9,43,.07), transparent 35%),
+    radial-gradient(ellipse at 50% 0%, rgba(229,9,43,.23), transparent 48%),
+    radial-gradient(ellipse at 0% 65%, rgba(229,9,43,.10), transparent 35%),
+    radial-gradient(ellipse at 100% 85%, rgba(120,0,20,.10), transparent 38%),
     var(--bg);
   font-family: Arial, "Noto Sans Bengali", sans-serif;
 }
@@ -75,6 +76,7 @@ h1 {
   text-align: center;
 }
 
+/* Monochrome Social Icons */
 .socials {
   display: flex;
   align-items: center;
@@ -89,17 +91,19 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  background: var(--glass);
-  border: 1px solid var(--border);
+  color: #ededed;
+  background: rgba(0,0,0,.55);
+  border: 1px solid rgba(255,255,255,.17);
   border-radius: 50%;
   transition: .25s;
+  box-shadow: inset 0 1px rgba(255,255,255,.06);
 }
 
 .socials a:hover {
   transform: translateY(-3px);
-  border-color: var(--red);
-  background: rgba(229,9,43,.2);
+  color: #fff;
+  border-color: rgba(255,255,255,.55);
+  background: rgba(255,255,255,.12);
 }
 
 .socials svg {
@@ -108,9 +112,10 @@ h1 {
   fill: currentColor;
 }
 
+/* Latest Video */
 .video-section {
   width: 100%;
-  margin-bottom: 24px;
+  margin-bottom: 25px;
 }
 
 .section-label {
@@ -192,6 +197,7 @@ h1 {
   text-align: center;
 }
 
+/* Red Liquid Glass Buttons */
 .buttons {
   width: 100%;
   display: flex;
@@ -202,34 +208,52 @@ h1 {
 .action-btn {
   position: relative;
   width: 100%;
-  min-height: 65px;
+  min-height: 66px;
   padding: 12px 55px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #fff;
   text-align: center;
   text-decoration: none;
   font-size: 15px;
   font-weight: 700;
-  background: linear-gradient(120deg,
-    rgba(255,255,255,.085),
-    rgba(255,255,255,.025));
-  border: 1px solid var(--border);
-  border-radius: 15px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: inset 0 1px rgba(255,255,255,.06),
-              0 8px 25px rgba(0,0,0,.22);
+
+  background:
+    linear-gradient(115deg,
+      rgba(229,9,43,.13),
+      rgba(255,255,255,.055) 48%,
+      rgba(120,0,20,.12));
+
+  border: 1px solid rgba(255,255,255,.17);
+  border-radius: 16px;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.11),
+    inset 0 -1px rgba(229,9,43,.08),
+    0 8px 25px rgba(0,0,0,.25),
+    0 0 15px rgba(229,9,43,.045);
+
   transition: .25s;
 }
 
 .action-btn:hover {
   transform: translateY(-3px);
-  border-color: rgba(229,9,43,.7);
-  background: linear-gradient(120deg,
-    rgba(229,9,43,.2),
-    rgba(255,255,255,.04));
+  border-color: rgba(229,9,43,.65);
+
+  background:
+    linear-gradient(115deg,
+      rgba(229,9,43,.24),
+      rgba(255,255,255,.075),
+      rgba(120,0,20,.19));
+
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.15),
+    0 10px 28px rgba(0,0,0,.3),
+    0 0 20px rgba(229,9,43,.12);
 }
 
 .btn-icon {
@@ -240,9 +264,15 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 23px;
+  font-size: 22px;
+
+  filter: grayscale(1) sepia(1) saturate(8)
+          hue-rotate(315deg) brightness(1.05);
+
+  opacity: .9;
 }
 
+/* Footer */
 .footer {
   margin-top: 36px;
   text-align: center;
