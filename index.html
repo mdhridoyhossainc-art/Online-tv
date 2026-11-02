@@ -122,6 +122,7 @@ h1 {
 }
 
 .video-box {
+  position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
@@ -131,10 +132,64 @@ h1 {
   box-shadow: 0 10px 35px rgba(0,0,0,.35);
 }
 
-.video-box iframe {
+.video-link {
+  position: absolute;
+  inset: 0;
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+.video-thumbnail {
   width: 100%;
   height: 100%;
-  border: 0;
+  display: block;
+  object-fit: cover;
+  transition: transform .3s;
+}
+
+.video-link:hover .video-thumbnail {
+  transform: scale(1.04);
+}
+
+.play-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(229,9,43,.95);
+  box-shadow: 0 0 30px rgba(229,9,43,.45);
+  transition: .25s;
+}
+
+.play-button::after {
+  content: "";
+  margin-left: 5px;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 18px solid white;
+}
+
+.video-link:hover .play-button {
+  transform: translate(-50%, -50%) scale(1.12);
+}
+
+.video-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 25px 12px 10px;
+  background: linear-gradient(transparent, rgba(0,0,0,.8));
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
 .buttons {
@@ -247,13 +302,26 @@ h1 {
 
   <section class="video-section" id="videoSection" hidden>
     <p class="section-label">LATEST VIDEO</p>
+
     <div class="video-box">
-      <iframe id="latestVideo"
-        title="ONLINE TV Latest Video"
-        loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
+      <a id="videoLink"
+         class="video-link"
+         href="#"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="YouTube-এ সর্বশেষ ভিডিও দেখুন">
+
+        <img id="videoThumbnail"
+             class="video-thumbnail"
+             src=""
+             alt="ONLINE TV Latest Video">
+
+        <span class="play-button"></span>
+
+        <span class="video-caption">
+          WATCH ON YOUTUBE
+        </span>
+      </a>
     </div>
   </section>
 
@@ -290,6 +358,27 @@ function safeUrl(value) {
   try {
     const url = new URL(String(value || '').trim());
     return ['https:', 'http:'].includes(url.protocol) ? url.href : '';
+  } catch (error) {
+    return '';
+  }
+}
+
+function getYouTubeVideoId(value) {
+  try {
+    const url = new URL(value);
+    let id = '';
+
+    if (url.hostname.includes('youtu.be')) {
+      id = url.pathname.split('/').filter(Boolean)[0] || '';
+    } else if (url.pathname.startsWith('/shorts/')) {
+      id = url.pathname.split('/')[2] || '';
+    } else if (url.pathname.startsWith('/embed/')) {
+      id = url.pathname.split('/')[2] || '';
+    } else {
+      id = url.searchParams.get('v') || '';
+    }
+
+    return /^[a-zA-Z0-9_-]{11}$/.test(id) ? id : '';
   } catch (error) {
     return '';
   }
@@ -333,8 +422,13 @@ function addButton(icon, label, url) {
 }
 
 function showError(message) {
-  document.getElementById('buttons').innerHTML =
-    '<p class="loading">' + message + '</p>';
+  document.getElementById('buttons').innerHTML = '';
+
+  const messageElement = document.createElement('p');
+  messageElement.className = 'loading';
+  messageElement.textContent = message;
+
+  document.getElementById('buttons').appendChild(messageElement);
 }
 
 function renderProfile(data) {
@@ -363,15 +457,25 @@ function renderProfile(data) {
     addSocial(name, data[name]);
   });
 
+  // সর্বশেষ YouTube ভিডিওর Thumbnail
   const videoUrl = safeUrl(data.latestVideoUrl || data.videoUrl);
+  const videoId = videoUrl ? getYouTubeVideoId(videoUrl) : '';
 
-  if (videoUrl) {
-    document.getElementById('latestVideo').src = videoUrl;
-    document.getElementById('videoSection').hidden = false;
+  const videoSection = document.getElementById('videoSection');
+
+  if (videoId) {
+    document.getElementById('videoLink').href =
+      'https://www.youtube.com/watch?v=' + videoId;
+
+    document.getElementById('videoThumbnail').src =
+      'https://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg';
+
+    videoSection.hidden = false;
   } else {
-    document.getElementById('videoSection').hidden = true;
+    videoSection.hidden = true;
   }
 
+  // চারটি কাস্টম বাটন
   const buttons = document.getElementById('buttons');
   buttons.innerHTML = '';
 
@@ -389,11 +493,9 @@ function renderProfile(data) {
 }
 
 function loadProfile() {
-  const buttons = document.getElementById('buttons');
   const callbackName = 'onlineTVCallback_' + Date.now();
 
   let finished = false;
-
   const script = document.createElement('script');
 
   const timeout = setTimeout(function() {
