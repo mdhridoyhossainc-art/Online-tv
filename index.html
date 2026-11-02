@@ -5,10 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#080103">
-  <title>ONLINE TV | Official Profile</title>
+  <title id="site-title">ONLINE TV | Official Profile</title>
   <style>
     :root {
-      --red: #ff173d
+      --red: #ff173d;
+      --accent-color: #ff173d;
     }
 
     * {
@@ -135,113 +136,6 @@
       box-shadow: inset 0 1px 3px #ffffff55, 0 0 28px #ff002e50
     }
 
-    .thumb {
-      position: relative;
-      aspect-ratio: 16/9;
-      margin: 12px;
-      overflow: hidden;
-      border-radius: 12px;
-      background: #160006
-    }
-
-    .thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block
-    }
-
-    .play {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: #000a;
-      border: 1px solid #ffffffaa;
-      box-shadow: 0 0 25px #ff002e80;
-      font-size: 27px;
-      padding-left: 4px
-    }
-
-    .caption {
-      position: relative;
-      text-align: center;
-      padding: 16px 35px;
-      font-size: 18px;
-      font-weight: 800
-    }
-
-    .chev {
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 30px;
-      font-weight: 300
-    }
-
-    .recent-section {
-      margin-top: 4px
-    }
-
-    .recent-heading {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin: 0 2px 13px
-    }
-
-    .recent-heading h2 {
-      font-size: 15px;
-      letter-spacing: 1.6px;
-      margin: 0;
-      font-weight: 900
-    }
-
-    .recent-heading a {
-      font-size: 13px;
-      color: #ff9aaa;
-      text-decoration: none
-    }
-
-    .recent-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px
-    }
-
-    .video-item {
-      min-width: 0
-    }
-
-    .video-item .thumb {
-      aspect-ratio: 16/9;
-      margin: 10px
-    }
-
-    .video-name {
-      position: relative;
-      z-index: 1;
-      padding: 2px 16px 0;
-      font-size: 16px;
-      font-weight: 800;
-      line-height: 1.5;
-      text-align: center
-    }
-
-    .video-status {
-      margin: 8px 2px 0;
-      color: #bca7ad;
-      font-size: 12px;
-      text-align: center
-    }
-
     .links {
       display: grid;
       gap: 14px;
@@ -274,21 +168,10 @@
       fill: white
     }
 
-    .yt {
-      background: linear-gradient(145deg, #ff263f, #b5001f)
-    }
-
-    .fb {
-      background: linear-gradient(145deg, #3985ff, #1644a4)
-    }
-
-    .ig {
-      background: linear-gradient(145deg, #ffb04b, #e92b76 55%, #673bd1)
-    }
-
-    .wa {
-      background: linear-gradient(145deg, #2ce87d, #087a43)
-    }
+    .yt { background: linear-gradient(145deg, #ff263f, #b5001f) }
+    .fb { background: linear-gradient(145deg, #3985ff, #1644a4) }
+    .ig { background: linear-gradient(145deg, #ffb04b, #e92b76 55%, #673bd1) }
+    .wa { background: linear-gradient(145deg, #2ce87d, #087a43) }
 
     .label {
       position: relative;
@@ -308,73 +191,13 @@
     }
 
     @media(max-width:520px) {
-      .page {
-        padding: 10px
-      }
-
-      .panel {
-        padding: 22px 12px;
-        border-radius: 24px
-      }
-
-      .logo-container {
-        width: 112px;
-        height: 112px
-      }
-
-      .thumb {
-        aspect-ratio: 16/9;
-        margin: 8px
-      }
-
-      .play {
-        width: 52px;
-        height: 52px
-      }
-
-      .link {
-        min-height: 72px;
-        padding: 10px 14px;
-        gap: 12px;
-        border-radius: 16px
-      }
-
-      .icon {
-        width: 48px;
-        height: 48px;
-        flex-basis: 48px;
-        border-radius: 14px
-      }
-
-      .icon svg {
-        width: 25px;
-        height: 25px
-      }
-
-      .label {
-        font-size: 16px;
-        padding-right: 22px
-      }
-
-      .chev {
-        right: 13px
-      }
-
-      .socials {
-        margin: 19px 0 24px
-      }
-
-      .recent-heading h2 {
-        font-size: 13px
-      }
-
-      .recent-heading a {
-        font-size: 12px
-      }
-
-      .video-name {
-        font-size: 15px
-      }
+      .page { padding: 10px }
+      .panel { padding: 22px 12px; border-radius: 24px }
+      .logo-container { width: 112px; height: 112px }
+      .link { min-height: 72px; padding: 10px 14px; gap: 12px; border-radius: 16px }
+      .icon { width: 48px; height: 48px; flex-basis: 48px; border-radius: 14px }
+      .icon svg { width: 25px; height: 25px }
+      .label { font-size: 16px; padding-right: 22px }
     }
   </style>
 </head>
@@ -386,55 +209,73 @@
         <div class="logo-container">
           <img class="logo" src="https://lh3.googleusercontent.com/d/1QfLwARYA-EYj481_h5sCvLlqTzg5MuFd" alt="ONLINE TV logo">
         </div>
-        <h1 class="handle">Online tv</h1>
-        <p class="slogan">দেশের সর্বাধিক খবর ও সমসাময়ের সাথে<br>সবসময় — আমাদের লক্ষ্য। লাইক,<br>কমেন্ট ও শেয়ার করে পাশে থাকুন।</p>
+        <h1 class="handle" id="display-handle">Online tv</h1>
+        <p class="slogan" id="display-slogan">
+          আমি চ্যানেল বিক্রি করে ফেলব কেউ কিনবেন<br>এটি আমাদের অনলাইন পেইজ আমাদের সাথেই থাকুন
+        </p>
         <nav class="socials" aria-label="Social links">
-          <a class="social" href="https://www.youtube.com/@oonlinetb420" target="_blank" aria-label="YouTube">▶</a>
-          <a class="social" href="https://www.facebook.com/oonlinetv420" target="_blank" aria-label="Facebook">f</a>
-          <a class="social" href="https://www.instagram.com/oonlinetb420/" target="_blank" aria-label="Instagram">◎</a>
-          <a class="social" href="https://wa.me/8801805205471" target="_blank" aria-label="WhatsApp">☏</a>
+          <a class="social" id="social-yt" href="https://www.youtube.com/@oonlinetb420" target="_blank" aria-label="YouTube">▶</a>
+          <a class="social" id="social-fb" href="https://www.facebook.com/oonlinetv420" target="_blank" aria-label="Facebook">f</a>
+          <a class="social" id="social-ig" href="https://www.instagram.com/oonlinetv420/" target="_blank" aria-label="Instagram">◎</a>
+          <a class="social" id="social-wa" href="https://wa.me/8801805205471" target="_blank" aria-label="WhatsApp">☏</a>
         </nav>
       </header>
 
-      <section class="recent-section" aria-label="Latest YouTube video">
-        <div class="recent-heading">
-          <h2>সর্বশেষ ভিডিও</h2>
-          <a href="https://www.youtube.com/@oonlinetb420/videos" target="_blank" rel="noopener">সব ভিডিও দেখুন ↗</a>
-        </div>
-        <div class="recent-grid">
-          <a class="glass video-item" href="https://www.youtube.com/@oonlinetb420/videos" target="_blank" rel="noopener">
-            <div class="thumb">
-              <img src="https://lh3.googleusercontent.com/d/1QfLwARYA-EYj481_h5sCvLlqTzg5MuFd" alt="ONLINE TV" loading="lazy">
-              <span class="play">▶</span>
-            </div>
-            <div class="video-name">ONLINE TV-এর সমস্ত ভিডিও দেখতে এখানে ক্লিক করুন</div>
-            <div class="caption">ভিডিওগুলো দেখুন <span class="chev">›</span></div>
-          </a>
-        </div>
-        <p class="video-status">ONLINE TV অফিশিয়াল চ্যানেল</p>
-      </section>
-
       <section class="links">
-        <a class="glass link" href="https://www.youtube.com/@oonlinetb420?sub_confirmation=1" target="_blank">
+        <a id="link-yt" class="glass link" href="https://www.youtube.com/@oonlinetb420?sub_confirmation=1" target="_blank">
           <span class="icon yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></span>
-          <span class="label">YouTube</span><span class="chev">›</span>
+          <span class="label">YouTube</span>
         </a>
-        <a class="glass link" href="https://www.facebook.com/oonlinetv420" target="_blank">
+        <a id="link-fb" class="glass link" href="https://www.facebook.com/oonlinetv420" target="_blank">
           <span class="icon fb"><b style="font:900 34px Arial">f</b></span>
-          <span class="label">Facebook</span><span class="chev">›</span>
+          <span class="label">Facebook</span>
         </a>
-        <a class="glass link" href="https://www.instagram.com/oonlinetb420/" target="_blank">
+        <a id="link-ig" class="glass link" href="https://www.instagram.com/oonlinetv420/" target="_blank">
           <span class="icon ig"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm5 2.3a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Zm0 2.2a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6Z"/></svg></span>
-          <span class="label">Instagram</span><span class="chev">›</span>
+          <span class="label">Instagram</span>
         </a>
-        <a class="glass link" href="https://wa.me/8801805205471" target="_blank">
+        <a id="link-wa" class="glass link" href="https://wa.me/8801805205471" target="_blank">
           <span class="icon wa"><svg viewBox="0 0 24 24"><path d="M12 2a9.8 9.8 0 0 0-8.4 14.8L2 22l5.4-1.5A10 10 0 1 0 12 2Zm0 2a7.8 7.8 0 0 1 0 15.6 7.7 7.7 0 0 1-4-.1l-.5-.2-2.3.7.7-2.2-.3-.5A7.8 7.8 0 0 1 12 4Zm-3.1 3c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.2.2 1.8 2.9 4.4 3.9 2.2.9 2.7.7 3.2.6.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.1.1-1.3-.1-.2-.3-.2-.6-.4l-1.8-.9c-.2-.1-.4-.2-.6.2l-.8 1c-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.2-1.4-.8-.7-1.3-1.6-1.5-1.9-.1-.3 0-.4.1-.6l.5-.5.3-.5c.1-.1 0-.4 0-.5l-.8-1.9c-.2-.5-.4-.5-.7-.5h-.6Z"/></svg></span>
-          <span class="label">WhatsApp</span><span class="chev">›</span>
+          <span class="label">WhatsApp</span>
         </a>
       </section>
 
       <footer class="foot">ONLINE TV • OFFICIAL PROFILE</footer>
     </section>
   </main>
+
+  <script>
+    // Step 1 e pawa Web App URL-ti ' ' er vitor bosiye din
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzbSWPZ_qWmJSJ0HHwl4kRBbj2IWXYVorajlWRoBby88BpRFfF0823_k40JX0Cshsc/exec'; 
+
+    async function loadSheetData() {
+      if (!APPS_SCRIPT_URL) return;
+      try {
+        let res = await fetch(APPS_SCRIPT_URL);
+        let data = await res.json();
+        
+        if(data.tagline) document.getElementById('display-slogan').innerHTML = data.tagline.replace(/\n/g, '<br>');
+        if(data.facebook) {
+          document.getElementById('social-fb').href = data.facebook;
+          document.getElementById('link-fb').href = data.facebook;
+        }
+        if(data.instagram) {
+          document.getElementById('social-ig').href = data.instagram;
+          document.getElementById('link-ig').href = data.instagram;
+        }
+        if(data.youtube) {
+          document.getElementById('social-yt').href = data.youtube;
+          document.getElementById('link-yt').href = data.youtube;
+        }
+        if(data.whatsapp) {
+          document.getElementById('social-wa').href = data.whatsapp;
+          document.getElementById('link-wa').href = data.whatsapp;
+        }
+      } catch (e) {
+        console.log("Data fetch error: ", e);
+      }
+    }
+    loadSheetData();
+  </script>
 </body>
 </html>
