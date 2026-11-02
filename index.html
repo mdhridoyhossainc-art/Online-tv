@@ -12,8 +12,8 @@
 :root {
   --red: #e5092b;
   --bg: #080808;
-  --glass: rgba(255,255,255,.055);
-  --border: rgba(255,255,255,.13);
+  --glass: rgba(255,255,255,.075);
+  --border: rgba(255,255,255,.20);
 }
 
 * { box-sizing: border-box; }
@@ -24,10 +24,10 @@ body {
   padding: 38px 16px 22px;
   color: #fff;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(229,9,43,.23), transparent 48%),
-    radial-gradient(ellipse at 0% 65%, rgba(229,9,43,.10), transparent 35%),
-    radial-gradient(ellipse at 100% 85%, rgba(120,0,20,.10), transparent 38%),
-    var(--bg);
+    radial-gradient(ellipse at 50% 0%, rgba(229,9,43,.34), transparent 48%),
+    radial-gradient(ellipse at 0% 55%, rgba(229,9,43,.20), transparent 42%),
+    radial-gradient(ellipse at 100% 85%, rgba(150,0,25,.18), transparent 42%),
+    linear-gradient(145deg, #080808 20%, #160308 55%, #080808 100%);
   font-family: Arial, "Noto Sans Bengali", sans-serif;
 }
 
@@ -58,9 +58,9 @@ body {
     #ff3155
   );
   box-shadow:
-    0 0 12px rgba(255,65,100,.35),
-    0 0 28px rgba(40,168,255,.20),
-    0 0 42px rgba(255,155,54,.15);
+    0 0 14px rgba(255,65,100,.42),
+    0 0 30px rgba(40,168,255,.25),
+    0 0 45px rgba(255,155,54,.20);
   animation: neonGlow 4s ease-in-out infinite alternate;
 }
 
@@ -69,9 +69,11 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   border-radius: 50%;
   border: 3px solid #111;
   background: #191919;
+  filter: none;
 }
 
 @keyframes neonGlow {
@@ -83,9 +85,9 @@ body {
   }
   to {
     box-shadow:
-      0 0 18px rgba(255,65,100,.55),
-      0 0 35px rgba(40,168,255,.32),
-      0 0 50px rgba(255,155,54,.25);
+      0 0 20px rgba(255,65,100,.60),
+      0 0 38px rgba(40,168,255,.34),
+      0 0 52px rgba(255,155,54,.28);
   }
 }
 
@@ -122,11 +124,11 @@ h1 {
   align-items: center;
   justify-content: center;
   background: rgba(0,0,0,.55);
-  border: 1px solid rgba(255,255,255,.17);
+  border: 1px solid rgba(255,255,255,.19);
   border-radius: 50%;
   transition: transform .25s ease, box-shadow .25s ease,
               border-color .25s ease, background .25s ease;
-  box-shadow: inset 0 1px rgba(255,255,255,.06);
+  box-shadow: inset 0 1px rgba(255,255,255,.08);
 }
 
 .socials svg {
@@ -135,29 +137,11 @@ h1 {
   fill: currentColor;
 }
 
-/* Facebook */
-.socials a.social-facebook {
-  color: #1877F2;
-}
-
-/* Instagram */
-.socials a.social-instagram {
-  color: #E4405F;
-}
-
-.socials a.social-instagram svg {
-  fill: url(#instagramGradient);
-}
-
-/* YouTube */
-.socials a.social-youtube {
-  color: #FF0033;
-}
-
-/* WhatsApp */
-.socials a.social-whatsapp {
-  color: #25D366;
-}
+.socials a.social-facebook { color: #1877F2; }
+.socials a.social-instagram { color: #E4405F; }
+.socials a.social-instagram svg { fill: url(#instagramGradient); }
+.socials a.social-youtube { color: #FF0033; }
+.socials a.social-whatsapp { color: #25D366; }
 
 .socials a:hover {
   transform: translateY(-4px) scale(1.07);
@@ -168,23 +152,20 @@ h1 {
   border-color: #1877F2;
   box-shadow: 0 0 16px rgba(24,119,242,.35);
 }
-
 .socials a.social-instagram:hover {
   border-color: #E4405F;
   box-shadow: 0 0 16px rgba(228,64,95,.35);
 }
-
 .socials a.social-youtube:hover {
   border-color: #FF0033;
   box-shadow: 0 0 16px rgba(255,0,51,.35);
 }
-
 .socials a.social-whatsapp:hover {
   border-color: #25D366;
   box-shadow: 0 0 16px rgba(37,211,102,.35);
 }
 
-/* Latest Video - Glass Bezel */
+/* Latest Video - Liquid Glass Bezel */
 .video-section {
   width: 100%;
   margin-bottom: 25px;
@@ -204,13 +185,13 @@ h1 {
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #151515;
-  border: 1px solid rgba(255,255,255,.23);
+  border: 1px solid rgba(255,255,255,.25);
   border-radius: 19px;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.15),
-    0 0 0 1px rgba(229,9,43,.10),
-    0 0 18px rgba(229,9,43,.13),
-    0 10px 35px rgba(0,0,0,.35);
+    inset 0 1px 0 rgba(255,255,255,.18),
+    0 0 0 1px rgba(229,9,43,.16),
+    0 0 22px rgba(229,9,43,.20),
+    0 10px 35px rgba(0,0,0,.40);
   transition: box-shadow .3s ease, border-color .3s ease;
 }
 
@@ -219,19 +200,19 @@ h1 {
   position: absolute;
   inset: 0;
   z-index: 2;
-  border: 1px solid rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.19);
   border-radius: inherit;
   pointer-events: none;
-  box-shadow: inset 0 1px 5px rgba(255,255,255,.10);
+  box-shadow: inset 0 1px 7px rgba(255,255,255,.13);
 }
 
 .video-box:hover {
-  border-color: rgba(229,9,43,.48);
+  border-color: rgba(229,9,43,.65);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.18),
-    0 0 0 1px rgba(229,9,43,.18),
-    0 0 25px rgba(229,9,43,.22),
-    0 12px 38px rgba(0,0,0,.4);
+    inset 0 1px 0 rgba(255,255,255,.20),
+    0 0 0 1px rgba(229,9,43,.22),
+    0 0 30px rgba(229,9,43,.30),
+    0 12px 38px rgba(0,0,0,.45);
 }
 
 .video-link {
@@ -266,7 +247,7 @@ h1 {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background: rgba(229,9,43,.95);
-  box-shadow: 0 0 30px rgba(229,9,43,.45);
+  box-shadow: 0 0 30px rgba(229,9,43,.50);
   transition: transform .25s ease, box-shadow .25s ease;
 }
 
@@ -280,7 +261,7 @@ h1 {
 
 .video-link:hover .play-button {
   transform: translate(-50%, -50%) scale(1.12);
-  box-shadow: 0 0 38px rgba(229,9,43,.65);
+  box-shadow: 0 0 38px rgba(229,9,43,.70);
 }
 
 .video-caption {
@@ -305,6 +286,8 @@ h1 {
 
 .action-btn {
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
   width: 100%;
   min-height: 66px;
   padding: 12px 55px;
@@ -319,44 +302,63 @@ h1 {
 
   background:
     linear-gradient(115deg,
-      rgba(229,9,43,.13),
-      rgba(255,255,255,.055) 48%,
-      rgba(120,0,20,.12));
+      rgba(229,9,43,.25),
+      rgba(255,255,255,.085) 48%,
+      rgba(120,0,20,.25));
 
-  border: 1px solid rgba(255,255,255,.17);
-  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 17px;
 
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
 
   box-shadow:
-    inset 0 1px rgba(255,255,255,.11),
-    inset 0 -1px rgba(229,9,43,.08),
-    0 8px 25px rgba(0,0,0,.25),
-    0 0 15px rgba(229,9,43,.045);
+    inset 0 1px 1px rgba(255,255,255,.22),
+    inset 0 -1px rgba(229,9,43,.18),
+    0 8px 25px rgba(0,0,0,.32),
+    0 0 18px rgba(229,9,43,.13);
 
-  transition: transform .25s ease, border-color .25s ease,
-              box-shadow .25s ease, background .25s ease;
+  transition: transform .3s ease, border-color .3s ease,
+              box-shadow .3s ease, background .3s ease;
+}
+
+.action-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(125deg,
+      rgba(255,255,255,.14),
+      transparent 38%,
+      rgba(229,9,43,.13));
+  pointer-events: none;
 }
 
 .action-btn:hover {
-  transform: translateY(-3px);
-  border-color: rgba(229,9,43,.65);
+  transform: translateY(-4px);
+  border-color: rgba(229,9,43,.78);
 
   background:
     linear-gradient(115deg,
-      rgba(229,9,43,.24),
-      rgba(255,255,255,.075),
-      rgba(120,0,20,.19));
+      rgba(229,9,43,.36),
+      rgba(255,255,255,.12),
+      rgba(120,0,20,.30));
 
   box-shadow:
-    inset 0 1px rgba(255,255,255,.15),
-    0 10px 28px rgba(0,0,0,.3),
-    0 0 20px rgba(229,9,43,.12);
+    inset 0 1px rgba(255,255,255,.25),
+    0 12px 30px rgba(0,0,0,.38),
+    0 0 26px rgba(229,9,43,.25);
+}
+
+.action-btn:active {
+  transform: translateY(-1px) scale(.99);
 }
 
 .btn-icon {
   position: absolute;
+  z-index: 1;
   left: 19px;
   width: 29px;
   height: 29px;
@@ -365,6 +367,23 @@ h1 {
   justify-content: center;
   font-size: 22px;
   opacity: 1;
+}
+
+.btn-icon svg {
+  width: 25px;
+  height: 25px;
+  display: block;
+  fill: currentColor;
+}
+
+.btn-icon-facebook { color: #1877F2; }
+.btn-icon-youtube { color: #FF0033; }
+.btn-icon-whatsapp { color: #25D366; }
+.btn-icon-instagram { color: #E4405F; }
+
+.action-btn > span:last-child {
+  position: relative;
+  z-index: 1;
 }
 
 /* Footer */
@@ -531,6 +550,17 @@ function addSocial(name, url) {
   document.getElementById('socials').appendChild(link);
 }
 
+function detectBrand(label, url) {
+  const text = (String(label || '') + ' ' + String(url || '')).toLowerCase();
+
+  if (text.includes('facebook') || text.includes('fb.com')) return 'facebook';
+  if (text.includes('instagram') || text.includes('instagr.am')) return 'instagram';
+  if (text.includes('whatsapp') || text.includes('wa.me')) return 'whatsapp';
+  if (text.includes('youtube') || text.includes('youtu.be')) return 'youtube';
+
+  return '';
+}
+
 function addButton(icon, label, url) {
   const validUrl = safeUrl(url);
   if (!validUrl || !String(label || '').trim()) return;
@@ -541,9 +571,25 @@ function addButton(icon, label, url) {
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
 
+  const brand = detectBrand(label, url);
+
   const iconElement = document.createElement('span');
   iconElement.className = 'btn-icon';
-  iconElement.textContent = icon || '🔗';
+
+  if (brand && socialIcons[brand]) {
+    iconElement.classList.add('btn-icon-' + brand);
+
+    if (brand === 'instagram') {
+      iconElement.innerHTML = socialIcons.instagram.replaceAll(
+        'instagramGradient',
+        'buttonInstagramGradient'
+      );
+    } else {
+      iconElement.innerHTML = socialIcons[brand];
+    }
+  } else {
+    iconElement.textContent = icon || '🔗';
+  }
 
   const labelElement = document.createElement('span');
   labelElement.textContent = label;
