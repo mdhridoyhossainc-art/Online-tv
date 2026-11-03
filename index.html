@@ -1,650 +1,157 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090609">
-<title>ONLINE TV | Official Media Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online TV - Official Bio Link</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-<style>
-:root {
-  --bg:#090609;
-  --red:#ff2948;
-  --red2:#a90025;
-  --white:#fff;
-  --muted:#c0adb5;
-  --glass:rgba(255,255,255,.055);
-  --border:rgba(255,255,255,.13);
-}
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 420px;
+            padding: 30px 24px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
 
-* {
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff0055;
+            padding: 3px;
+            margin-bottom: 16px;
+            box-shadow: 0 8px 16px rgba(255, 0, 85, 0.3);
+        }
 
-body {
-  min-height:100vh;
-  font-family:'Inter','Hind Siliguri',sans-serif;
-  color:var(--white);
-  padding:32px 16px;
-  background:
-    radial-gradient(ellipse at 50% 0%,rgba(205,0,40,.30),transparent 42%),
-    radial-gradient(ellipse at 0% 55%,rgba(115,0,30,.19),transparent 42%),
-    radial-gradient(ellipse at 100% 85%,rgba(255,30,60,.12),transparent 35%),
-    linear-gradient(145deg,#080608,#170910 48%,#080609);
-  background-attachment:fixed;
-}
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
 
-.container {
-  width:100%;
-  max-width:470px;
-  margin:auto;
-}
+        p.bio {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
 
-.topline {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:22px;
-}
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
 
-.brand {
-  font-size:15px;
-  font-weight:900;
-  letter-spacing:2px;
-}
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 14px 20px;
+            border-radius: 14px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
 
-.brand span,
-.title .tv,
-.footer span {
-  color:var(--red);
-}
+        .link-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
 
-.live {
-  display:flex;
-  align-items:center;
-  gap:7px;
-  color:#ff788a;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:1.5px;
-}
+        .link-btn i.icon {
+            font-size: 20px;
+            width: 30px;
+            text-align: left;
+        }
 
-.live-dot {
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:var(--red);
-  box-shadow:0 0 12px var(--red);
-}
+        .youtube { color: #ff0000; }
+        .facebook { color: #1877f2; }
+        .website { color: #00f2fe; }
+        .contact { color: #25d366; }
 
-.profile {
-  text-align:center;
-  padding:32px 22px 27px;
-  border:1px solid rgba(255,65,91,.30);
-  border-radius:25px;
-  background:
-    linear-gradient(145deg,rgba(80,18,36,.48),rgba(20,13,21,.82)),
-    rgba(255,255,255,.035);
-  box-shadow:
-    0 22px 65px rgba(0,0,0,.48),
-    inset 0 1px 0 rgba(255,255,255,.09);
-  position:relative;
-  overflow:hidden;
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
-}
+        .footer {
+            margin-top: 28px;
+            font-size: 12px;
+            color: #64748b;
+        }
 
-.profile::before {
-  content:"";
-  position:absolute;
-  width:240px;
-  height:240px;
-  top:-155px;
-  left:calc(50% - 120px);
-  border-radius:50%;
-  background:rgba(255,25,60,.28);
-  filter:blur(65px);
-}
-
-.avatar-wrap {
-  width:120px;
-  height:120px;
-  margin:0 auto 20px;
-  padding:4px;
-  border-radius:50%;
-  position:relative;
-  background:linear-gradient(135deg,#ff243f,#720019,#ff8a9b);
-  box-shadow:0 0 28px rgba(255,36,63,.35);
-}
-
-.avatar {
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  object-fit:cover;
-  background:#180d14;
-  border:4px solid #190d14;
-}
-
-.title {
-  font-size:31px;
-  font-weight:900;
-  letter-spacing:1px;
-  line-height:1.25;
-  overflow-wrap:anywhere;
-}
-
-.title .online {color:#fff;}
-.title .tv {color:#ff304d;}
-
-.tagline {
-  margin-top:11px;
-  font-family:'Hind Siliguri',sans-serif;
-  color:#e4d7dc;
-  font-size:15px;
-  line-height:1.8;
-}
-
-.verified {
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  margin-top:17px;
-  padding:8px 14px;
-  border:1px solid rgba(255,255,255,.13);
-  border-radius:30px;
-  background:rgba(255,255,255,.055);
-  color:#f0dfe4;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:1.1px;
-}
-
-.verified svg {color:#ff526b;}
-
-.section-title {
-  display:flex;
-  align-items:center;
-  gap:11px;
-  margin:27px 3px 15px;
-  color:#fff;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:1.5px;
-}
-
-.section-title::after {
-  content:"";
-  flex:1;
-  height:1px;
-  background:linear-gradient(90deg,rgba(255,255,255,.19),transparent);
-}
-
-/* Social buttons */
-
-.socials {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-}
-
-.social {
-  min-width:0;
-  min-height:85px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  padding:12px 3px;
-  border:1px solid var(--border);
-  border-radius:17px;
-  color:#fff;
-  text-decoration:none;
-  background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.025));
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 8px 22px rgba(0,0,0,.20);
-  backdrop-filter:blur(15px);
-  -webkit-backdrop-filter:blur(15px);
-  transition:.25s ease;
-}
-
-.social svg {
-  width:25px;
-  height:25px;
-}
-
-.social span {
-  font-size:10px;
-  font-weight:700;
-}
-
-.social.facebook svg {color:#1877f2;}
-.social.instagram svg {color:#ed4b96;}
-.social.youtube svg {color:#ff263f;}
-.social.whatsapp svg {color:#25d366;}
-
-.social:hover {
-  transform:translateY(-5px);
-  border-color:rgba(255,65,91,.65);
-  background:rgba(255,255,255,.10);
-  box-shadow:0 8px 25px rgba(255,25,60,.13);
-}
-
-/* Latest video */
-
-.youtube-area {
-  display:flex;
-  justify-content:center;
-  margin:22px auto 0;
-}
-
-.youtube-play {
-  width:100%;
-  max-width:190px;
-  min-height:65px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  border:1px solid rgba(255,55,79,.55);
-  border-radius:17px;
-  color:#fff;
-  text-decoration:none;
-  background:linear-gradient(120deg,rgba(255,36,63,.20),rgba(255,255,255,.045));
-  box-shadow:0 0 25px rgba(255,30,60,.11),inset 0 1px 0 rgba(255,255,255,.12);
-  backdrop-filter:blur(15px);
-  -webkit-backdrop-filter:blur(15px);
-  transition:.25s ease;
-}
-
-.youtube-play svg {
-  width:32px;
-  height:32px;
-  color:#ff304d;
-  filter:drop-shadow(0 0 9px rgba(255,36,63,.5));
-}
-
-.play-label {
-  text-align:left;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.5px;
-}
-
-.play-label small {
-  display:block;
-  margin-top:3px;
-  color:#c8b4bc;
-  font-size:9px;
-  font-weight:500;
-}
-
-.youtube-play:hover {
-  transform:scale(1.045);
-  border-color:#ff304d;
-  box-shadow:0 0 30px rgba(255,36,63,.27);
-}
-
-/* Custom glass buttons */
-
-.links {
-  display:flex;
-  flex-direction:column;
-  gap:13px;
-}
-
-.custom-link {
-  min-height:67px;
-  padding:12px 16px;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  border-radius:17px;
-  border:1px solid rgba(255,75,100,.29);
-  color:#fff;
-  text-decoration:none;
-  background:
-    linear-gradient(110deg,rgba(130,10,38,.24),rgba(255,255,255,.055) 55%,rgba(255,255,255,.025));
-  box-shadow:
-    0 9px 25px rgba(0,0,0,.25),
-    inset 0 1px 0 rgba(255,255,255,.10);
-  backdrop-filter:blur(17px);
-  -webkit-backdrop-filter:blur(17px);
-  transition:.28s ease;
-  position:relative;
-  overflow:hidden;
-}
-
-.custom-link::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(110deg,transparent,rgba(255,255,255,.075),transparent);
-  transform:translateX(-100%);
-  transition:.5s ease;
-}
-
-.custom-link:hover::before {
-  transform:translateX(100%);
-}
-
-.custom-link:hover {
-  transform:translateY(-3px);
-  border-color:rgba(255,65,91,.8);
-  box-shadow:0 12px 30px rgba(255,20,55,.13);
-  background:linear-gradient(110deg,rgba(170,10,42,.35),rgba(255,255,255,.08));
-}
-
-.link-icon {
-  width:45px;
-  height:45px;
-  flex-shrink:0;
-  display:grid;
-  place-items:center;
-  border-radius:13px;
-  border:1px solid rgba(255,70,95,.42);
-  background:linear-gradient(145deg,rgba(255,40,70,.27),rgba(255,255,255,.07));
-  color:#ff687c;
-  font-size:21px;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 4px 12px rgba(0,0,0,.2);
-  position:relative;
-  z-index:1;
-}
-
-.link-text {
-  flex:1;
-  min-width:0;
-  font-size:14px;
-  font-weight:700;
-  overflow-wrap:anywhere;
-  position:relative;
-  z-index:1;
-}
-
-.arrow {
-  flex-shrink:0;
-  color:#ff6b80;
-  font-size:22px;
-  position:relative;
-  z-index:1;
-}
-
-.footer {
-  text-align:center;
-  padding:29px 10px 10px;
-  color:#a3949d;
-  font-size:11px;
-  line-height:2;
-}
-
-.footer strong {
-  color:#fff;
-  font-size:13px;
-  letter-spacing:1.5px;
-}
-
-@media(max-width:360px) {
-  .title {font-size:26px;}
-  .socials {gap:6px;}
-  .social span {font-size:9px;}
-  .custom-link {padding:11px;}
-}
-</style>
+        .footer strong {
+            color: #94a3b8;
+        }
+    </style>
 </head>
-
 <body>
-<div class="container">
 
-  <div class="topline">
-    <div class="brand">ONLINE <span>TV</span></div>
-    <div class="live"><i class="live-dot"></i> DIGITAL MEDIA</div>
-  </div>
+    <div class="card">
+        <!-- আপনার প্রোফাইল ছবি বা লোগোর লিংক এখানে বসবে -->
+        <img src="https://via.placeholder.com/110" alt="Online TV Logo" class="profile-img">
+        
+        <h1>Online TV</h1>
+        <p class="bio">Digital Media, Entertainment & News Platform</p>
 
-  <section class="profile">
-    <div class="avatar-wrap">
-      <img id="profileImage" class="avatar" src="" alt="ONLINE TV">
+        <div class="links-container">
+            <!-- আপনার ইউটিউব চ্যানেল লিংক (oonlinetv420 হ্যান্ডেল সহ) -->
+            <a href="https://www.youtube.com/@oonlinetv420" target="_blank" class="link-btn">
+                <i class="fa-brands fa-youtube icon youtube"></i>
+                <span>YouTube Channel</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+
+            <!-- ফেসবুক পেজ লিংক -->
+            <a href="https://facebook.com" target="_blank" class="link-btn">
+                <i class="fa-brands fa-facebook icon facebook"></i>
+                <span>Facebook Page</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+
+            <!-- ওয়েবসাইট বা গিটহ্যাব পেজ লিংক -->
+            <a href="https://mdhridoyhossainc-art.github.io/Online-tv/" target="_blank" class="link-btn">
+                <i class="fa-solid fa-globe icon website"></i>
+                <span>Official Website</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+
+            <!-- হোয়াটসঅ্যাপ কন্টাক্ট লিংক -->
+            <a href="https://wa.me/" target="_blank" class="link-btn">
+                <i class="fa-brands fa-whatsapp icon contact"></i>
+                <span>WhatsApp Contact</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+        </div>
+
+        <div class="footer">
+            © 2026 <strong>Online TV</strong>. All Rights Reserved.
+        </div>
     </div>
 
-    <h1 class="title" id="title">
-      <span class="online">ONLINE</span> <span class="tv">TV</span>
-    </h1>
-
-    <p class="tagline" id="tagline">সংবাদ • বিনোদন • মানুষের গল্প</p>
-
-    <div class="verified">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path d="M12 2l3 2 4-.2.8 3.8 2.2 3.4-2.2 3.4-.8 3.8-4-.2-3 2-3-2-4 .2-.8-3.8L2 11l2.2-3.4L5 3.8l4 .2z"/>
-        <path d="m8 12 2.5 2.5L16 9"/>
-      </svg>
-      OFFICIAL MEDIA PROFILE
-    </div>
-  </section>
-
-  <div class="section-title">CONNECT WITH US</div>
-
-  <div class="socials">
-    <a class="social facebook" id="facebook" href="#" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8z"/>
-      </svg>
-      <span>Facebook</span>
-    </a>
-
-    <a class="social instagram" id="instagram" href="#" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <rect x="3" y="3" width="18" height="18" rx="5"/>
-        <circle cx="12" cy="12" r="4"/>
-        <circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/>
-      </svg>
-      <span>Instagram</span>
-    </a>
-
-    <a class="social youtube" id="youtube" href="#" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0-.5 5 31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 .5-5 31 31 0 0 0-.5-5zM9.8 15.5v-7l6 3.5z"/>
-      </svg>
-      <span>YouTube</span>
-    </a>
-
-    <a class="social whatsapp" id="whatsapp" href="#" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L.2 24l6.4-1.7a11.8 11.8 0 0 0 5.5 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.4zM12.1 21.7a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.8 1 1-3.7-.3-.5a9.7 9.7 0 0 1-1.5-5.1 9.9 9.9 0 1 1 10 9.9zm5.4-7.4c-.3-.2-1.7-.8-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.5-1.7-1.7-2-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-.9-2.1c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.5s1.1 2.9 1.3 3.1c.1.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.6-.4z"/>
-      </svg>
-      <span>WhatsApp</span>
-    </a>
-  </div>
-
-  <!-- Latest video: play icon only -->
-  <div class="youtube-area">
-    <a class="youtube-play" id="latestVideo" href="https://www.youtube.com/" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5v-7l6.3 3.5z"/>
-      </svg>
-      <span class="play-label">
-        LATEST VIDEO
-        <small>Watch on YouTube ↗</small>
-      </span>
-    </a>
-  </div>
-
-  <div class="section-title">EXPLORE ONLINE TV</div>
-  <div class="links" id="customLinks"></div>
-
-  <footer class="footer">
-    <strong>ONLINE <span>TV</span></strong><br>
-    সংবাদ, বিনোদন ও মানুষের গল্পের বিশ্বস্ত ঠিকানা<br>
-    © 2026 ONLINE TV. All Rights Reserved.
-  </footer>
-
-</div>
-
-<script>
-const APPS_SCRIPT_URL =
-'https://script.google.com/macros/s/AKfycbzA5VHTZL0Izp_9yi3_eI99Ju0Fwz_Eb8KHYY-ENXR8GKbcfRL7uBDVu_yju_nBw4mX/exec';
-
-const DEFAULT_VIDEO_ID = 'AepReMI-ecU';
-
-/* Social links */
-function setSocial(id, url) {
-  const el = document.getElementById(id);
-
-  if (url && String(url).trim()) {
-    el.href = url;
-    el.style.display = 'flex';
-  } else {
-    el.style.display = 'none';
-  }
-}
-
-/* Extract YouTube video ID */
-function getVideoId(url) {
-  if (!url) return DEFAULT_VIDEO_ID;
-
-  const match = String(url).match(
-    /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([a-zA-Z0-9_-]{11})/
-  );
-
-  return match ? match[1] : DEFAULT_VIDEO_ID;
-}
-
-/* Latest video link */
-function renderVideo(url) {
-  const id = getVideoId(url);
-
-  document.getElementById('latestVideo').href =
-    'https://www.youtube.com/watch?v=' + encodeURIComponent(id);
-}
-
-/* Default icons for four custom buttons */
-const DEFAULT_ICONS = ['📰', '📺', '▶️', '🌐'];
-
-/* Render custom buttons */
-function renderButtons(data) {
-  const container = document.getElementById('customLinks');
-  container.innerHTML = '';
-
-  for (let i = 1; i <= 4; i++) {
-    const text = data['button' + i + 'Text'];
-    const url = data['button' + i + 'Url'];
-    const icon = data['button' + i + 'Icon'];
-
-    if (!text || !url) continue;
-
-    const a = document.createElement('a');
-    a.className = 'custom-link';
-    a.href = url;
-    a.target = '_blank';
-    a.rel = 'noopener';
-
-    const iconBox = document.createElement('span');
-    iconBox.className = 'link-icon';
-
-    /* Use Admin icon when available; otherwise use a visible default icon */
-    iconBox.textContent =
-      icon && String(icon).trim() ? String(icon).trim() : DEFAULT_ICONS[i - 1];
-
-    const label = document.createElement('span');
-    label.className = 'link-text';
-    label.textContent = text;
-
-    const arrow = document.createElement('span');
-    arrow.className = 'arrow';
-    arrow.textContent = '↗';
-
-    a.append(iconBox, label, arrow);
-    container.appendChild(a);
-  }
-}
-
-/* Profile data */
-function applyProfile(data) {
-  if (!data || data.error) return;
-
-  const title = String(data.title || 'ONLINE TV').trim();
-  const titleEl = document.getElementById('title');
-
-  /* Preserve the white ONLINE and red TV branding */
-  if (title.toUpperCase() === 'ONLINE TV') {
-    titleEl.innerHTML =
-      '<span class="online">ONLINE</span> <span class="tv">TV</span>';
-  } else {
-    titleEl.textContent = title;
-  }
-
-  document.getElementById('tagline').textContent =
-    data.tagline || 'সংবাদ • বিনোদন • মানুষের গল্প';
-
-  const image = data.profileImage || '';
-  const avatar = document.getElementById('profileImage');
-
-  if (image && /^https?:\/\//i.test(String(image))) {
-    avatar.src = image;
-  } else {
-    avatar.src =
-      'https://placehold.co/300x300/210b15/ffffff?text=ONLINE+TV';
-  }
-
-  setSocial('facebook', data.facebook);
-  setSocial('instagram', data.instagram);
-  setSocial('youtube', data.youtube);
-  setSocial('whatsapp', data.whatsapp);
-
-  renderButtons(data);
-  renderVideo(data.latestVideoUrl || data.videoUrl);
-}
-
-/* Load data from Google Apps Script */
-function loadProfile() {
-  const cached = localStorage.getItem('onlineTVProfileCache');
-
-  if (cached) {
-    try {
-      applyProfile(JSON.parse(cached));
-    } catch(e) {
-      console.warn('Cached profile could not be loaded.');
-    }
-  }
-
-  const callbackName = 'onlineTVCallback_' + Date.now();
-
-  const script = document.createElement('script');
-
-  window[callbackName] = function(data) {
-    try {
-      applyProfile(data);
-      localStorage.setItem(
-        'onlineTVProfileCache',
-        JSON.stringify(data)
-      );
-    } catch(e) {
-      console.error('Profile error:', e);
-    }
-
-    delete window[callbackName];
-    script.remove();
-  };
-
-  script.src = APPS_SCRIPT_URL +
-    '?callback=' + callbackName +
-    '&_=' + Date.now();
-
-  script.onerror = function() {
-    console.error('Profile connection failed.');
-    delete window[callbackName];
-    script.remove();
-  };
-
-  document.body.appendChild(script);
-}
-
-loadProfile();
-</script>
 </body>
 </html>
