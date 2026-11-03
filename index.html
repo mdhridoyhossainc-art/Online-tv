@@ -428,7 +428,7 @@ h1 {
   box-shadow: none !important;
 }
 
-/* LARGE BRAND ICONS WITH GLASS SHINE - NO BOX, NO SHADOW */
+/* LARGE BRAND ICONS - NO GLASS UNDER ICON, NO SHADOW */
 
 .btn-icon {
   position: absolute;
@@ -452,39 +452,39 @@ h1 {
   height: 46px;
   display: block;
   opacity: 1;
-  filter: saturate(1.08) brightness(1.08);
+  filter: none;
   box-shadow: none !important;
 }
 
-/* Original brand colours */
+/* Facebook: blue circle with white f */
 
-.btn-icon-facebook svg { fill: #1877F2; }
+.btn-icon-facebook svg {
+  fill: none;
+}
+
+.btn-icon-facebook svg .facebook-circle {
+  fill: #1877F2;
+}
+
+.btn-icon-facebook svg .facebook-letter {
+  fill: #FFFFFF;
+}
+
+/* Other original brand colours */
+
 .btn-icon-youtube svg { fill: #FF0033; }
 .btn-icon-whatsapp svg { fill: #25D366; }
 
 .btn-icon-instagram svg {
   opacity: 1;
-  filter: saturate(1.08) brightness(1.08);
+  filter: none;
 }
 
-/* Subtle shine directly over the logo */
+/* No icon shine overlay */
 
 .btn-icon::after {
-  content: "";
-  position: absolute;
-  inset: 2px;
-  z-index: 3;
-  pointer-events: none;
-  background: linear-gradient(
-    135deg,
-    rgba(255,255,255,.42) 0%,
-    rgba(255,255,255,.16) 18%,
-    transparent 42%,
-    transparent 72%,
-    rgba(255,255,255,.12) 100%
-  );
-  mix-blend-mode: screen;
-  opacity: .62;
+  content: none !important;
+  display: none !important;
 }
 
 .action-btn:hover .btn-icon {
@@ -792,6 +792,19 @@ function detectBrand(label, url) {
   return '';
 }
 
+/* FACEBOOK BUTTON SVG: BLUE CIRCLE + WHITE f */
+
+function makeFacebookButtonSVG() {
+  return `
+  <svg viewBox="0 0 48 48"
+       xmlns="http://www.w3.org/2000/svg"
+       aria-hidden="true">
+    <circle class="facebook-circle" cx="24" cy="24" r="23"/>
+    <path class="facebook-letter"
+      d="M27.2 41V26.1h5l.8-5.8h-5.8v-3.7c0-1.7.5-2.9 2.9-2.9h3.1V8.5c-.5-.1-2.4-.2-4.5-.2-4.5 0-7.6 2.7-7.6 7.8v4.2H16v5.8h5.1V41h6.1z"/>
+  </svg>`;
+}
+
 /* CUSTOM BUTTONS */
 
 function addButton(icon, label, url) {
@@ -811,7 +824,11 @@ function addButton(icon, label, url) {
   const iconElement = document.createElement('span');
   iconElement.className = 'btn-icon';
 
-  if (brand === 'instagram') {
+  if (brand === 'facebook') {
+    iconElement.classList.add('btn-icon-facebook');
+    iconElement.innerHTML = makeFacebookButtonSVG();
+
+  } else if (brand === 'instagram') {
     iconElement.classList.add('btn-icon-instagram');
     iconElement.innerHTML = makeInstagramButtonSVG();
 
