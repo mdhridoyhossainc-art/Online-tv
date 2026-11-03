@@ -4,14 +4,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#180006">
+<meta name="theme-color" content="#160006">
 <title>ONLINE TV | Official</title>
 <meta name="description" content="সংবাদ, বিনোদন ও মানুষের গল্পের বিশ্বস্ত ঠিকানা।">
 
 <style>
 :root {
   --red: #e5092b;
-  --bg: #180006;
+  --bg: #160006;
 }
 
 * { box-sizing: border-box; }
@@ -22,11 +22,11 @@ body {
   padding: 38px 16px 22px;
   color: #fff;
   background:
-    radial-gradient(ellipse at 15% 15%, rgba(150,0,30,.28), transparent 55%),
-    radial-gradient(ellipse at 85% 25%, rgba(100,0,20,.25), transparent 55%),
-    radial-gradient(ellipse at 50% 0%, rgba(180,0,35,.20), transparent 60%),
-    radial-gradient(ellipse at 0% 75%, rgba(110,0,25,.24), transparent 55%),
-    linear-gradient(145deg, #050505, #240009 50%, #080003);
+    radial-gradient(ellipse at 15% 15%, rgba(190,0,45,.30), transparent 55%),
+    radial-gradient(ellipse at 85% 25%, rgba(100,0,35,.28), transparent 55%),
+    radial-gradient(ellipse at 50% 0%, rgba(220,0,50,.20), transparent 60%),
+    radial-gradient(ellipse at 0% 75%, rgba(100,0,30,.22), transparent 55%),
+    linear-gradient(145deg, #050305, #26000d 50%, #080003);
   background-attachment: fixed;
   font-family: Arial, "Noto Sans Bengali", sans-serif;
 }
@@ -40,7 +40,7 @@ body {
   align-items: center;
 }
 
-/* Profile Neon Glow */
+/* Profile */
 .profile {
   position: relative;
   isolation: isolate;
@@ -68,7 +68,6 @@ body {
   border-radius: 50%;
   border: 3px solid #111;
   background: #191919;
-  filter: none;
 }
 
 @keyframes neonGlow {
@@ -137,13 +136,10 @@ h1 {
 
 .socials a.social-facebook { color: #1877F2; }
 .socials a.social-facebook svg { fill: #1877F2; }
-
 .socials a.social-instagram { color: #E4405F; }
 .socials a.social-instagram svg { fill: none; }
-
 .socials a.social-youtube { color: #FF0033; }
 .socials a.social-youtube svg { fill: #FF0033; }
-
 .socials a.social-whatsapp { color: #25D366; }
 .socials a.social-whatsapp svg { fill: #25D366; }
 
@@ -153,7 +149,7 @@ h1 {
   box-shadow: 0 0 18px currentColor;
 }
 
-/* Video Glass Bezel */
+/* Video */
 .video-section {
   width: 100%;
   margin-bottom: 25px;
@@ -172,14 +168,13 @@ h1 {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: rgba(255,255,255,.07);
-  border: 1.5px solid rgba(255,255,255,.45);
+  background: #170009;
+  border: 1.5px solid rgba(255,100,125,.55);
   border-radius: 20px;
   box-shadow:
-    inset 0 1px 4px rgba(255,255,255,.18),
-    inset 0 0 15px rgba(255,255,255,.06),
-    0 0 0 2px rgba(255,0,45,.22),
-    0 0 22px rgba(255,0,45,.25),
+    inset 0 1px 4px rgba(255,255,255,.10),
+    0 0 0 2px rgba(255,0,45,.18),
+    0 0 22px rgba(255,0,45,.22),
     0 10px 32px rgba(0,0,0,.40);
   transition: .3s ease;
 }
@@ -189,20 +184,16 @@ h1 {
   position: absolute;
   inset: 0;
   z-index: 2;
-  border: 1px solid rgba(255,255,255,.22);
+  border: 1px solid rgba(255,255,255,.16);
   border-radius: inherit;
   pointer-events: none;
-  box-shadow:
-    inset 0 2px 8px rgba(255,255,255,.10),
-    inset 0 -2px 10px rgba(255,0,45,.12);
 }
 
 .video-box:hover {
-  border-color: rgba(255,255,255,.65);
+  border-color: rgba(255,100,125,.8);
   box-shadow:
-    inset 0 1px 4px rgba(255,255,255,.25),
-    0 0 0 2px rgba(255,0,45,.28),
-    0 0 28px rgba(255,0,45,.35),
+    0 0 0 2px rgba(255,0,45,.25),
+    0 0 28px rgba(255,0,45,.32),
     0 12px 38px rgba(0,0,0,.45);
 }
 
@@ -226,7 +217,6 @@ h1 {
   transform: scale(1.04);
 }
 
-/* Softer Glass Play Button */
 .play-button {
   position: absolute;
   left: 50%;
@@ -238,17 +228,14 @@ h1 {
   justify-content: center;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: rgba(20,10,10,.55);
-  border: 1.5px solid rgba(255,255,255,.60);
-
-  backdrop-filter: blur(12px) saturate(125%);
-  -webkit-backdrop-filter: blur(12px) saturate(125%);
-
+  background: rgba(30,0,10,.72);
+  border: 1.5px solid rgba(255,255,255,.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   box-shadow:
-    inset 0 1px 5px rgba(255,255,255,.25),
-    0 0 14px rgba(255,255,255,.15),
+    inset 0 1px 5px rgba(255,255,255,.20),
+    0 0 14px rgba(255,255,255,.12),
     0 5px 22px rgba(0,0,0,.28);
-
   transition: .25s ease;
 }
 
@@ -258,15 +245,11 @@ h1 {
   border-top: 9px solid transparent;
   border-bottom: 9px solid transparent;
   border-left: 14px solid #fff;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,.2));
 }
 
 .video-link:hover .play-button {
   transform: translate(-50%, -50%) scale(1.08);
-  background: rgba(40,0,10,.70);
-  box-shadow:
-    inset 0 1px 6px rgba(255,255,255,.3),
-    0 0 20px rgba(255,255,255,.25);
+  background: rgba(100,0,25,.85);
 }
 
 .video-caption {
@@ -281,7 +264,7 @@ h1 {
   text-align: center;
 }
 
-/* Reduced White Liquid Glass Buttons */
+/* Buttons */
 .buttons {
   width: 100%;
   display: flex;
@@ -296,11 +279,9 @@ h1 {
   width: 100%;
   min-height: 78px;
   padding: 14px 65px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -308,23 +289,24 @@ h1 {
   font-weight: 700;
   letter-spacing: .3px;
 
+  /* Dark Burgundy Glass */
   background: linear-gradient(
     135deg,
-    rgba(190,0,38,.62),
-    rgba(35,0,10,.78),
-    rgba(150,0,35,.58)
+    rgba(115,0,30,.88),
+    rgba(35,0,12,.94),
+    rgba(95,0,28,.88)
   );
 
-  border: 1px solid rgba(255,255,255,.38);
+  border: 1px solid rgba(255,115,140,.48);
   border-radius: 22px;
 
-  backdrop-filter: blur(12px) saturate(125%);
-  -webkit-backdrop-filter: blur(12px) saturate(125%);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
 
   box-shadow:
-    inset 0 1px 4px rgba(255,255,255,.18),
-    inset 0 -2px 8px rgba(0,0,0,.16),
-    0 7px 22px rgba(0,0,0,.30),
+    inset 0 1px 4px rgba(255,255,255,.12),
+    inset 0 -2px 8px rgba(0,0,0,.20),
+    0 7px 22px rgba(0,0,0,.32),
     0 0 12px rgba(255,0,45,.16);
 
   transition:
@@ -340,15 +322,13 @@ h1 {
   inset: 1px;
   z-index: 0;
   border-radius: 21px;
-
   background: linear-gradient(
     125deg,
-    rgba(255,255,255,.16) 0%,
-    rgba(255,255,255,.07) 25%,
-    transparent 55%,
-    rgba(255,255,255,.08) 100%
+    rgba(255,255,255,.10),
+    rgba(255,255,255,.025) 30%,
+    transparent 60%,
+    rgba(255,80,110,.08)
   );
-
   pointer-events: none;
 }
 
@@ -358,28 +338,24 @@ h1 {
   top: 0;
   left: 8%;
   width: 84%;
-  height: 2px;
-
-  background: rgba(255,255,255,.45);
-  box-shadow: 0 0 8px rgba(255,255,255,.25);
-
+  height: 1px;
+  background: rgba(255,150,170,.38);
+  box-shadow: 0 0 7px rgba(255,50,90,.20);
   z-index: 1;
   pointer-events: none;
 }
 
 .action-btn:hover {
   transform: translateY(-4px);
-  border-color: rgba(255,255,255,.65);
-
+  border-color: rgba(255,130,155,.75);
   background: linear-gradient(
     135deg,
-    rgba(210,0,42,.75),
-    rgba(65,0,15,.85),
-    rgba(180,0,38,.70)
+    rgba(160,0,40,.94),
+    rgba(55,0,18,.97),
+    rgba(135,0,35,.94)
   );
-
   box-shadow:
-    inset 0 1px 6px rgba(255,255,255,.22),
+    inset 0 1px 6px rgba(255,255,255,.16),
     0 12px 35px rgba(0,0,0,.35),
     0 0 20px rgba(255,0,45,.25);
 }
@@ -388,7 +364,7 @@ h1 {
   transform: translateY(-1px) scale(.99);
 }
 
-/* Compact Brand Icons */
+/* Button Icons */
 .btn-icon {
   position: absolute;
   z-index: 2;
@@ -412,13 +388,9 @@ h1 {
 }
 
 .btn-icon-facebook { background: #1877F2; }
-
 .btn-icon-instagram {
-  background: linear-gradient(
-    135deg,#FFD600,#FF7A00,#FF0169,#7638FA
-  );
+  background: linear-gradient(135deg,#FFD600,#FF7A00,#FF0169,#7638FA);
 }
-
 .btn-icon-youtube { background: #FF0033; }
 .btn-icon-whatsapp { background: #25D366; }
 
@@ -467,20 +439,16 @@ h1 {
     padding-left: 13px;
     padding-right: 13px;
   }
-
   h1 { font-size: 24px; }
-
   .action-btn {
     min-height: 72px;
     font-size: 14px;
   }
-
   .btn-icon {
     width: 33px;
     height: 33px;
     left: 15px;
   }
-
   .btn-icon svg {
     width: 21px;
     height: 21px;
@@ -513,25 +481,19 @@ h1 {
 
   <section class="video-section" id="videoSection" hidden>
     <p class="section-label">LATEST VIDEO</p>
-
     <div class="video-box">
       <a id="videoLink"
          class="video-link"
-         href="#"
+         href="https://www.youtube.com/watch?v=AepReMI-ecU"
          target="_blank"
          rel="noopener noreferrer"
          aria-label="YouTube-এ সর্বশেষ ভিডিও দেখুন">
-
         <img id="videoThumbnail"
              class="video-thumbnail"
              src=""
              alt="ONLINE TV Latest Video">
-
         <span class="play-button"></span>
-
-        <span class="video-caption">
-          WATCH ON YOUTUBE
-        </span>
+        <span class="video-caption">WATCH ON YOUTUBE</span>
       </a>
     </div>
   </section>
@@ -551,7 +513,9 @@ h1 {
 const APPS_SCRIPT_URL =
 'https://script.google.com/macros/s/AKfycbzA5VHTZL0Izp_9yi3_eI99Ju0Fwz_Eb8KHYY-ENXR8GKbcfRL7uBDVu_yju_nBw4mX/exec';
 
-/* Instagram Gradient SVG */
+const DEFAULT_VIDEO_ID = 'AepReMI-ecU';
+
+/* Instagram SVG */
 function makeInstagramSVG(id) {
   return `
   <svg viewBox="0 0 24 24" fill="none"
@@ -607,9 +571,11 @@ function getYouTubeVideoId(value) {
 
     if (url.hostname.includes('youtu.be')) {
       id = url.pathname.split('/').filter(Boolean)[0] || '';
-    } else if (url.pathname.startsWith('/shorts/')) {
-      id = url.pathname.split('/')[2] || '';
-    } else if (url.pathname.startsWith('/embed/')) {
+    } else if (
+      url.pathname.startsWith('/shorts/') ||
+      url.pathname.startsWith('/embed/') ||
+      url.pathname.startsWith('/live/')
+    ) {
       id = url.pathname.split('/')[2] || '';
     } else {
       id = url.searchParams.get('v') || '';
@@ -698,6 +664,47 @@ function showError(message) {
   document.getElementById('buttons').appendChild(messageElement);
 }
 
+/* Video thumbnail with fallback */
+function renderVideo(data) {
+  const videoUrl = safeUrl(data.latestVideoUrl || data.videoUrl);
+
+  // Sheet-এর লিংক না এলে আগের ভিডিও ব্যবহার হবে
+  const videoId =
+    (videoUrl ? getYouTubeVideoId(videoUrl) : '') ||
+    DEFAULT_VIDEO_ID;
+
+  const videoSection = document.getElementById('videoSection');
+  const thumbnail = document.getElementById('videoThumbnail');
+
+  document.getElementById('videoLink').href =
+    'https://www.youtube.com/watch?v=' + videoId;
+
+  const thumbnailOptions = [
+    'https://img.youtube.com/vi/' + videoId + '/maxresdefault.jpg',
+    'https://img.youtube.com/vi/' + videoId + '/hqdefault.jpg',
+    'https://img.youtube.com/vi/' + videoId + '/mqdefault.jpg',
+    'https://img.youtube.com/vi/' + videoId + '/default.jpg'
+  ];
+
+  let thumbnailIndex = 0;
+
+  thumbnail.onerror = function() {
+    thumbnailIndex++;
+
+    if (thumbnailIndex < thumbnailOptions.length) {
+      thumbnail.src = thumbnailOptions[thumbnailIndex];
+    } else {
+      thumbnail.onerror = null;
+      thumbnail.alt = 'ভিডিওটি YouTube-এ দেখতে ক্লিক করুন';
+    }
+  };
+
+  thumbnail.src = thumbnailOptions[0];
+
+  // ভিডিও সেকশন সবসময় দৃশ্যমান থাকবে
+  videoSection.hidden = false;
+}
+
 function renderProfile(data) {
   if (!data || typeof data !== 'object') {
     showError('সঠিক তথ্য পাওয়া যায়নি।');
@@ -724,44 +731,10 @@ function renderProfile(data) {
     addSocial(name, data[name]);
   });
 
-  /* Latest YouTube video */
-  const videoUrl = safeUrl(data.latestVideoUrl || data.videoUrl);
-  const videoId = videoUrl ? getYouTubeVideoId(videoUrl) : '';
+  // Latest video
+  renderVideo(data);
 
-  const videoSection = document.getElementById('videoSection');
-
-  if (videoId) {
-    document.getElementById('videoLink').href =
-      'https://www.youtube.com/watch?v=' + videoId;
-
-    const thumbnail = document.getElementById('videoThumbnail');
-
-    // Thumbnail fallback: HQ → MQ → Default
-    const thumbnailOptions = [
-      'https://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg',
-      'https://i.ytimg.com/vi/' + videoId + '/mqdefault.jpg',
-      'https://i.ytimg.com/vi/' + videoId + '/default.jpg'
-    ];
-
-    let thumbnailIndex = 0;
-
-    thumbnail.onerror = function() {
-      thumbnailIndex++;
-
-      if (thumbnailIndex < thumbnailOptions.length) {
-        thumbnail.src = thumbnailOptions[thumbnailIndex];
-      } else {
-        thumbnail.onerror = null;
-      }
-    };
-
-    thumbnail.src = thumbnailOptions[0];
-    videoSection.hidden = false;
-  } else {
-    videoSection.hidden = true;
-  }
-
-  /* All four custom buttons from Google Sheet */
+  // Four custom buttons
   const buttons = document.getElementById('buttons');
   buttons.innerHTML = '';
 
@@ -783,7 +756,6 @@ function loadProfile() {
   const CACHE_KEY = 'onlineTVProfileCache';
   let hasCachedData = false;
 
-  // Show previously saved profile immediately
   try {
     const cachedData = localStorage.getItem(CACHE_KEY);
 
@@ -827,12 +799,10 @@ function loadProfile() {
     try {
       renderProfile(data);
 
-      // Save latest data for next visit
       localStorage.setItem(
         CACHE_KEY,
         JSON.stringify(data)
       );
-
     } catch (error) {
       console.error('Profile display error:', error);
 
