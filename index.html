@@ -1,157 +1,862 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online TV - Official Bio Link</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#160006">
+<title>ONLINE TV | Official</title>
+<meta name="description" content="সংবাদ, বিনোদন ও মানুষের গল্পের বিশ্বস্ত ঠিকানা।">
 
-        body {
-            background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+<style>
+:root {
+  --red: #e5092b;
+  --bg: #160006;
+}
 
-        .card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            width: 100%;
-            max-width: 420px;
-            padding: 30px 24px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
+* { box-sizing: border-box; }
 
-        .profile-img {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #ff0055;
-            padding: 3px;
-            margin-bottom: 16px;
-            box-shadow: 0 8px 16px rgba(255, 0, 85, 0.3);
-        }
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 38px 16px 22px;
+  color: #ffffff;
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(190,0,45,.28), transparent 55%),
+    radial-gradient(ellipse at 85% 25%, rgba(100,0,35,.25), transparent 55%),
+    radial-gradient(ellipse at 50% 0%, rgba(220,0,50,.18), transparent 60%),
+    radial-gradient(ellipse at 0% 75%, rgba(100,0,30,.20), transparent 55%),
+    linear-gradient(135deg, #0f0308, #26000d 50%, #080003);
+  background-attachment: fixed;
+  font-family: Arial, "Noto Sans Bengali", sans-serif;
+}
 
-        h1 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 6px;
-            letter-spacing: 0.5px;
-        }
+.container {
+  width: 100%;
+  max-width: 480px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-        p.bio {
-            color: #94a3b8;
-            font-size: 14px;
-            margin-bottom: 24px;
-            line-height: 1.5;
-        }
+/* Profile */
+.profile {
+  position: relative;
+  isolation: isolate;
+  width: 112px;
+  height: 112px;
+  padding: 4px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ff3155, #ff9b36, #ffe45e, #25d8a0,
+    #28a8ff, #a65cff, #ff3155
+  );
+  box-shadow:
+    0 0 14px rgba(255,65,100,.30),
+    0 0 30px rgba(40,168,255,.30),
+    0 0 45px rgba(166,92,255,.24);
+  animation: neonGlow 4s ease-in-out infinite alternate;
+}
 
-        .links-container {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
+.profile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 3px solid #111;
+  background: #191919;
+}
 
-        .link-btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 14px 20px;
-            border-radius: 14px;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.3s ease;
-        }
+@keyframes neonGlow {
+  from {
+    box-shadow:
+      0 0 12px rgba(255,65,100,.25),
+      0 0 28px rgba(40,168,255,.22),
+      0 0 42px rgba(166,92,255,.18);
+  }
+  to {
+    box-shadow:
+      0 0 20px rgba(255,65,100,.45),
+      0 0 38px rgba(40,168,255,.40),
+      0 0 52px rgba(166,92,255,.35);
+  }
+}
 
-        .link-btn:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
+h1 {
+  margin: 17px 0 7px;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
 
-        .link-btn i.icon {
-            font-size: 20px;
-            width: 30px;
-            text-align: left;
-        }
+.tagline {
+  max-width: 400px;
+  margin: 0 0 19px;
+  color: #ffe0e7;
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: center;
+}
 
-        .youtube { color: #ff0000; }
-        .facebook { color: #1877f2; }
-        .website { color: #00f2fe; }
-        .contact { color: #25d366; }
+/* Social Icons - Burgundy Glass */
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 19px;
+  margin-bottom: 27px;
+}
 
-        .footer {
-            margin-top: 28px;
-            font-size: 12px;
-            color: #64748b;
-        }
+.socials a {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    145deg,
+    rgba(105,0,30,.58),
+    rgba(30,0,12,.78)
+  );
+  border: 1px solid rgba(255,115,140,.35);
+  border-radius: 50%;
+  transition: .25s ease;
+  box-shadow:
+    inset 0 1px 4px rgba(255,255,255,.13),
+    inset 0 -2px 5px rgba(0,0,0,.20),
+    0 5px 14px rgba(0,0,0,.30),
+    0 0 9px rgba(255,0,45,.10);
+  backdrop-filter: blur(12px) saturate(125%);
+  -webkit-backdrop-filter: blur(12px) saturate(125%);
+}
 
-        .footer strong {
-            color: #94a3b8;
-        }
-    </style>
+.socials svg {
+  width: 23px;
+  height: 23px;
+  display: block;
+}
+
+.socials a.social-facebook { color: #1877F2; }
+.socials a.social-facebook svg { fill: #1877F2; }
+.socials a.social-instagram { color: #E4405F; }
+.socials a.social-instagram svg { fill: none; }
+.socials a.social-youtube { color: #FF0033; }
+.socials a.social-youtube svg { fill: #FF0033; }
+.socials a.social-whatsapp { color: #25D366; }
+.socials a.social-whatsapp svg { fill: #25D366; }
+
+.socials a:hover {
+  transform: translateY(-4px) scale(1.09);
+  background: linear-gradient(
+    145deg,
+    rgba(150,0,40,.75),
+    rgba(55,0,20,.88)
+  );
+  border-color: rgba(255,130,155,.70);
+  box-shadow:
+    inset 0 1px 5px rgba(255,255,255,.18),
+    0 0 18px currentColor,
+    0 6px 18px rgba(0,0,0,.30);
+}
+
+/* Video */
+.video-section {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.section-label {
+  margin: 0 0 12px;
+  color: #ffe0e7;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.video-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: linear-gradient(145deg, #4a0018, #160006);
+  border: 1.5px solid rgba(255,115,140,.48);
+  border-radius: 20px;
+  box-shadow:
+    inset 0 1px 5px rgba(255,255,255,.12),
+    inset 0 -3px 10px rgba(0,0,0,.25),
+    0 0 0 2px rgba(255,0,45,.12),
+    0 0 22px rgba(255,0,45,.18),
+    0 10px 32px rgba(0,0,0,.40);
+  transition: .3s ease;
+}
+
+.video-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border: 1px solid rgba(255,150,170,.18);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.video-box:hover {
+  border-color: rgba(255,130,155,.75);
+  box-shadow:
+    inset 0 1px 5px rgba(255,255,255,.14),
+    0 0 0 2px rgba(255,0,45,.20),
+    0 0 28px rgba(255,0,45,.28),
+    0 12px 38px rgba(0,0,0,.45);
+}
+
+.video-link {
+  position: absolute;
+  inset: 0;
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.video-link:hover .video-thumbnail {
+  transform: scale(1.04);
+}
+
+.play-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: linear-gradient(
+    145deg,
+    rgba(110,0,30,.82),
+    rgba(25,0,10,.88)
+  );
+  border: 1.5px solid rgba(255,160,180,.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    inset 0 1px 5px rgba(255,255,255,.18),
+    0 0 15px rgba(255,0,45,.20),
+    0 5px 22px rgba(0,0,0,.35);
+  transition: .25s ease;
+}
+
+.play-button::after {
+  content: "";
+  margin-left: 3px;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 14px solid #fff;
+}
+
+.video-link:hover .play-button {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: linear-gradient(
+    145deg,
+    rgba(170,0,45,.92),
+    rgba(55,0,18,.94)
+  );
+}
+
+.video-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 25px 12px 10px;
+  background: linear-gradient(transparent, rgba(0,0,0,.8));
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Buttons - Burgundy Glass */
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.action-btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  min-height: 78px;
+  padding: 14px 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .3px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(105,0,28,.78),
+    rgba(30,0,12,.88),
+    rgba(85,0,25,.80)
+  );
+
+  border: 1px solid rgba(255,115,140,.42);
+  border-radius: 22px;
+
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+
+  box-shadow:
+    inset 0 1px 5px rgba(255,255,255,.13),
+    inset 0 -3px 8px rgba(0,0,0,.24),
+    0 8px 24px rgba(0,0,0,.34),
+    0 0 14px rgba(255,0,45,.13);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease,
+    background .35s ease;
+}
+
+.action-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: 0;
+  border-radius: 21px;
+  background: linear-gradient(
+    125deg,
+    rgba(255,255,255,.12),
+    rgba(255,255,255,.035) 30%,
+    transparent 60%,
+    rgba(255,80,110,.10)
+  );
+  pointer-events: none;
+}
+
+.action-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+  background: rgba(255,150,170,.42);
+  box-shadow: 0 0 8px rgba(255,50,90,.24);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.action-btn:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,140,165,.78);
+  background: linear-gradient(
+    135deg,
+    rgba(145,0,38,.88),
+    rgba(48,0,18,.94),
+    rgba(120,0,34,.88)
+  );
+  box-shadow:
+    inset 0 1px 6px rgba(255,255,255,.17),
+    0 12px 35px rgba(0,0,0,.38),
+    0 0 22px rgba(255,0,45,.27);
+}
+
+.action-btn:active {
+  transform: translateY(-1px) scale(.99);
+}
+
+/* Button Icons */
+.btn-icon {
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,.4),
+    0 3px 8px rgba(0,0,0,.25);
+}
+
+.btn-icon svg {
+  width: 23px;
+  height: 23px;
+  display: block;
+  filter: grayscale(1) brightness(0) invert(1);
+}
+
+.btn-icon-facebook { background: #1877F2; }
+.btn-icon-instagram {
+  background: linear-gradient(135deg,#FFD600,#FF7A00,#FF0169,#7638FA);
+}
+.btn-icon-youtube { background: #FF0033; }
+.btn-icon-whatsapp { background: #25D366; }
+
+.btn-label {
+  position: relative;
+  z-index: 2;
+}
+
+/* Footer */
+.footer {
+  margin-top: 36px;
+  text-align: center;
+}
+
+.footer strong {
+  display: block;
+  color: #ffe0e7;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+.footer small {
+  display: block;
+  margin-top: 5px;
+  color: #ff3155;
+  font-size: 7px;
+  letter-spacing: 2px;
+}
+
+.loading {
+  padding: 18px;
+  color: #ffe0e7;
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+  body { padding-top: 48px; }
+  .profile { width: 120px; height: 120px; }
+  h1 { font-size: 30px; }
+}
+
+@media (max-width: 380px) {
+  body {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+  h1 { font-size: 24px; }
+  .action-btn {
+    min-height: 72px;
+    font-size: 14px;
+  }
+  .btn-icon {
+    width: 33px;
+    height: 33px;
+    left: 15px;
+  }
+  .btn-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
 </head>
+
 <body>
+<main class="container">
 
-    <div class="card">
-        <!-- আপনার প্রোফাইল ছবি বা লোগোর লিংক এখানে বসবে -->
-        <img src="https://via.placeholder.com/110" alt="Online TV Logo" class="profile-img">
-        
-        <h1>Online TV</h1>
-        <p class="bio">Digital Media, Entertainment & News Platform</p>
+  <div class="profile">
+    <img id="profileImage" src="" alt="ONLINE TV">
+  </div>
 
-        <div class="links-container">
-            <!-- আপনার ইউটিউব চ্যানেল লিংক (oonlinetv420 হ্যান্ডেল সহ) -->
-            <a href="https://www.youtube.com/@oonlinetv420" target="_blank" class="link-btn">
-                <i class="fa-brands fa-youtube icon youtube"></i>
-                <span>YouTube Channel</span>
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
+  <h1 id="title">ONLINE TV</h1>
 
-            <!-- ফেসবুক পেজ লিংক -->
-            <a href="https://facebook.com" target="_blank" class="link-btn">
-                <i class="fa-brands fa-facebook icon facebook"></i>
-                <span>Facebook Page</span>
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
+  <p class="tagline" id="tagline">
+    সংবাদ • বিনোদন • মানুষের গল্প
+  </p>
 
-            <!-- ওয়েবসাইট বা গিটহ্যাব পেজ লিংক -->
-            <a href="https://mdhridoyhossainc-art.github.io/Online-tv/" target="_blank" class="link-btn">
-                <i class="fa-solid fa-globe icon website"></i>
-                <span>Official Website</span>
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
+  <nav class="socials" id="socials"></nav>
 
-            <!-- হোয়াটসঅ্যাপ কন্টাক্ট লিংক -->
-            <a href="https://wa.me/" target="_blank" class="link-btn">
-                <i class="fa-brands fa-whatsapp icon contact"></i>
-                <span>WhatsApp Contact</span>
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
-        </div>
-
-        <div class="footer">
-            © 2026 <strong>Online TV</strong>. All Rights Reserved.
-        </div>
+  <section class="video-section" id="videoSection" hidden>
+    <p class="section-label">LATEST VIDEO</p>
+    <div class="video-box">
+      <a id="videoLink"
+         class="video-link"
+         href="https://www.youtube.com/watch?v=AepReMI-ecU"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="YouTube-এ সর্বশেষ ভিডিও দেখুন">
+        <img id="videoThumbnail"
+             class="video-thumbnail"
+             src=""
+             alt="ONLINE TV Latest Video">
+        <span class="play-button"></span>
+        <span class="video-caption">WATCH ON YOUTUBE</span>
+      </a>
     </div>
+  </section>
+
+  <section class="buttons" id="buttons">
+    <div class="loading">তথ্য লোড হচ্ছে...</div>
+  </section>
+
+  <footer class="footer">
+    <strong>ONLINE TV OFFICIAL</strong>
+    <small>DIGITAL MEDIA PLATFORM</small>
+  </footer>
+
+</main>
+
+<script>
+const APPS_SCRIPT_URL =
+'https://script.google.com/macros/s/AKfycbzA5VHTZL0Izp_9yi3_eI99Ju0Fwz_Eb8KHYY-ENXR8GKbcfRL7uBDVu_yju_nBw4mX/exec';
+
+const DEFAULT_VIDEO_ID = 'AepReMI-ecU';
+
+/* Instagram SVG */
+function makeInstagramSVG(id) {
+  return `
+  <svg viewBox="0 0 24 24" fill="none"
+       xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="${id}"
+        x1="3" y1="21" x2="21" y2="3"
+        gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#FFD600"/>
+        <stop offset="35%" stop-color="#FF7A00"/>
+        <stop offset="65%" stop-color="#FF0169"/>
+        <stop offset="100%" stop-color="#7638FA"/>
+      </linearGradient>
+    </defs>
+    <rect x="3" y="3" width="18" height="18" rx="5"
+          stroke="url(#${id})" stroke-width="2"/>
+    <circle cx="12" cy="12" r="4"
+            stroke="url(#${id})" stroke-width="2"/>
+    <circle cx="17.5" cy="6.5" r="1"
+            fill="url(#${id})"/>
+  </svg>`;
+}
+
+const socialIcons = {
+  facebook: `<svg viewBox="0 0 24 24" fill="#1877F2">
+    <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.6V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.2v3h2.8v8z"/>
+  </svg>`,
+
+  instagram: makeInstagramSVG('instagramSocialGradient'),
+
+  youtube: `<svg viewBox="0 0 24 24" fill="#FF0033">
+    <path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0-.5 5 31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 .5-5 31 31 0 0 0-.5-5zM9.6 15.5v-7l6 3.5z"/>
+  </svg>`,
+
+  whatsapp: `<svg viewBox="0 0 24 24" fill="#25D366">
+    <path d="M12 2a9.8 9.8 0 0 0-8.4 14.8L2 22l5.4-1.5A9.8 9.8 0 1 0 12 2zm0 17.8a8 8 0 0 1-4.1-1.1l-.3-.2-3.2.9.9-3.1-.2-.3A8 8 0 1 1 12 19.8zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8.9-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.5l.4-.4.2-.4c.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.8 3.4 1.4.6 1.9.6 2.6.5.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3z"/>
+  </svg>`
+};
+
+function safeUrl(value) {
+  try {
+    const url = new URL(String(value || '').trim());
+    return ['https:', 'http:'].includes(url.protocol) ? url.href : '';
+  } catch (error) {
+    return '';
+  }
+}
+
+function getYouTubeVideoId(value) {
+  try {
+    const url = new URL(value);
+    let id = '';
+
+    if (url.hostname.includes('youtu.be')) {
+      id = url.pathname.split('/').filter(Boolean)[0] || '';
+    } else if (
+      url.pathname.startsWith('/shorts/') ||
+      url.pathname.startsWith('/embed/') ||
+      url.pathname.startsWith('/live/')
+    ) {
+      id = url.pathname.split('/')[2] || '';
+    } else {
+      id = url.searchParams.get('v') || '';
+    }
+
+    return /^[a-zA-Z0-9_-]{11}$/.test(id) ? id : '';
+  } catch (error) {
+    return '';
+  }
+}
+
+function addSocial(name, url) {
+  const validUrl = safeUrl(url);
+  if (!validUrl || !socialIcons[name]) return;
+
+  const link = document.createElement('a');
+  link.className = 'social-' + name;
+  link.href = validUrl;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.setAttribute('aria-label', name);
+  link.innerHTML = socialIcons[name];
+
+  document.getElementById('socials').appendChild(link);
+}
+
+function detectBrand(label, url) {
+  let host = '';
+
+  try {
+    host = new URL(url).hostname.toLowerCase();
+  } catch (error) {}
+
+  const text = (String(label || '') + ' ' + String(url || '')).toLowerCase();
+
+  if (host.includes('facebook.com') || host.includes('fb.com') || text.includes('facebook')) return 'facebook';
+  if (host.includes('instagram.com') || host.includes('instagr.am') || text.includes('instagram')) return 'instagram';
+  if (host.includes('whatsapp.com') || host.includes('wa.me') || text.includes('whatsapp')) return 'whatsapp';
+  if (host.includes('youtube.com') || host.includes('youtu.be') || text.includes('youtube')) return 'youtube';
+
+  return '';
+}
+
+function addButton(icon, label, url) {
+  const validUrl = safeUrl(url);
+  if (!validUrl || !String(label || '').trim()) return;
+
+  const link = document.createElement('a');
+  link.className = 'action-btn';
+  link.href = validUrl;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+
+  const brand = detectBrand(label, validUrl);
+
+  const iconElement = document.createElement('span');
+  iconElement.className = 'btn-icon';
+
+  if (brand === 'instagram') {
+    iconElement.classList.add('btn-icon-instagram');
+    iconElement.innerHTML = makeInstagramSVG('instagramButtonGradient');
+  } else if (brand && socialIcons[brand]) {
+    iconElement.classList.add('btn-icon-' + brand);
+    iconElement.innerHTML = socialIcons[brand];
+  } else {
+    iconElement.textContent = icon || '🔗';
+  }
+
+  const labelElement = document.createElement('span');
+  labelElement.className = 'btn-label';
+  labelElement.textContent = label;
+
+  link.appendChild(iconElement);
+  link.appendChild(labelElement);
+
+  document.getElementById('buttons').appendChild(link);
+}
+
+function showError(message) {
+  document.getElementById('buttons').innerHTML = '';
+
+  const messageElement = document.createElement('p');
+  messageElement.className = 'loading';
+  messageElement.textContent = message;
+
+  document.getElementById('buttons').appendChild(messageElement);
+}
+
+/* Video thumbnail with fallback */
+function renderVideo(data) {
+  const videoUrl = safeUrl(data.latestVideoUrl || data.videoUrl);
+
+  const videoId =
+    (videoUrl ? getYouTubeVideoId(videoUrl) : '') ||
+    DEFAULT_VIDEO_ID;
+
+  const videoSection = document.getElementById('videoSection');
+  const thumbnail = document.getElementById('videoThumbnail');
+
+  document.getElementById('videoLink').href =
+    'https://www.youtube.com/watch?v=' + videoId;
+
+  const thumbnailOptions = [
+    'https://img.youtube.com/vi/' + videoId + '/maxresdefault.jpg',
+    'https://img.youtube.com/vi/' + videoId + '/hqdefault.jpg',
+    'https://img.youtube.com/vi/' + videoId + '/mqdefault.jpg',
+    'https://img.youtube.com/vi/' + videoId + '/default.jpg'
+  ];
+
+  let thumbnailIndex = 0;
+
+  thumbnail.onerror = function() {
+    thumbnailIndex++;
+
+    if (thumbnailIndex < thumbnailOptions.length) {
+      thumbnail.src = thumbnailOptions[thumbnailIndex];
+    } else {
+      thumbnail.onerror = null;
+      thumbnail.alt = 'ভিডিওটি YouTube-এ দেখতে ক্লিক করুন';
+    }
+  };
+
+  thumbnail.src = thumbnailOptions[0];
+
+  videoSection.hidden = false;
+}
+
+function renderProfile(data) {
+  if (!data || typeof data !== 'object') {
+    showError('সঠিক তথ্য পাওয়া যায়নি।');
+    return;
+  }
+
+  document.title = (data.title || 'ONLINE TV') + ' | Official';
+
+  document.getElementById('title').textContent =
+    String(data.title || 'ONLINE TV').replace(/:$/, '').trim();
+
+  document.getElementById('tagline').textContent =
+    data.tagline || '';
+
+  const imageUrl = safeUrl(data.profileImage || data.logoText);
+
+  if (imageUrl) {
+    document.getElementById('profileImage').src = imageUrl;
+  }
+
+  document.getElementById('socials').innerHTML = '';
+
+  ['facebook', 'instagram', 'youtube', 'whatsapp'].forEach(function(name) {
+    addSocial(name, data[name]);
+  });
+
+  renderVideo(data);
+
+  const buttons = document.getElementById('buttons');
+  buttons.innerHTML = '';
+
+  for (let i = 1; i <= 4; i++) {
+    addButton(
+      data['button' + i + 'Icon'],
+      data['button' + i + 'Text'],
+      data['button' + i + 'Url']
+    );
+  }
+
+  if (!buttons.children.length) {
+    showError('কাস্টম বাটন এখনো যোগ করা হয়নি।');
+  }
+}
+
+/* Fast profile loading with browser cache */
+function loadProfile() {
+  const CACHE_KEY = 'onlineTVProfileCache';
+  let hasCachedData = false;
+
+  try {
+    const cachedData = localStorage.getItem(CACHE_KEY);
+
+    if (cachedData) {
+      const parsedData = JSON.parse(cachedData);
+
+      if (parsedData && typeof parsedData === 'object') {
+        renderProfile(parsedData);
+        hasCachedData = true;
+      }
+    }
+  } catch (error) {
+    console.warn('Profile cache error:', error);
+  }
+
+  const callbackName =
+    'onlineTVCallback_' + Date.now() + '_' +
+    Math.random().toString(36).slice(2);
+
+  let finished = false;
+  const script = document.createElement('script');
+
+  const timeout = setTimeout(function() {
+    if (finished) return;
+
+    finished = true;
+    delete window[callbackName];
+    script.remove();
+
+    if (!hasCachedData) {
+      showError('তথ্য লোড হয়নি। আবার চেষ্টা করুন।');
+    }
+  }, 20000);
+
+  window[callbackName] = function(data) {
+    if (finished) return;
+
+    finished = true;
+    clearTimeout(timeout);
+
+    try {
+      renderProfile(data);
+
+      localStorage.setItem(
+        CACHE_KEY,
+        JSON.stringify(data)
+      );
+    } catch (error) {
+      console.error('Profile display error:', error);
+
+      if (!hasCachedData) {
+        showError('প্রোফাইল দেখাতে সমস্যা হয়েছে।');
+      }
+    }
+
+    delete window[callbackName];
+    script.remove();
+  };
+
+  script.onerror = function() {
+    if (finished) return;
+
+    finished = true;
+    clearTimeout(timeout);
+    delete window[callbackName];
+
+    if (!hasCachedData) {
+      showError('Google Apps Script-এর সঙ্গে সংযোগ হয়নি।');
+    }
+
+    script.remove();
+  };
+
+  script.src = APPS_SCRIPT_URL +
+    '?callback=' + encodeURIComponent(callbackName) +
+    '&t=' + Date.now();
+
+  document.body.appendChild(script);
+}
+
+loadProfile();
+</script>
 
 </body>
 </html>
