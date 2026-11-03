@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -14,21 +15,32 @@
   --black: #050505;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background-color: #100003;
+  overscroll-behavior-y: none;
+}
 
 body {
   position: relative;
   isolation: isolate;
   margin: 0;
   min-height: 100vh;
+  min-height: 100svh;
   padding: 38px 16px 22px;
   color: #fff;
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
   background:
     radial-gradient(ellipse at 15% 15%, rgba(180,0,35,.35), transparent 48%),
     radial-gradient(ellipse at 85% 25%, rgba(110,0,20,.28), transparent 48%),
     radial-gradient(ellipse at 50% 100%, rgba(130,0,25,.22), transparent 50%),
     linear-gradient(135deg, #050505, #240008 48%, #080000);
-  background-attachment: fixed;
+  background-attachment: scroll;
   font-family: Arial, "Noto Sans Bengali", sans-serif;
 }
 
@@ -126,7 +138,7 @@ h1 {
   text-align: center;
 }
 
-/* SOCIAL ICONS - UNCHANGED */
+/* SOCIAL ICONS */
 
 .socials {
   display: flex;
@@ -267,7 +279,9 @@ h1 {
   transition: transform .4s ease;
 }
 
-.video-link:hover .video-thumbnail { transform: scale(1.04); }
+.video-link:hover .video-thumbnail {
+  transform: scale(1.04);
+}
 
 /* GLASS PLAY ICON */
 
@@ -343,7 +357,7 @@ h1 {
   text-align: center;
 }
 
-/* PREMIUM RED GLASS BUTTONS - NO SHADOW */
+/* PREMIUM RED GLASS BUTTONS */
 
 .buttons {
   width: 100%;
@@ -427,7 +441,7 @@ h1 {
   box-shadow: none !important;
 }
 
-/* LARGE BRAND ICONS - NO GLASS UNDER ICON, NO SHADOW */
+/* BRAND ICONS */
 
 .btn-icon {
   position: absolute;
@@ -455,21 +469,13 @@ h1 {
   box-shadow: none !important;
 }
 
-/* Facebook: blue circle with white f */
+/* FACEBOOK */
 
-.btn-icon-facebook svg {
-  fill: none;
-}
+.btn-icon-facebook svg { fill: none; }
+.btn-icon-facebook svg .facebook-circle { fill: #1877F2; }
+.btn-icon-facebook svg .facebook-letter { fill: #FFFFFF; }
 
-.btn-icon-facebook svg .facebook-circle {
-  fill: #1877F2;
-}
-
-.btn-icon-facebook svg .facebook-letter {
-  fill: #FFFFFF;
-}
-
-/* Other original brand colours */
+/* OTHER BRAND COLOURS */
 
 .btn-icon-youtube svg { fill: #FF0033; }
 .btn-icon-whatsapp svg { fill: #25D366; }
@@ -478,8 +484,6 @@ h1 {
   opacity: 1;
   filter: none;
 }
-
-/* No icon shine overlay */
 
 .btn-icon::after {
   content: none !important;
@@ -522,6 +526,8 @@ h1 {
   font-size: 7px;
   letter-spacing: 2px;
 }
+
+/* LOADING */
 
 .loading {
   padding: 18px;
@@ -629,12 +635,10 @@ const APPS_SCRIPT_URL =
 
 const DEFAULT_VIDEO_ID = 'AepReMI-ecU';
 
-/* YOUR YOUTUBE CHANNEL */
-
 const YOUTUBE_CHANNEL_URL =
 'https://www.youtube.com/@oonlinetb420';
 
-/* INSTAGRAM SVG FOR TOP SOCIAL ICON */
+/* INSTAGRAM SVG */
 
 function makeInstagramSVG(id) {
   return `
@@ -649,7 +653,7 @@ function makeInstagramSVG(id) {
   </svg>`;
 }
 
-/* COLOURFUL INSTAGRAM ICON FOR CUSTOM BUTTON */
+/* INSTAGRAM BUTTON SVG */
 
 function makeInstagramButtonSVG() {
   return `
@@ -791,7 +795,7 @@ function detectBrand(label, url) {
   return '';
 }
 
-/* FACEBOOK BUTTON SVG: BLUE CIRCLE + WHITE f */
+/* FACEBOOK BUTTON SVG */
 
 function makeFacebookButtonSVG() {
   return `
@@ -862,7 +866,7 @@ function showError(message) {
   buttons.appendChild(messageElement);
 }
 
-/* LATEST VIDEO THUMBNAIL - CLICK OPENS CHANNEL */
+/* LATEST VIDEO THUMBNAIL */
 
 function renderVideo(data) {
   const videoUrl = safeUrl(
@@ -880,8 +884,6 @@ function renderVideo(data) {
     document.getElementById('videoThumbnail');
 
   const videoLink = document.getElementById('videoLink');
-
-  /* Always open the YouTube channel, not the individual video */
 
   videoLink.href = YOUTUBE_CHANNEL_URL;
 
