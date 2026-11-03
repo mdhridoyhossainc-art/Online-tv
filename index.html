@@ -14,10 +14,10 @@
 <style>
 :root {
   --bg:#090609;
-  --red:#ff243f;
+  --red:#ff2948;
   --red2:#a90025;
   --white:#fff;
-  --muted:#b7aab1;
+  --muted:#c0adb5;
   --glass:rgba(255,255,255,.055);
   --border:rgba(255,255,255,.13);
 }
@@ -87,7 +87,7 @@ body {
 .profile {
   text-align:center;
   padding:32px 22px 27px;
-  border:1px solid rgba(255,65,91,.25);
+  border:1px solid rgba(255,65,91,.30);
   border-radius:25px;
   background:
     linear-gradient(145deg,rgba(80,18,36,.48),rgba(20,13,21,.82)),
@@ -141,8 +141,8 @@ body {
   overflow-wrap:anywhere;
 }
 
-.title .online { color:#fff; }
-.title .tv { color:#ff304d; }
+.title .online {color:#fff;}
+.title .tv {color:#ff304d;}
 
 .tagline {
   margin-top:11px;
@@ -167,7 +167,7 @@ body {
   letter-spacing:1.1px;
 }
 
-.verified svg { color:#ff526b; }
+.verified svg {color:#ff526b;}
 
 .section-title {
   display:flex;
@@ -186,6 +186,8 @@ body {
   height:1px;
   background:linear-gradient(90deg,rgba(255,255,255,.19),transparent);
 }
+
+/* Social buttons */
 
 .socials {
   display:grid;
@@ -223,10 +225,10 @@ body {
   font-weight:700;
 }
 
-.social.facebook svg { color:#1877f2; }
-.social.instagram svg { color:#ed4b96; }
-.social.youtube svg { color:#ff263f; }
-.social.whatsapp svg { color:#25d366; }
+.social.facebook svg {color:#1877f2;}
+.social.instagram svg {color:#ed4b96;}
+.social.youtube svg {color:#ff263f;}
+.social.whatsapp svg {color:#25d366;}
 
 .social:hover {
   transform:translateY(-5px);
@@ -235,7 +237,7 @@ body {
   box-shadow:0 8px 25px rgba(255,25,60,.13);
 }
 
-/* YouTube Play */
+/* Latest video */
 
 .youtube-area {
   display:flex;
@@ -269,14 +271,14 @@ body {
   filter:drop-shadow(0 0 9px rgba(255,36,63,.5));
 }
 
-.youtube-play .play-label {
+.play-label {
   text-align:left;
   font-size:12px;
   font-weight:800;
   letter-spacing:.5px;
 }
 
-.youtube-play .play-label small {
+.play-label small {
   display:block;
   margin-top:3px;
   color:#c8b4bc;
@@ -341,17 +343,19 @@ body {
 }
 
 .link-icon {
-  width:43px;
-  height:43px;
+  width:45px;
+  height:45px;
   flex-shrink:0;
   display:grid;
   place-items:center;
   border-radius:13px;
-  border:1px solid rgba(255,70,95,.35);
-  background:linear-gradient(145deg,rgba(255,40,70,.23),rgba(255,255,255,.06));
+  border:1px solid rgba(255,70,95,.42);
+  background:linear-gradient(145deg,rgba(255,40,70,.27),rgba(255,255,255,.07));
   color:#ff687c;
   font-size:21px;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.12);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 4px 12px rgba(0,0,0,.2);
+  position:relative;
+  z-index:1;
 }
 
 .link-text {
@@ -360,12 +364,16 @@ body {
   font-size:14px;
   font-weight:700;
   overflow-wrap:anywhere;
+  position:relative;
+  z-index:1;
 }
 
 .arrow {
   flex-shrink:0;
   color:#ff6b80;
   font-size:22px;
+  position:relative;
+  z-index:1;
 }
 
 .footer {
@@ -383,10 +391,10 @@ body {
 }
 
 @media(max-width:360px) {
-  .title { font-size:26px; }
-  .socials { gap:6px; }
-  .social span { font-size:9px; }
-  .custom-link { padding:11px; }
+  .title {font-size:26px;}
+  .socials {gap:6px;}
+  .social span {font-size:9px;}
+  .custom-link {padding:11px;}
 }
 </style>
 </head>
@@ -453,7 +461,7 @@ body {
     </a>
   </div>
 
-  <!-- Latest YouTube video: play icon only -->
+  <!-- Latest video: play icon only -->
   <div class="youtube-area">
     <a class="youtube-play" id="latestVideo" href="https://www.youtube.com/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor">
@@ -483,8 +491,10 @@ const APPS_SCRIPT_URL =
 
 const DEFAULT_VIDEO_ID = 'AepReMI-ecU';
 
+/* Social links */
 function setSocial(id, url) {
   const el = document.getElementById(id);
+
   if (url && String(url).trim()) {
     el.href = url;
     el.style.display = 'flex';
@@ -493,6 +503,7 @@ function setSocial(id, url) {
   }
 }
 
+/* Extract YouTube video ID */
 function getVideoId(url) {
   if (!url) return DEFAULT_VIDEO_ID;
 
@@ -503,12 +514,18 @@ function getVideoId(url) {
   return match ? match[1] : DEFAULT_VIDEO_ID;
 }
 
+/* Latest video link */
 function renderVideo(url) {
   const id = getVideoId(url);
+
   document.getElementById('latestVideo').href =
     'https://www.youtube.com/watch?v=' + encodeURIComponent(id);
 }
 
+/* Default icons for four custom buttons */
+const DEFAULT_ICONS = ['📰', '📺', '▶️', '🌐'];
+
+/* Render custom buttons */
 function renderButtons(data) {
   const container = document.getElementById('customLinks');
   container.innerHTML = '';
@@ -516,7 +533,7 @@ function renderButtons(data) {
   for (let i = 1; i <= 4; i++) {
     const text = data['button' + i + 'Text'];
     const url = data['button' + i + 'Url'];
-    const icon = data['button' + i + 'Icon'] || '↗';
+    const icon = data['button' + i + 'Icon'];
 
     if (!text || !url) continue;
 
@@ -528,7 +545,10 @@ function renderButtons(data) {
 
     const iconBox = document.createElement('span');
     iconBox.className = 'link-icon';
-    iconBox.textContent = icon;
+
+    /* Use Admin icon when available; otherwise use a visible default icon */
+    iconBox.textContent =
+      icon && String(icon).trim() ? String(icon).trim() : DEFAULT_ICONS[i - 1];
 
     const label = document.createElement('span');
     label.className = 'link-text';
@@ -543,29 +563,32 @@ function renderButtons(data) {
   }
 }
 
+/* Profile data */
 function applyProfile(data) {
   if (!data || data.error) return;
 
-  const title = data.title || 'ONLINE TV';
+  const title = String(data.title || 'ONLINE TV').trim();
   const titleEl = document.getElementById('title');
 
-  // Keep the ONLINE and TV colors while using the Admin title.
-  const safeTitle = document.createElement('span');
-  safeTitle.textContent = title;
-  safeTitle.style.color = '#ffffff';
+  /* Preserve the white ONLINE and red TV branding */
+  if (title.toUpperCase() === 'ONLINE TV') {
+    titleEl.innerHTML =
+      '<span class="online">ONLINE</span> <span class="tv">TV</span>';
+  } else {
+    titleEl.textContent = title;
+  }
 
-  titleEl.replaceChildren(safeTitle);
+  document.getElementById('tagline').textContent =
+    data.tagline || 'সংবাদ • বিনোদন • মানুষের গল্প';
 
-  const tagline = data.tagline || 'সংবাদ • বিনোদন • মানুষের গল্প';
-  document.getElementById('tagline').textContent = tagline;
-
-  const image = data.profileImage || data.logoText || '';
+  const image = data.profileImage || '';
   const avatar = document.getElementById('profileImage');
 
   if (image && /^https?:\/\//i.test(String(image))) {
     avatar.src = image;
   } else {
-    avatar.src = 'https://placehold.co/300x300/210b15/ffffff?text=ONLINE+TV';
+    avatar.src =
+      'https://placehold.co/300x300/210b15/ffffff?text=ONLINE+TV';
   }
 
   setSocial('facebook', data.facebook);
@@ -577,21 +600,29 @@ function applyProfile(data) {
   renderVideo(data.latestVideoUrl || data.videoUrl);
 }
 
+/* Load data from Google Apps Script */
 function loadProfile() {
   const cached = localStorage.getItem('onlineTVProfileCache');
 
   if (cached) {
     try {
       applyProfile(JSON.parse(cached));
-    } catch(e) {}
+    } catch(e) {
+      console.warn('Cached profile could not be loaded.');
+    }
   }
 
   const callbackName = 'onlineTVCallback_' + Date.now();
 
+  const script = document.createElement('script');
+
   window[callbackName] = function(data) {
     try {
       applyProfile(data);
-      localStorage.setItem('onlineTVProfileCache', JSON.stringify(data));
+      localStorage.setItem(
+        'onlineTVProfileCache',
+        JSON.stringify(data)
+      );
     } catch(e) {
       console.error('Profile error:', e);
     }
@@ -600,7 +631,6 @@ function loadProfile() {
     script.remove();
   };
 
-  const script = document.createElement('script');
   script.src = APPS_SCRIPT_URL +
     '?callback=' + callbackName +
     '&_=' + Date.now();
