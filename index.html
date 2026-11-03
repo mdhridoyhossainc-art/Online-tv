@@ -1,17 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#160006">
+<meta name="theme-color" content="#24000d">
 <title>ONLINE TV | Official</title>
 <meta name="description" content="সংবাদ, বিনোদন ও মানুষের গল্পের বিশ্বস্ত ঠিকানা।">
 
 <style>
 :root {
-  --red: #e5092b;
-  --bg: #160006;
+  --red: #ff1744;
+  --burgundy: #26000f;
+  --gold: #ffd477;
+  --purple: #8b35ff;
 }
 
 * {
@@ -19,18 +20,48 @@
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   margin: 0;
   min-height: 100vh;
   padding: 38px 16px 22px;
   color: #fff;
   background:
-    radial-gradient(ellipse at 15% 15%, rgba(190,0,45,.28), transparent 55%),
-    radial-gradient(ellipse at 85% 25%, rgba(100,0,35,.25), transparent 55%),
-    radial-gradient(ellipse at 50% 0%, rgba(220,0,50,.18), transparent 60%),
-    radial-gradient(ellipse at 0% 75%, rgba(100,0,30,.20), transparent 55%),
-    linear-gradient(135deg, #0f0308, #26000d 50%, #080003);
+    radial-gradient(ellipse at 12% 12%, rgba(255,0,65,.42), transparent 48%),
+    radial-gradient(ellipse at 90% 18%, rgba(130,25,255,.34), transparent 48%),
+    radial-gradient(ellipse at 50% 0%, rgba(255,180,65,.19), transparent 48%),
+    radial-gradient(ellipse at 5% 75%, rgba(180,0,75,.32), transparent 48%),
+    radial-gradient(ellipse at 95% 85%, rgba(110,35,255,.25), transparent 48%),
+    linear-gradient(135deg, #100008, #390017 42%, #1b001c 75%, #080005);
   background-attachment: fixed;
   font-family: Arial, "Noto Sans Bengali", sans-serif;
+}
+
+/* BACKGROUND SOFT GLOW */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 25%, rgba(255,25,75,.20), transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(145,55,255,.18), transparent 32%),
+    radial-gradient(circle at 50% 85%, rgba(255,190,75,.12), transparent 30%);
+  filter: blur(35px);
+  animation: backgroundGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundGlow {
+  from {
+    opacity: .65;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.08);
+  }
 }
 
 .container {
@@ -56,9 +87,9 @@ body {
     #28a8ff, #a65cff, #ff3155
   );
   box-shadow:
-    0 0 14px rgba(255,65,100,.30),
-    0 0 30px rgba(40,168,255,.30),
-    0 0 45px rgba(166,92,255,.24);
+    0 0 18px rgba(255,65,100,.45),
+    0 0 35px rgba(40,168,255,.35),
+    0 0 55px rgba(166,92,255,.30);
   animation: neonGlow 4s ease-in-out infinite alternate;
 }
 
@@ -76,15 +107,15 @@ body {
 @keyframes neonGlow {
   from {
     box-shadow:
-      0 0 12px rgba(255,65,100,.25),
-      0 0 28px rgba(40,168,255,.22),
-      0 0 42px rgba(166,92,255,.18);
+      0 0 14px rgba(255,65,100,.35),
+      0 0 30px rgba(40,168,255,.25),
+      0 0 45px rgba(166,92,255,.22);
   }
   to {
     box-shadow:
-      0 0 20px rgba(255,65,100,.45),
-      0 0 38px rgba(40,168,255,.40),
-      0 0 52px rgba(166,92,255,.35);
+      0 0 24px rgba(255,65,100,.60),
+      0 0 42px rgba(40,168,255,.45),
+      0 0 60px rgba(166,92,255,.40);
   }
 }
 
@@ -96,12 +127,13 @@ h1 {
   font-weight: 800;
   letter-spacing: 1.5px;
   text-align: center;
+  text-shadow: 0 0 18px rgba(255,60,100,.25);
 }
 
 .tagline {
   max-width: 400px;
   margin: 0 0 19px;
-  color: #ffe0e7;
+  color: #ffe7ed;
   font-size: 14px;
   line-height: 1.8;
   text-align: center;
@@ -125,19 +157,19 @@ h1 {
   justify-content: center;
   background: linear-gradient(
     145deg,
-    rgba(105,0,30,.58),
-    rgba(30,0,12,.78)
+    rgba(125,0,42,.75),
+    rgba(40,0,25,.88)
   );
-  border: 1px solid rgba(255,115,140,.35);
+  border: 1px solid rgba(255,145,165,.48);
   border-radius: 50%;
   transition: .25s ease;
   box-shadow:
-    inset 0 1px 4px rgba(255,255,255,.13),
+    inset 0 1px 5px rgba(255,255,255,.20),
     inset 0 -2px 5px rgba(0,0,0,.20),
-    0 5px 14px rgba(0,0,0,.30),
-    0 0 9px rgba(255,0,45,.10);
-  backdrop-filter: blur(12px) saturate(125%);
-  -webkit-backdrop-filter: blur(12px) saturate(125%);
+    0 5px 16px rgba(0,0,0,.30),
+    0 0 13px rgba(255,0,65,.18);
+  backdrop-filter: blur(12px) saturate(145%);
+  -webkit-backdrop-filter: blur(12px) saturate(145%);
 }
 
 .socials svg {
@@ -149,8 +181,21 @@ h1 {
 .socials a.social-facebook { color: #1877F2; }
 .socials a.social-facebook svg { fill: #1877F2; }
 
-.socials a.social-instagram { color: #E4405F; }
-.socials a.social-instagram svg { fill: none; }
+.socials a.social-instagram {
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    #FFD600,
+    #FF7A00 30%,
+    #FF0169 65%,
+    #7638FA
+  );
+  border-color: rgba(255,255,255,.65);
+  box-shadow:
+    inset 0 1px 5px rgba(255,255,255,.30),
+    0 0 14px rgba(255,60,140,.30),
+    0 5px 15px rgba(0,0,0,.30);
+}
 
 .socials a.social-youtube { color: #FF0033; }
 .socials a.social-youtube svg { fill: #FF0033; }
@@ -160,15 +205,10 @@ h1 {
 
 .socials a:hover {
   transform: translateY(-4px) scale(1.09);
-  background: linear-gradient(
-    145deg,
-    rgba(150,0,40,.75),
-    rgba(55,0,20,.88)
-  );
-  border-color: rgba(255,130,155,.70);
+  border-color: rgba(255,255,255,.80);
   box-shadow:
-    inset 0 1px 5px rgba(255,255,255,.18),
-    0 0 18px currentColor,
+    inset 0 1px 5px rgba(255,255,255,.22),
+    0 0 20px currentColor,
     0 6px 18px rgba(0,0,0,.30);
 }
 
@@ -181,10 +221,11 @@ h1 {
 
 .section-label {
   margin: 0 0 12px;
-  color: #ffe0e7;
+  color: #ffe8bd;
   font-size: 11px;
   letter-spacing: 2px;
   text-align: center;
+  text-shadow: 0 0 12px rgba(255,190,75,.35);
 }
 
 .video-box {
@@ -192,14 +233,15 @@ h1 {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: linear-gradient(145deg, #4a0018, #160006);
-  border: 1.5px solid rgba(255,115,140,.48);
+  background: linear-gradient(145deg, #650020, #210014);
+  border: 1.5px solid rgba(255,155,175,.62);
   border-radius: 20px;
   box-shadow:
-    inset 0 1px 5px rgba(255,255,255,.12),
+    inset 0 1px 6px rgba(255,255,255,.18),
     inset 0 -3px 10px rgba(0,0,0,.25),
-    0 0 0 2px rgba(255,0,45,.12),
-    0 0 22px rgba(255,0,45,.18),
+    0 0 0 2px rgba(255,0,65,.16),
+    0 0 25px rgba(255,0,65,.25),
+    0 0 35px rgba(130,35,255,.13),
     0 10px 32px rgba(0,0,0,.40);
   transition: .3s ease;
 }
@@ -209,17 +251,18 @@ h1 {
   position: absolute;
   inset: 0;
   z-index: 2;
-  border: 1px solid rgba(255,150,170,.18);
+  border: 1px solid rgba(255,190,205,.25);
   border-radius: inherit;
   pointer-events: none;
 }
 
 .video-box:hover {
-  border-color: rgba(255,130,155,.75);
+  border-color: rgba(255,190,200,.85);
   box-shadow:
-    inset 0 1px 5px rgba(255,255,255,.14),
-    0 0 0 2px rgba(255,0,45,.20),
-    0 0 28px rgba(255,0,45,.28),
+    inset 0 1px 5px rgba(255,255,255,.20),
+    0 0 0 2px rgba(255,0,65,.22),
+    0 0 30px rgba(255,0,65,.35),
+    0 0 42px rgba(130,35,255,.20),
     0 12px 38px rgba(0,0,0,.45);
 }
 
@@ -256,15 +299,15 @@ h1 {
   border-radius: 50%;
   background: linear-gradient(
     145deg,
-    rgba(110,0,30,.82),
-    rgba(25,0,10,.88)
+    rgba(150,0,45,.88),
+    rgba(35,0,20,.90)
   );
-  border: 1.5px solid rgba(255,160,180,.65);
+  border: 1.5px solid rgba(255,190,205,.80);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow:
-    inset 0 1px 5px rgba(255,255,255,.18),
-    0 0 15px rgba(255,0,45,.20),
+    inset 0 1px 5px rgba(255,255,255,.25),
+    0 0 18px rgba(255,0,65,.32),
     0 5px 22px rgba(0,0,0,.35);
   transition: .25s ease;
 }
@@ -281,8 +324,8 @@ h1 {
   transform: translate(-50%, -50%) scale(1.08);
   background: linear-gradient(
     145deg,
-    rgba(170,0,45,.92),
-    rgba(55,0,18,.94)
+    rgba(200,0,60,.95),
+    rgba(65,0,35,.96)
   );
 }
 
@@ -298,7 +341,7 @@ h1 {
   text-align: center;
 }
 
-/* PREMIUM OFFICIAL GLASS REFLECTION BUTTONS */
+/* PREMIUM GLASS REFLECTION BUTTONS */
 
 .buttons {
   width: 100%;
@@ -315,7 +358,6 @@ h1 {
   width: 100%;
   min-height: 80px;
   padding: 15px 68px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -329,23 +371,24 @@ h1 {
 
   background: linear-gradient(
     125deg,
-    rgba(115,0,34,.78),
-    rgba(30,3,15,.94) 48%,
-    rgba(85,0,27,.84)
+    rgba(155,0,48,.86),
+    rgba(48,3,30,.94) 48%,
+    rgba(115,0,65,.88)
   );
 
-  border: 1px solid rgba(255,135,155,.38);
+  border: 1px solid rgba(255,165,185,.52);
   border-radius: 21px;
 
-  backdrop-filter: blur(20px) saturate(155%);
-  -webkit-backdrop-filter: blur(20px) saturate(155%);
+  backdrop-filter: blur(22px) saturate(175%);
+  -webkit-backdrop-filter: blur(22px) saturate(175%);
 
   box-shadow:
-    inset 0 1px 1px rgba(255,255,255,.24),
-    inset 0 0 18px rgba(255,255,255,.035),
-    inset 0 -8px 18px rgba(0,0,0,.30),
+    inset 0 1px 2px rgba(255,255,255,.30),
+    inset 0 0 22px rgba(255,255,255,.055),
+    inset 0 -8px 18px rgba(0,0,0,.28),
     0 9px 25px rgba(0,0,0,.38),
-    0 0 15px rgba(229,9,43,.13);
+    0 0 18px rgba(229,9,43,.20),
+    0 0 25px rgba(125,35,255,.10);
 
   transition:
     transform .35s cubic-bezier(.2,.8,.2,1),
@@ -362,16 +405,14 @@ h1 {
   inset: 1px;
   z-index: 0;
   border-radius: 20px;
-
   background: linear-gradient(
     115deg,
-    rgba(255,255,255,.17) 0%,
-    rgba(255,255,255,.055) 17%,
+    rgba(255,255,255,.24) 0%,
+    rgba(255,255,255,.09) 17%,
     transparent 38%,
-    transparent 70%,
-    rgba(255,70,105,.10) 100%
+    transparent 67%,
+    rgba(255,80,135,.16) 100%
   );
-
   pointer-events: none;
 }
 
@@ -386,16 +427,14 @@ h1 {
   height: 260%;
   z-index: 1;
   pointer-events: none;
-
   background: linear-gradient(
     90deg,
     transparent,
+    rgba(255,255,255,.13),
+    rgba(255,255,255,.35),
     rgba(255,255,255,.10),
-    rgba(255,255,255,.28),
-    rgba(255,255,255,.08),
     transparent
   );
-
   transform: rotate(24deg);
   transition: left .75s ease;
 }
@@ -406,21 +445,21 @@ h1 {
 
 .action-btn:hover {
   transform: translateY(-4px) scale(1.012);
-  border-color: rgba(255,170,185,.78);
+  border-color: rgba(255,200,215,.88);
 
   background: linear-gradient(
     125deg,
-    rgba(155,0,43,.90),
-    rgba(43,3,19,.96) 48%,
-    rgba(120,0,38,.92)
+    rgba(190,0,60,.94),
+    rgba(60,3,35,.97) 48%,
+    rgba(145,0,80,.94)
   );
 
   box-shadow:
-    inset 0 1px 2px rgba(255,255,255,.30),
-    inset 0 0 22px rgba(255,255,255,.06),
+    inset 0 1px 2px rgba(255,255,255,.35),
+    inset 0 0 22px rgba(255,255,255,.08),
     0 14px 34px rgba(0,0,0,.42),
-    0 0 24px rgba(229,9,43,.28),
-    0 0 42px rgba(255,90,125,.10);
+    0 0 28px rgba(229,9,43,.35),
+    0 0 42px rgba(145,65,255,.18);
 }
 
 .action-btn:active {
@@ -428,7 +467,7 @@ h1 {
   transition: .12s ease;
 }
 
-/* PREMIUM ICON CONTAINER */
+/* ICON CONTAINER */
 
 .btn-icon {
   position: absolute;
@@ -436,23 +475,21 @@ h1 {
   left: 19px;
   width: 40px;
   height: 40px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 13px;
 
   background: linear-gradient(
     145deg,
-    rgba(255,255,255,.19),
-    rgba(255,255,255,.035)
+    rgba(255,255,255,.23),
+    rgba(255,255,255,.055)
   );
 
-  border: 1px solid rgba(255,255,255,.22);
+  border: 1px solid rgba(255,255,255,.28);
 
   box-shadow:
-    inset 0 1px 3px rgba(255,255,255,.28),
+    inset 0 1px 4px rgba(255,255,255,.32),
     inset 0 -3px 6px rgba(0,0,0,.18),
     0 4px 12px rgba(0,0,0,.30);
 
@@ -472,29 +509,35 @@ h1 {
 
 .btn-icon-facebook {
   background: linear-gradient(145deg,#368cff,#0755c9);
-  border-color: rgba(150,200,255,.55);
+  border-color: rgba(180,215,255,.70);
 }
 
 .btn-icon-instagram {
   background: linear-gradient(
     135deg,
     #FFD600,
-    #FF7A00,
-    #FF0169,
+    #FF7A00 30%,
+    #FF0169 65%,
     #7638FA
   );
-  border-color: rgba(255,190,210,.55);
+  border-color: rgba(255,220,235,.80);
+  box-shadow:
+    inset 0 1px 4px rgba(255,255,255,.35),
+    0 0 15px rgba(255,40,130,.30),
+    0 4px 12px rgba(0,0,0,.30);
 }
 
 .btn-icon-youtube {
   background: linear-gradient(145deg,#ff365b,#bd001f);
-  border-color: rgba(255,140,155,.55);
+  border-color: rgba(255,170,185,.70);
 }
 
 .btn-icon-whatsapp {
   background: linear-gradient(145deg,#43e984,#079c55);
-  border-color: rgba(160,255,195,.55);
+  border-color: rgba(180,255,205,.70);
 }
+
+/* Instagram SVG stays white */
 
 .btn-icon-instagram svg {
   filter: none;
@@ -502,10 +545,9 @@ h1 {
 
 .action-btn:hover .btn-icon {
   transform: scale(1.08) rotate(-3deg);
-
   box-shadow:
-    inset 0 1px 4px rgba(255,255,255,.40),
-    0 0 15px rgba(255,255,255,.18),
+    inset 0 1px 4px rgba(255,255,255,.45),
+    0 0 18px rgba(255,255,255,.22),
     0 5px 14px rgba(0,0,0,.32);
 }
 
@@ -524,7 +566,7 @@ h1 {
 
 .footer strong {
   display: block;
-  color: #ffe0e7;
+  color: #ffe8ed;
   font-size: 9px;
   font-weight: 500;
   letter-spacing: 3px;
@@ -533,7 +575,7 @@ h1 {
 .footer small {
   display: block;
   margin-top: 5px;
-  color: #ff3155;
+  color: #ff5275;
   font-size: 7px;
   letter-spacing: 2px;
 }
@@ -659,31 +701,21 @@ const APPS_SCRIPT_URL =
 
 const DEFAULT_VIDEO_ID = 'AepReMI-ecU';
 
-/* INSTAGRAM SVG */
+/* INSTAGRAM SVG - WHITE ICON */
 
 function makeInstagramSVG(id) {
   return `
   <svg viewBox="0 0 24 24" fill="none"
        xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="${id}"
-        x1="3" y1="21" x2="21" y2="3"
-        gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stop-color="#FFD600"/>
-        <stop offset="35%" stop-color="#FF7A00"/>
-        <stop offset="65%" stop-color="#FF0169"/>
-        <stop offset="100%" stop-color="#7638FA"/>
-      </linearGradient>
-    </defs>
 
     <rect x="3" y="3" width="18" height="18" rx="5"
-          stroke="url(#${id})" stroke-width="2"/>
+          stroke="#FFFFFF" stroke-width="2"/>
 
     <circle cx="12" cy="12" r="4"
-            stroke="url(#${id})" stroke-width="2"/>
+            stroke="#FFFFFF" stroke-width="2"/>
 
     <circle cx="17.5" cy="6.5" r="1"
-            fill="url(#${id})"/>
+            fill="#FFFFFF"/>
   </svg>`;
 }
 
@@ -694,7 +726,7 @@ const socialIcons = {
     <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.6V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.2v3h2.8v8z"/>
   </svg>`,
 
-  instagram: makeInstagramSVG('instagramSocialGradient'),
+  instagram: makeInstagramSVG('instagramSocial'),
 
   youtube: `<svg viewBox="0 0 24 24" fill="#FF0033">
     <path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0-.5 5 31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 .5-5 31 31 0 0 0-.5-5zM9.6 15.5v-7l6 3.5z"/>
@@ -825,7 +857,7 @@ function addButton(icon, label, url) {
   if (brand === 'instagram') {
     iconElement.classList.add('btn-icon-instagram');
     iconElement.innerHTML =
-      makeInstagramSVG('instagramButtonGradient');
+      makeInstagramSVG('instagramButton');
 
   } else if (brand && socialIcons[brand]) {
     iconElement.classList.add('btn-icon-' + brand);
@@ -875,8 +907,19 @@ function renderVideo(data) {
   const thumbnail =
     document.getElementById('videoThumbnail');
 
-  document.getElementById('videoLink').href =
+  const newVideoLink =
     'https://www.youtube.com/watch?v=' + videoId;
+
+  const videoLink = document.getElementById('videoLink');
+
+  /* একই ভিডিও হলে অকারণে thumbnail reload হবে না */
+  if (videoLink.dataset.videoId === videoId) {
+    videoSection.hidden = false;
+    return;
+  }
+
+  videoLink.dataset.videoId = videoId;
+  videoLink.href = newVideoLink;
 
   const thumbnailOptions = [
     'https://img.youtube.com/vi/' + videoId + '/maxresdefault.jpg',
@@ -906,7 +949,7 @@ function renderVideo(data) {
 /* PROFILE RENDER */
 
 function renderProfile(data) {
-  if (!data || typeof data !== 'object') {
+  if (!data || typeof data !== 'object' || data.error) {
     showError('সঠিক তথ্য পাওয়া যায়নি।');
     return;
   }
@@ -922,7 +965,7 @@ function renderProfile(data) {
   if (titleText.toUpperCase() === 'ONLINE TV') {
     titleElement.innerHTML =
       '<span style="color:#fff">ONLINE</span> ' +
-      '<span style="color:#e5092b">TV</span>';
+      '<span style="color:#ff3155">TV</span>';
   } else {
     titleElement.textContent = titleText;
   }
@@ -969,7 +1012,13 @@ function renderProfile(data) {
 
 /* FAST CACHE + GOOGLE APPS SCRIPT */
 
+let profileRequestInProgress = false;
+
 function loadProfile() {
+  if (profileRequestInProgress) return;
+
+  profileRequestInProgress = true;
+
   const CACHE_KEY = 'onlineTVProfileCache';
   let hasCachedData = false;
 
@@ -999,6 +1048,7 @@ function loadProfile() {
     if (finished) return;
 
     finished = true;
+    profileRequestInProgress = false;
     delete window[callbackName];
     script.remove();
 
@@ -1012,6 +1062,7 @@ function loadProfile() {
 
     finished = true;
     clearTimeout(timeout);
+    profileRequestInProgress = false;
 
     try {
       renderProfile(data);
@@ -1038,6 +1089,7 @@ function loadProfile() {
 
     finished = true;
     clearTimeout(timeout);
+    profileRequestInProgress = false;
     delete window[callbackName];
 
     if (!hasCachedData) {
@@ -1054,7 +1106,16 @@ function loadProfile() {
   document.body.appendChild(script);
 }
 
+/* FIRST LOAD */
+
 loadProfile();
+
+/* CHECK FOR NEW YOUTUBE VIDEO EVERY 2 MINUTES */
+
+setInterval(function() {
+  loadProfile();
+}, 120000);
+
 </script>
 
 </body>
