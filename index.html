@@ -1,20 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#071426">
+<meta name="theme-color" content="#120006">
 <title>ONLINE TV | Official</title>
 <meta name="description" content="সংবাদ, বিনোদন ও মানুষের গল্পের বিশ্বস্ত ঠিকানা।">
 
 <style>
 :root {
-  --red: #ff1744;
-  --burgundy: #350014;
-  --navy: #07172e;
-  --navy-light: #173b60;
-  --gold: #ffd477;
+  --red: #e5092b;
+  --burgundy: #35000d;
+  --black: #050505;
+  --glass-border: rgba(255,255,255,.48);
 }
 
 * {
@@ -29,17 +27,15 @@ body {
   padding: 38px 16px 22px;
   color: #fff;
   background:
-    radial-gradient(ellipse at 12% 12%, rgba(255,0,55,.34), transparent 48%),
-    radial-gradient(ellipse at 90% 18%, rgba(20,85,160,.38), transparent 50%),
-    radial-gradient(ellipse at 50% 0%, rgba(255,180,65,.15), transparent 48%),
-    radial-gradient(ellipse at 5% 75%, rgba(180,0,55,.28), transparent 48%),
-    radial-gradient(ellipse at 95% 85%, rgba(15,75,140,.28), transparent 48%),
-    linear-gradient(135deg, #050b16, #21000d 42%, #07182b 76%, #05070e);
+    radial-gradient(ellipse at 15% 15%, rgba(180,0,35,.35), transparent 48%),
+    radial-gradient(ellipse at 85% 25%, rgba(110,0,20,.28), transparent 48%),
+    radial-gradient(ellipse at 50% 100%, rgba(130,0,25,.22), transparent 50%),
+    linear-gradient(135deg, #050505, #240008 48%, #080000);
   background-attachment: fixed;
   font-family: Arial, "Noto Sans Bengali", sans-serif;
 }
 
-/* BACKGROUND SOFT GLOW */
+/* RED AND BLACK BACKGROUND GLOW */
 
 body::before {
   content: "";
@@ -48,9 +44,9 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(circle at 20% 25%, rgba(255,25,65,.18), transparent 30%),
-    radial-gradient(circle at 80% 30%, rgba(35,110,190,.20), transparent 32%),
-    radial-gradient(circle at 50% 85%, rgba(255,190,75,.10), transparent 30%);
+    radial-gradient(circle at 20% 25%, rgba(220,0,45,.16), transparent 32%),
+    radial-gradient(circle at 80% 35%, rgba(130,0,25,.18), transparent 32%),
+    radial-gradient(circle at 50% 85%, rgba(180,0,35,.12), transparent 35%);
   filter: blur(35px);
   animation: backgroundGlow 10s ease-in-out infinite alternate;
 }
@@ -160,7 +156,7 @@ h1 {
   background: linear-gradient(
     145deg,
     rgba(125,0,42,.75),
-    rgba(7,24,46,.92)
+    rgba(7,0,10,.92)
   );
   border: 1px solid rgba(255,145,165,.48);
   border-radius: 50%;
@@ -235,7 +231,7 @@ h1 {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: linear-gradient(145deg, #650020, #07172e);
+  background: linear-gradient(145deg, #650020, #080000);
   border: 1.5px solid rgba(255,155,175,.62);
   border-radius: 20px;
   box-shadow:
@@ -243,7 +239,6 @@ h1 {
     inset 0 -3px 10px rgba(0,0,0,.25),
     0 0 0 2px rgba(255,0,65,.16),
     0 0 25px rgba(255,0,65,.25),
-    0 0 35px rgba(20,85,150,.18),
     0 10px 32px rgba(0,0,0,.40);
   transition: .3s ease;
 }
@@ -264,7 +259,6 @@ h1 {
     inset 0 1px 5px rgba(255,255,255,.20),
     0 0 0 2px rgba(255,0,65,.22),
     0 0 30px rgba(255,0,65,.35),
-    0 0 42px rgba(20,85,150,.24),
     0 12px 38px rgba(0,0,0,.45);
 }
 
@@ -302,7 +296,7 @@ h1 {
   background: linear-gradient(
     145deg,
     rgba(150,0,45,.88),
-    rgba(7,24,46,.95)
+    rgba(15,0,5,.95)
   );
   border: 1.5px solid rgba(255,190,205,.80);
   backdrop-filter: blur(12px);
@@ -327,7 +321,7 @@ h1 {
   background: linear-gradient(
     145deg,
     rgba(200,0,60,.95),
-    rgba(8,30,55,.96)
+    rgba(20,0,8,.96)
   );
 }
 
@@ -343,7 +337,7 @@ h1 {
   text-align: center;
 }
 
-/* PREMIUM GLASS REFLECTION BUTTONS */
+/* PREMIUM GLASS BUTTONS - NO SHADOW */
 
 .buttons {
   width: 100%;
@@ -373,30 +367,24 @@ h1 {
 
   background: linear-gradient(
     125deg,
-    rgba(125,0,38,.88),
-    rgba(7,24,46,.96) 48%,
-    rgba(25,53,82,.88)
+    rgba(255,255,255,.13),
+    rgba(110,0,25,.22),
+    rgba(255,255,255,.07)
   );
 
-  border: 1px solid rgba(160,190,220,.52);
+  border: 1px solid rgba(255,255,255,.48);
   border-radius: 21px;
 
-  backdrop-filter: blur(22px) saturate(175%);
-  -webkit-backdrop-filter: blur(22px) saturate(175%);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
 
-  box-shadow:
-    inset 0 1px 2px rgba(255,255,255,.30),
-    inset 0 0 22px rgba(255,255,255,.055),
-    inset 0 -8px 18px rgba(0,0,0,.28),
-    0 9px 25px rgba(0,0,0,.38),
-    0 0 18px rgba(229,9,43,.20),
-    0 0 25px rgba(20,85,150,.16);
+  box-shadow: none;
+  text-shadow: none;
 
   transition:
-    transform .35s cubic-bezier(.2,.8,.2,1),
-    border-color .35s ease,
-    box-shadow .35s ease,
-    background .35s ease;
+    transform .3s ease,
+    border-color .3s ease,
+    background .3s ease;
 }
 
 /* GLASS SURFACE REFLECTION */
@@ -409,11 +397,10 @@ h1 {
   border-radius: 20px;
   background: linear-gradient(
     115deg,
-    rgba(255,255,255,.24) 0%,
-    rgba(255,255,255,.09) 17%,
-    transparent 38%,
-    transparent 67%,
-    rgba(255,80,135,.16) 100%
+    rgba(255,255,255,.22),
+    rgba(255,255,255,.07) 25%,
+    transparent 55%,
+    rgba(255,255,255,.12)
   );
   pointer-events: none;
 }
@@ -432,9 +419,9 @@ h1 {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255,255,255,.13),
-    rgba(255,255,255,.35),
-    rgba(255,255,255,.10),
+    rgba(255,255,255,.12),
+    rgba(255,255,255,.30),
+    rgba(255,255,255,.08),
     transparent
   );
   transform: rotate(24deg);
@@ -446,27 +433,20 @@ h1 {
 }
 
 .action-btn:hover {
-  transform: translateY(-4px) scale(1.012);
-  border-color: rgba(210,230,255,.88);
-
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,.75);
   background: linear-gradient(
     125deg,
-    rgba(185,0,48,.94),
-    rgba(8,30,55,.97) 48%,
-    rgba(35,68,100,.94)
+    rgba(255,255,255,.18),
+    rgba(150,0,30,.28),
+    rgba(255,255,255,.10)
   );
-
-  box-shadow:
-    inset 0 1px 2px rgba(255,255,255,.35),
-    inset 0 0 22px rgba(255,255,255,.08),
-    0 14px 34px rgba(0,0,0,.42),
-    0 0 28px rgba(229,9,43,.35),
-    0 0 35px rgba(35,110,190,.22);
+  box-shadow: none;
 }
 
 .action-btn:active {
-  transform: translateY(-1px) scale(.985);
-  transition: .12s ease;
+  transform: scale(.985);
+  box-shadow: none;
 }
 
 /* ICON CONTAINER */
@@ -481,23 +461,11 @@ h1 {
   align-items: center;
   justify-content: center;
   border-radius: 13px;
-
-  background: linear-gradient(
-    145deg,
-    rgba(255,255,255,.23),
-    rgba(255,255,255,.055)
-  );
-
-  border: 1px solid rgba(255,255,255,.28);
-
-  box-shadow:
-    inset 0 1px 4px rgba(255,255,255,.32),
-    inset 0 -3px 6px rgba(0,0,0,.18),
-    0 4px 12px rgba(0,0,0,.30);
-
-  transition:
-    transform .35s ease,
-    box-shadow .35s ease;
+  background: rgba(255,255,255,.13);
+  border: 1px solid rgba(255,255,255,.38);
+  box-shadow: none;
+  text-shadow: none;
+  transition: transform .3s ease;
 }
 
 .btn-icon svg {
@@ -523,10 +491,7 @@ h1 {
     #315bff
   );
   border-color: rgba(255,220,235,.80);
-  box-shadow:
-    inset 0 1px 4px rgba(255,255,255,.35),
-    0 0 15px rgba(255,40,130,.30),
-    0 4px 12px rgba(0,0,0,.30);
+  box-shadow: none;
 }
 
 .btn-icon-youtube {
@@ -539,25 +504,20 @@ h1 {
   border-color: rgba(180,255,205,.70);
 }
 
-/* Instagram SVG stays white */
-
 .btn-icon-instagram svg {
   filter: none;
 }
 
 .action-btn:hover .btn-icon {
-  transform: scale(1.08) rotate(-3deg);
-  box-shadow:
-    inset 0 1px 4px rgba(255,255,255,.45),
-    0 0 18px rgba(255,255,255,.22),
-    0 5px 14px rgba(0,0,0,.32);
+  transform: scale(1.05);
+  box-shadow: none;
 }
 
 .btn-label {
   position: relative;
   z-index: 2;
   color: #fff;
-  text-shadow: 0 0 8px rgba(255,255,255,.15);
+  text-shadow: none;
 }
 
 /* FOOTER */
