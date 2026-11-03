@@ -1,18 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#24000d">
+<meta name="theme-color" content="#071426">
 <title>ONLINE TV | Official</title>
 <meta name="description" content="সংবাদ, বিনোদন ও মানুষের গল্পের বিশ্বস্ত ঠিকানা।">
 
 <style>
 :root {
   --red: #ff1744;
-  --burgundy: #26000f;
+  --burgundy: #350014;
+  --navy: #07172e;
+  --navy-light: #173b60;
   --gold: #ffd477;
-  --purple: #8b35ff;
 }
 
 * {
@@ -27,12 +29,12 @@ body {
   padding: 38px 16px 22px;
   color: #fff;
   background:
-    radial-gradient(ellipse at 12% 12%, rgba(255,0,65,.42), transparent 48%),
-    radial-gradient(ellipse at 90% 18%, rgba(130,25,255,.34), transparent 48%),
-    radial-gradient(ellipse at 50% 0%, rgba(255,180,65,.19), transparent 48%),
-    radial-gradient(ellipse at 5% 75%, rgba(180,0,75,.32), transparent 48%),
-    radial-gradient(ellipse at 95% 85%, rgba(110,35,255,.25), transparent 48%),
-    linear-gradient(135deg, #100008, #390017 42%, #1b001c 75%, #080005);
+    radial-gradient(ellipse at 12% 12%, rgba(255,0,55,.34), transparent 48%),
+    radial-gradient(ellipse at 90% 18%, rgba(20,85,160,.38), transparent 50%),
+    radial-gradient(ellipse at 50% 0%, rgba(255,180,65,.15), transparent 48%),
+    radial-gradient(ellipse at 5% 75%, rgba(180,0,55,.28), transparent 48%),
+    radial-gradient(ellipse at 95% 85%, rgba(15,75,140,.28), transparent 48%),
+    linear-gradient(135deg, #050b16, #21000d 42%, #07182b 76%, #05070e);
   background-attachment: fixed;
   font-family: Arial, "Noto Sans Bengali", sans-serif;
 }
@@ -46,9 +48,9 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(circle at 20% 25%, rgba(255,25,75,.20), transparent 30%),
-    radial-gradient(circle at 80% 30%, rgba(145,55,255,.18), transparent 32%),
-    radial-gradient(circle at 50% 85%, rgba(255,190,75,.12), transparent 30%);
+    radial-gradient(circle at 20% 25%, rgba(255,25,65,.18), transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(35,110,190,.20), transparent 32%),
+    radial-gradient(circle at 50% 85%, rgba(255,190,75,.10), transparent 30%);
   filter: blur(35px);
   animation: backgroundGlow 10s ease-in-out infinite alternate;
 }
@@ -84,12 +86,12 @@ body::before {
   border-radius: 50%;
   background: conic-gradient(
     #ff3155, #ff9b36, #ffe45e, #25d8a0,
-    #28a8ff, #a65cff, #ff3155
+    #28a8ff, #173b60, #ff3155
   );
   box-shadow:
     0 0 18px rgba(255,65,100,.45),
-    0 0 35px rgba(40,168,255,.35),
-    0 0 55px rgba(166,92,255,.30);
+    0 0 35px rgba(40,145,220,.30),
+    0 0 55px rgba(15,55,100,.30);
   animation: neonGlow 4s ease-in-out infinite alternate;
 }
 
@@ -108,14 +110,14 @@ body::before {
   from {
     box-shadow:
       0 0 14px rgba(255,65,100,.35),
-      0 0 30px rgba(40,168,255,.25),
-      0 0 45px rgba(166,92,255,.22);
+      0 0 30px rgba(40,145,220,.25),
+      0 0 45px rgba(15,55,100,.22);
   }
   to {
     box-shadow:
       0 0 24px rgba(255,65,100,.60),
-      0 0 42px rgba(40,168,255,.45),
-      0 0 60px rgba(166,92,255,.40);
+      0 0 42px rgba(40,145,220,.40),
+      0 0 60px rgba(15,55,100,.35);
   }
 }
 
@@ -158,7 +160,7 @@ h1 {
   background: linear-gradient(
     145deg,
     rgba(125,0,42,.75),
-    rgba(40,0,25,.88)
+    rgba(7,24,46,.92)
   );
   border: 1px solid rgba(255,145,165,.48);
   border-radius: 50%;
@@ -188,7 +190,7 @@ h1 {
     #FFD600,
     #FF7A00 30%,
     #FF0169 65%,
-    #7638FA
+    #315bff
   );
   border-color: rgba(255,255,255,.65);
   box-shadow:
@@ -233,7 +235,7 @@ h1 {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: linear-gradient(145deg, #650020, #210014);
+  background: linear-gradient(145deg, #650020, #07172e);
   border: 1.5px solid rgba(255,155,175,.62);
   border-radius: 20px;
   box-shadow:
@@ -241,7 +243,7 @@ h1 {
     inset 0 -3px 10px rgba(0,0,0,.25),
     0 0 0 2px rgba(255,0,65,.16),
     0 0 25px rgba(255,0,65,.25),
-    0 0 35px rgba(130,35,255,.13),
+    0 0 35px rgba(20,85,150,.18),
     0 10px 32px rgba(0,0,0,.40);
   transition: .3s ease;
 }
@@ -262,7 +264,7 @@ h1 {
     inset 0 1px 5px rgba(255,255,255,.20),
     0 0 0 2px rgba(255,0,65,.22),
     0 0 30px rgba(255,0,65,.35),
-    0 0 42px rgba(130,35,255,.20),
+    0 0 42px rgba(20,85,150,.24),
     0 12px 38px rgba(0,0,0,.45);
 }
 
@@ -300,7 +302,7 @@ h1 {
   background: linear-gradient(
     145deg,
     rgba(150,0,45,.88),
-    rgba(35,0,20,.90)
+    rgba(7,24,46,.95)
   );
   border: 1.5px solid rgba(255,190,205,.80);
   backdrop-filter: blur(12px);
@@ -325,7 +327,7 @@ h1 {
   background: linear-gradient(
     145deg,
     rgba(200,0,60,.95),
-    rgba(65,0,35,.96)
+    rgba(8,30,55,.96)
   );
 }
 
@@ -371,12 +373,12 @@ h1 {
 
   background: linear-gradient(
     125deg,
-    rgba(155,0,48,.86),
-    rgba(48,3,30,.94) 48%,
-    rgba(115,0,65,.88)
+    rgba(125,0,38,.88),
+    rgba(7,24,46,.96) 48%,
+    rgba(25,53,82,.88)
   );
 
-  border: 1px solid rgba(255,165,185,.52);
+  border: 1px solid rgba(160,190,220,.52);
   border-radius: 21px;
 
   backdrop-filter: blur(22px) saturate(175%);
@@ -388,7 +390,7 @@ h1 {
     inset 0 -8px 18px rgba(0,0,0,.28),
     0 9px 25px rgba(0,0,0,.38),
     0 0 18px rgba(229,9,43,.20),
-    0 0 25px rgba(125,35,255,.10);
+    0 0 25px rgba(20,85,150,.16);
 
   transition:
     transform .35s cubic-bezier(.2,.8,.2,1),
@@ -445,13 +447,13 @@ h1 {
 
 .action-btn:hover {
   transform: translateY(-4px) scale(1.012);
-  border-color: rgba(255,200,215,.88);
+  border-color: rgba(210,230,255,.88);
 
   background: linear-gradient(
     125deg,
-    rgba(190,0,60,.94),
-    rgba(60,3,35,.97) 48%,
-    rgba(145,0,80,.94)
+    rgba(185,0,48,.94),
+    rgba(8,30,55,.97) 48%,
+    rgba(35,68,100,.94)
   );
 
   box-shadow:
@@ -459,7 +461,7 @@ h1 {
     inset 0 0 22px rgba(255,255,255,.08),
     0 14px 34px rgba(0,0,0,.42),
     0 0 28px rgba(229,9,43,.35),
-    0 0 42px rgba(145,65,255,.18);
+    0 0 35px rgba(35,110,190,.22);
 }
 
 .action-btn:active {
@@ -518,7 +520,7 @@ h1 {
     #FFD600,
     #FF7A00 30%,
     #FF0169 65%,
-    #7638FA
+    #315bff
   );
   border-color: rgba(255,220,235,.80);
   box-shadow:
@@ -554,7 +556,8 @@ h1 {
 .btn-label {
   position: relative;
   z-index: 2;
-  text-shadow: 0 1px 5px rgba(0,0,0,.45);
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255,255,255,.15);
 }
 
 /* FOOTER */
@@ -912,7 +915,6 @@ function renderVideo(data) {
 
   const videoLink = document.getElementById('videoLink');
 
-  /* একই ভিডিও হলে অকারণে thumbnail reload হবে না */
   if (videoLink.dataset.videoId === videoId) {
     videoSection.hidden = false;
     return;
@@ -1065,12 +1067,16 @@ function loadProfile() {
     profileRequestInProgress = false;
 
     try {
-      renderProfile(data);
+      if (data && typeof data === 'object' && !data.error) {
+        renderProfile(data);
 
-      localStorage.setItem(
-        CACHE_KEY,
-        JSON.stringify(data)
-      );
+        localStorage.setItem(
+          CACHE_KEY,
+          JSON.stringify(data)
+        );
+      } else if (!hasCachedData) {
+        showError('সঠিক তথ্য পাওয়া যায়নি।');
+      }
 
     } catch (error) {
       console.error('Profile display error:', error);
