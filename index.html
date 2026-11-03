@@ -125,8 +125,8 @@ h1 {
   box-shadow:
     inset 0 1px 4px rgba(255,255,255,.2),
     0 4px 14px rgba(0,0,0,.25);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .socials svg {
@@ -173,13 +173,13 @@ h1 {
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: rgba(255,255,255,.07);
-  border: 1.5px solid rgba(255,255,255,.72);
+  border: 1.5px solid rgba(255,255,255,.45);
   border-radius: 20px;
   box-shadow:
-    inset 0 1px 4px rgba(255,255,255,.45),
-    inset 0 0 15px rgba(255,255,255,.12),
-    0 0 0 2px rgba(255,0,45,.30),
-    0 0 28px rgba(255,0,45,.38),
+    inset 0 1px 4px rgba(255,255,255,.18),
+    inset 0 0 15px rgba(255,255,255,.06),
+    0 0 0 2px rgba(255,0,45,.22),
+    0 0 22px rgba(255,0,45,.25),
     0 10px 32px rgba(0,0,0,.40);
   transition: .3s ease;
 }
@@ -189,20 +189,20 @@ h1 {
   position: absolute;
   inset: 0;
   z-index: 2;
-  border: 1px solid rgba(255,255,255,.38);
+  border: 1px solid rgba(255,255,255,.22);
   border-radius: inherit;
   pointer-events: none;
   box-shadow:
-    inset 0 2px 12px rgba(255,255,255,.18),
-    inset 0 -2px 10px rgba(255,0,45,.18);
+    inset 0 2px 8px rgba(255,255,255,.10),
+    inset 0 -2px 10px rgba(255,0,45,.12);
 }
 
 .video-box:hover {
-  border-color: rgba(255,255,255,.95);
+  border-color: rgba(255,255,255,.65);
   box-shadow:
-    inset 0 1px 4px rgba(255,255,255,.5),
-    0 0 0 2px rgba(255,0,45,.38),
-    0 0 35px rgba(255,0,45,.48),
+    inset 0 1px 4px rgba(255,255,255,.25),
+    0 0 0 2px rgba(255,0,45,.28),
+    0 0 28px rgba(255,0,45,.35),
     0 12px 38px rgba(0,0,0,.45);
 }
 
@@ -226,7 +226,7 @@ h1 {
   transform: scale(1.04);
 }
 
-/* Strong White Liquid Glass Play Button */
+/* Softer Glass Play Button */
 .play-button {
   position: absolute;
   left: 50%;
@@ -238,17 +238,15 @@ h1 {
   justify-content: center;
   transform: translate(-50%, -50%);
   border-radius: 50%;
+  background: rgba(20,10,10,.55);
+  border: 1.5px solid rgba(255,255,255,.60);
 
-  background: rgba(255,255,255,.30);
-  border: 1.5px solid rgba(255,255,255,.98);
-
-  backdrop-filter: blur(40px) saturate(200%);
-  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  backdrop-filter: blur(12px) saturate(125%);
+  -webkit-backdrop-filter: blur(12px) saturate(125%);
 
   box-shadow:
-    inset 0 2px 10px rgba(255,255,255,.95),
-    inset 0 -2px 8px rgba(255,255,255,.30),
-    0 0 22px rgba(255,255,255,.35),
+    inset 0 1px 5px rgba(255,255,255,.25),
+    0 0 14px rgba(255,255,255,.15),
     0 5px 22px rgba(0,0,0,.28);
 
   transition: .25s ease;
@@ -265,10 +263,10 @@ h1 {
 
 .video-link:hover .play-button {
   transform: translate(-50%, -50%) scale(1.08);
-  background: rgba(255,255,255,.40);
+  background: rgba(40,0,10,.70);
   box-shadow:
-    inset 0 2px 12px rgba(255,255,255,1),
-    0 0 28px rgba(255,255,255,.55);
+    inset 0 1px 6px rgba(255,255,255,.3),
+    0 0 20px rgba(255,255,255,.25);
 }
 
 .video-caption {
@@ -283,7 +281,7 @@ h1 {
   text-align: center;
 }
 
-/* Soft Red Liquid Glass Buttons */
+/* Reduced White Liquid Glass Buttons */
 .buttons {
   width: 100%;
   display: flex;
@@ -312,22 +310,22 @@ h1 {
 
   background: linear-gradient(
     135deg,
-    rgba(190,0,38,.48),
-    rgba(90,0,20,.52),
-    rgba(160,0,35,.42)
+    rgba(190,0,38,.62),
+    rgba(35,0,10,.78),
+    rgba(150,0,35,.58)
   );
 
-  border: 1.5px solid rgba(255,255,255,.88);
+  border: 1px solid rgba(255,255,255,.38);
   border-radius: 22px;
 
-  backdrop-filter: blur(42px) saturate(230%);
-  -webkit-backdrop-filter: blur(42px) saturate(230%);
+  backdrop-filter: blur(12px) saturate(125%);
+  -webkit-backdrop-filter: blur(12px) saturate(125%);
 
   box-shadow:
-    inset 0 2px 9px rgba(255,255,255,.78),
-    inset 0 -3px 12px rgba(255,255,255,.22),
-    0 8px 28px rgba(0,0,0,.30),
-    0 0 18px rgba(255,0,45,.20);
+    inset 0 1px 4px rgba(255,255,255,.18),
+    inset 0 -2px 8px rgba(0,0,0,.16),
+    0 7px 22px rgba(0,0,0,.30),
+    0 0 12px rgba(255,0,45,.16);
 
   transition:
     transform .35s ease,
@@ -345,10 +343,10 @@ h1 {
 
   background: linear-gradient(
     125deg,
-    rgba(255,255,255,.58) 0%,
-    rgba(255,255,255,.20) 25%,
+    rgba(255,255,255,.16) 0%,
+    rgba(255,255,255,.07) 25%,
     transparent 55%,
-    rgba(255,255,255,.24) 100%
+    rgba(255,255,255,.08) 100%
   );
 
   pointer-events: none;
@@ -362,8 +360,8 @@ h1 {
   width: 84%;
   height: 2px;
 
-  background: rgba(255,255,255,.98);
-  box-shadow: 0 0 14px rgba(255,255,255,.75);
+  background: rgba(255,255,255,.45);
+  box-shadow: 0 0 8px rgba(255,255,255,.25);
 
   z-index: 1;
   pointer-events: none;
@@ -371,19 +369,19 @@ h1 {
 
 .action-btn:hover {
   transform: translateY(-4px);
-  border-color: #fff;
+  border-color: rgba(255,255,255,.65);
 
   background: linear-gradient(
     135deg,
-    rgba(210,0,42,.65),
-    rgba(115,0,25,.68),
-    rgba(180,0,38,.58)
+    rgba(210,0,42,.75),
+    rgba(65,0,15,.85),
+    rgba(180,0,38,.70)
   );
 
   box-shadow:
-    inset 0 2px 12px rgba(255,255,255,.92),
+    inset 0 1px 6px rgba(255,255,255,.22),
     0 12px 35px rgba(0,0,0,.35),
-    0 0 25px rgba(255,0,45,.32);
+    0 0 20px rgba(255,0,45,.25);
 }
 
 .action-btn:active {
@@ -736,9 +734,28 @@ function renderProfile(data) {
     document.getElementById('videoLink').href =
       'https://www.youtube.com/watch?v=' + videoId;
 
-    document.getElementById('videoThumbnail').src =
-      'https://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg';
+    const thumbnail = document.getElementById('videoThumbnail');
 
+    // Thumbnail fallback: HQ → MQ → Default
+    const thumbnailOptions = [
+      'https://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg',
+      'https://i.ytimg.com/vi/' + videoId + '/mqdefault.jpg',
+      'https://i.ytimg.com/vi/' + videoId + '/default.jpg'
+    ];
+
+    let thumbnailIndex = 0;
+
+    thumbnail.onerror = function() {
+      thumbnailIndex++;
+
+      if (thumbnailIndex < thumbnailOptions.length) {
+        thumbnail.src = thumbnailOptions[thumbnailIndex];
+      } else {
+        thumbnail.onerror = null;
+      }
+    };
+
+    thumbnail.src = thumbnailOptions[0];
     videoSection.hidden = false;
   } else {
     videoSection.hidden = true;
@@ -761,8 +778,30 @@ function renderProfile(data) {
   }
 }
 
+/* Fast profile loading with browser cache */
 function loadProfile() {
-  const callbackName = 'onlineTVCallback_' + Date.now();
+  const CACHE_KEY = 'onlineTVProfileCache';
+  let hasCachedData = false;
+
+  // Show previously saved profile immediately
+  try {
+    const cachedData = localStorage.getItem(CACHE_KEY);
+
+    if (cachedData) {
+      const parsedData = JSON.parse(cachedData);
+
+      if (parsedData && typeof parsedData === 'object') {
+        renderProfile(parsedData);
+        hasCachedData = true;
+      }
+    }
+  } catch (error) {
+    console.warn('Profile cache error:', error);
+  }
+
+  const callbackName =
+    'onlineTVCallback_' + Date.now() + '_' +
+    Math.random().toString(36).slice(2);
 
   let finished = false;
   const script = document.createElement('script');
@@ -774,7 +813,9 @@ function loadProfile() {
     delete window[callbackName];
     script.remove();
 
-    showError('তথ্য লোড হয়নি। আবার চেষ্টা করুন।');
+    if (!hasCachedData) {
+      showError('তথ্য লোড হয়নি। আবার চেষ্টা করুন।');
+    }
   }, 20000);
 
   window[callbackName] = function(data) {
@@ -785,9 +826,19 @@ function loadProfile() {
 
     try {
       renderProfile(data);
+
+      // Save latest data for next visit
+      localStorage.setItem(
+        CACHE_KEY,
+        JSON.stringify(data)
+      );
+
     } catch (error) {
       console.error('Profile display error:', error);
-      showError('প্রোফাইল দেখাতে সমস্যা হয়েছে।');
+
+      if (!hasCachedData) {
+        showError('প্রোফাইল দেখাতে সমস্যা হয়েছে।');
+      }
     }
 
     delete window[callbackName];
@@ -801,7 +852,10 @@ function loadProfile() {
     clearTimeout(timeout);
     delete window[callbackName];
 
-    showError('Google Apps Script-এর সঙ্গে সংযোগ হয়নি।');
+    if (!hasCachedData) {
+      showError('Google Apps Script-এর সঙ্গে সংযোগ হয়নি।');
+    }
+
     script.remove();
   };
 
