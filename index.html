@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -126,7 +127,7 @@ h1 {
   text-align: center;
 }
 
-/* SOCIAL ICONS */
+/* SOCIAL ICONS - UNCHANGED */
 
 .socials {
   display: flex;
@@ -269,12 +270,14 @@ h1 {
 
 .video-link:hover .video-thumbnail { transform: scale(1.04); }
 
+/* GLASS PLAY ICON */
+
 .play-button {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 52px;
-  height: 52px;
+  width: 58px;
+  height: 58px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -282,33 +285,50 @@ h1 {
   border-radius: 50%;
   background: linear-gradient(
     145deg,
-    rgba(150,0,45,.88),
-    rgba(15,0,5,.95)
+    rgba(255,255,255,.28),
+    rgba(255,255,255,.07) 45%,
+    rgba(20,0,8,.32)
   );
-  border: 1.5px solid rgba(255,190,205,.80);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.68);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
   box-shadow:
-    inset 0 1px 5px rgba(255,255,255,.25),
-    0 0 18px rgba(255,0,65,.32),
-    0 5px 22px rgba(0,0,0,.35);
+    inset 0 1px 2px rgba(255,255,255,.55),
+    inset 0 -1px 3px rgba(0,0,0,.12);
   transition: .25s ease;
+}
+
+.play-button::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,.30),
+    transparent 55%
+  );
+  pointer-events: none;
 }
 
 .play-button::after {
   content: "";
-  margin-left: 3px;
-  border-top: 9px solid transparent;
-  border-bottom: 9px solid transparent;
-  border-left: 14px solid #fff;
+  position: relative;
+  z-index: 1;
+  margin-left: 4px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 16px solid #fff;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,.18));
 }
 
 .video-link:hover .play-button {
-  transform: translate(-50%, -50%) scale(1.08);
+  transform: translate(-50%, -50%) scale(1.09);
   background: linear-gradient(
     145deg,
-    rgba(200,0,60,.95),
-    rgba(20,0,8,.96)
+    rgba(255,255,255,.38),
+    rgba(255,255,255,.12) 50%,
+    rgba(20,0,8,.28)
   );
 }
 
@@ -408,14 +428,14 @@ h1 {
   box-shadow: none !important;
 }
 
-/* UPDATED BRAND ICONS: COLORFUL GLASS, NO BOX, NO SHADOW */
+/* LARGE BRAND ICONS WITH GLASS SHINE - NO BOX, NO SHADOW */
 
 .btn-icon {
   position: absolute;
   z-index: 2;
   left: 19px;
-  width: 42px;
-  height: 42px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -428,23 +448,43 @@ h1 {
 }
 
 .btn-icon svg {
-  width: 29px;
-  height: 29px;
+  width: 46px;
+  height: 46px;
   display: block;
-  opacity: .90;
-  filter: saturate(.88) brightness(1.06);
+  opacity: 1;
+  filter: saturate(1.08) brightness(1.08);
   box-shadow: none !important;
 }
 
 /* Original brand colours */
+
 .btn-icon-facebook svg { fill: #1877F2; }
 .btn-icon-youtube svg { fill: #FF0033; }
 .btn-icon-whatsapp svg { fill: #25D366; }
 
-/* Instagram gradient icon */
 .btn-icon-instagram svg {
-  opacity: .92;
-  filter: saturate(.90) brightness(1.05);
+  opacity: 1;
+  filter: saturate(1.08) brightness(1.08);
+}
+
+/* Subtle shine directly over the logo */
+
+.btn-icon::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,.42) 0%,
+    rgba(255,255,255,.16) 18%,
+    transparent 42%,
+    transparent 72%,
+    rgba(255,255,255,.12) 100%
+  );
+  mix-blend-mode: screen;
+  opacity: .62;
 }
 
 .action-btn:hover .btn-icon {
@@ -516,14 +556,14 @@ h1 {
   }
 
   .btn-icon {
-    width: 38px;
-    height: 38px;
+    width: 43px;
+    height: 43px;
     left: 15px;
   }
 
   .btn-icon svg {
-    width: 26px;
-    height: 26px;
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -557,10 +597,10 @@ h1 {
     <div class="video-box">
       <a id="videoLink"
          class="video-link"
-         href="https://www.youtube.com/watch?v=AepReMI-ecU"
+         href="https://www.youtube.com/@oonlinetb420"
          target="_blank"
          rel="noopener noreferrer"
-         aria-label="YouTube-এ সর্বশেষ ভিডিও দেখুন">
+         aria-label="ONLINE TV YouTube চ্যানেলে যান">
 
         <img id="videoThumbnail"
              class="video-thumbnail"
@@ -568,7 +608,7 @@ h1 {
              alt="ONLINE TV Latest Video">
 
         <span class="play-button"></span>
-        <span class="video-caption">WATCH ON YOUTUBE</span>
+        <span class="video-caption">VISIT OUR YOUTUBE CHANNEL</span>
       </a>
     </div>
   </section>
@@ -589,6 +629,11 @@ const APPS_SCRIPT_URL =
 'https://script.google.com/macros/s/AKfycbzA5VHTZL0Izp_9yi3_eI99Ju0Fwz_Eb8KHYY-ENXR8GKbcfRL7uBDVu_yju_nBw4mX/exec';
 
 const DEFAULT_VIDEO_ID = 'AepReMI-ecU';
+
+/* YOUR YOUTUBE CHANNEL */
+
+const YOUTUBE_CHANNEL_URL =
+'https://www.youtube.com/@oonlinetb420';
 
 /* INSTAGRAM SVG FOR TOP SOCIAL ICON */
 
@@ -801,7 +846,7 @@ function showError(message) {
   buttons.appendChild(messageElement);
 }
 
-/* LATEST VIDEO */
+/* LATEST VIDEO THUMBNAIL - CLICK OPENS CHANNEL */
 
 function renderVideo(data) {
   const videoUrl = safeUrl(
@@ -818,10 +863,11 @@ function renderVideo(data) {
   const thumbnail =
     document.getElementById('videoThumbnail');
 
-  const newVideoLink =
-    'https://www.youtube.com/watch?v=' + videoId;
-
   const videoLink = document.getElementById('videoLink');
+
+  /* Always open the YouTube channel, not the individual video */
+
+  videoLink.href = YOUTUBE_CHANNEL_URL;
 
   if (videoLink.dataset.videoId === videoId) {
     videoSection.hidden = false;
@@ -829,7 +875,6 @@ function renderVideo(data) {
   }
 
   videoLink.dataset.videoId = videoId;
-  videoLink.href = newVideoLink;
 
   const thumbnailOptions = [
     'https://img.youtube.com/vi/' + videoId + '/maxresdefault.jpg',
@@ -847,7 +892,7 @@ function renderVideo(data) {
       thumbnail.src = thumbnailOptions[thumbnailIndex];
     } else {
       thumbnail.onerror = null;
-      thumbnail.alt = 'ভিডিওটি YouTube-এ দেখতে ক্লিক করুন';
+      thumbnail.alt = 'ভিডিওটি দেখতে ONLINE TV YouTube চ্যানেলে যান';
     }
   };
 
@@ -1034,3 +1079,4 @@ setInterval(function() {
 
 </body>
 </html>
+```
