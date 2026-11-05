@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -180,17 +179,16 @@ h1 {
 .socials a.social-instagram {
   color: #fff;
   background: linear-gradient(
-    135deg,
-    #FFD600,
-    #FF7A00 30%,
-    #FF0169 65%,
-    #315bff
+    145deg,
+    rgba(125,0,42,.75),
+    rgba(7,0,10,.92)
   );
-  border-color: rgba(255,255,255,.65);
+  border-color: rgba(255,145,165,.48);
   box-shadow:
-    inset 0 1px 5px rgba(255,255,255,.30),
-    0 0 14px rgba(255,60,140,.30),
-    0 5px 15px rgba(0,0,0,.30);
+    inset 0 1px 5px rgba(255,255,255,.20),
+    inset 0 -2px 5px rgba(0,0,0,.20),
+    0 5px 16px rgba(0,0,0,.30),
+    0 0 13px rgba(255,0,65,.18);
 }
 
 .socials a.social-youtube { color: #FF0033; }
@@ -575,6 +573,209 @@ h1 {
     transition-duration: .01ms !important;
   }
 }
+
+/* SELECTABLE COLOR THEMES — only palette colors change */
+
+body[data-theme="default-blue"] {
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(0,92,210,.35), transparent 48%),
+    radial-gradient(ellipse at 85% 25%, rgba(0,55,145,.28), transparent 48%),
+    radial-gradient(ellipse at 50% 100%, rgba(0,85,190,.22), transparent 50%),
+    linear-gradient(135deg, #05070c, #071a35 48%, #03060c);
+}
+
+body[data-theme="default-blue"]::before {
+  background:
+    radial-gradient(circle at 20% 25%, rgba(0,115,255,.16), transparent 32%),
+    radial-gradient(circle at 80% 35%, rgba(0,75,190,.18), transparent 32%),
+    radial-gradient(circle at 50% 85%, rgba(0,105,220,.12), transparent 35%);
+}
+
+body[data-theme="green-fresh"] {
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(0,145,75,.34), transparent 48%),
+    radial-gradient(ellipse at 85% 25%, rgba(0,95,55,.27), transparent 48%),
+    radial-gradient(ellipse at 50% 100%, rgba(0,120,65,.20), transparent 50%),
+    linear-gradient(135deg, #030806, #062719 48%, #020805);
+}
+
+body[data-theme="green-fresh"]::before {
+  background:
+    radial-gradient(circle at 20% 25%, rgba(0,190,100,.16), transparent 32%),
+    radial-gradient(circle at 80% 35%, rgba(0,125,75,.18), transparent 32%),
+    radial-gradient(circle at 50% 85%, rgba(0,155,85,.12), transparent 35%);
+}
+
+body[data-theme="purple-elegant"] {
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(115,45,210,.34), transparent 48%),
+    radial-gradient(ellipse at 85% 25%, rgba(75,20,145,.28), transparent 48%),
+    radial-gradient(ellipse at 50% 100%, rgba(105,35,180,.22), transparent 50%),
+    linear-gradient(135deg, #07050b, #211035 48%, #08040d);
+}
+
+body[data-theme="purple-elegant"]::before {
+  background:
+    radial-gradient(circle at 20% 25%, rgba(150,75,255,.16), transparent 32%),
+    radial-gradient(circle at 80% 35%, rgba(100,40,190,.18), transparent 32%),
+    radial-gradient(circle at 50% 85%, rgba(135,55,220,.12), transparent 35%);
+}
+
+body[data-theme="orange-premium"] {
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(190,90,0,.34), transparent 48%),
+    radial-gradient(ellipse at 85% 25%, rgba(130,55,0,.28), transparent 48%),
+    radial-gradient(ellipse at 50% 100%, rgba(165,75,0,.20), transparent 50%),
+    linear-gradient(135deg, #090603, #2b1605 48%, #090501);
+}
+
+body[data-theme="orange-premium"]::before {
+  background:
+    radial-gradient(circle at 20% 25%, rgba(255,145,20,.16), transparent 32%),
+    radial-gradient(circle at 80% 35%, rgba(185,85,0,.18), transparent 32%),
+    radial-gradient(circle at 50% 85%, rgba(225,110,0,.12), transparent 35%);
+}
+
+body[data-theme="light-white"] {
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(255,255,255,.18), transparent 48%),
+    radial-gradient(ellipse at 85% 25%, rgba(205,215,230,.16), transparent 48%),
+    radial-gradient(ellipse at 50% 100%, rgba(235,240,248,.10), transparent 50%),
+    linear-gradient(135deg, #111318, #30343d 48%, #111318);
+}
+
+body[data-theme="light-white"]::before {
+  background:
+    radial-gradient(circle at 20% 25%, rgba(255,255,255,.16), transparent 32%),
+    radial-gradient(circle at 80% 35%, rgba(225,232,245,.14), transparent 32%),
+    radial-gradient(circle at 50% 85%, rgba(255,255,255,.10), transparent 35%);
+}
+
+body[data-theme="black-glass"] {
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(160,170,185,.16), transparent 48%),
+    radial-gradient(ellipse at 85% 25%, rgba(100,110,125,.13), transparent 48%),
+    radial-gradient(ellipse at 50% 100%, rgba(135,145,160,.10), transparent 50%),
+    linear-gradient(135deg, #020304, #171a20 48%, #030405);
+}
+
+body[data-theme="black-glass"]::before {
+  background:
+    radial-gradient(circle at 20% 25%, rgba(210,220,235,.12), transparent 32%),
+    radial-gradient(circle at 80% 35%, rgba(135,145,160,.14), transparent 32%),
+    radial-gradient(circle at 50% 85%, rgba(185,195,210,.09), transparent 35%);
+}
+
+/* Theme-tinted glass surfaces. Brand icon colors and profile ring are untouched. */
+
+body[data-theme="default-blue"] .socials a,
+body[data-theme="default-blue"] .action-btn {
+  background: rgba(0,65,150,.16) !important;
+  border-color: rgba(125,185,255,.42);
+}
+
+body[data-theme="default-blue"] .video-box {
+  background: linear-gradient(145deg,#06366d,#050a14);
+  border-color: rgba(125,185,255,.62);
+  box-shadow:
+    inset 0 1px 6px rgba(255,255,255,.18),
+    inset 0 -3px 10px rgba(0,0,0,.25),
+    0 0 0 2px rgba(0,110,255,.16),
+    0 0 25px rgba(0,110,255,.25),
+    0 10px 32px rgba(0,0,0,.40);
+}
+
+body[data-theme="green-fresh"] .socials a,
+body[data-theme="green-fresh"] .action-btn {
+  background: rgba(0,100,55,.16) !important;
+  border-color: rgba(125,230,175,.42);
+}
+
+body[data-theme="green-fresh"] .video-box {
+  background: linear-gradient(145deg,#07502e,#030b07);
+  border-color: rgba(125,230,175,.62);
+  box-shadow:
+    inset 0 1px 6px rgba(255,255,255,.18),
+    inset 0 -3px 10px rgba(0,0,0,.25),
+    0 0 0 2px rgba(0,190,95,.16),
+    0 0 25px rgba(0,190,95,.25),
+    0 10px 32px rgba(0,0,0,.40);
+}
+
+body[data-theme="purple-elegant"] .socials a,
+body[data-theme="purple-elegant"] .action-btn {
+  background: rgba(85,35,145,.17) !important;
+  border-color: rgba(195,155,255,.44);
+}
+
+body[data-theme="purple-elegant"] .video-box {
+  background: linear-gradient(145deg,#45206e,#090511);
+  border-color: rgba(195,155,255,.62);
+  box-shadow:
+    inset 0 1px 6px rgba(255,255,255,.18),
+    inset 0 -3px 10px rgba(0,0,0,.25),
+    0 0 0 2px rgba(140,70,255,.16),
+    0 0 25px rgba(140,70,255,.25),
+    0 10px 32px rgba(0,0,0,.40);
+}
+
+body[data-theme="orange-premium"] .socials a,
+body[data-theme="orange-premium"] .action-btn {
+  background: rgba(125,55,0,.17) !important;
+  border-color: rgba(255,190,120,.44);
+}
+
+body[data-theme="orange-premium"] .video-box {
+  background: linear-gradient(145deg,#6b3508,#100800);
+  border-color: rgba(255,190,120,.62);
+  box-shadow:
+    inset 0 1px 6px rgba(255,255,255,.18),
+    inset 0 -3px 10px rgba(0,0,0,.25),
+    0 0 0 2px rgba(235,115,0,.16),
+    0 0 25px rgba(235,115,0,.25),
+    0 10px 32px rgba(0,0,0,.40);
+}
+
+body[data-theme="light-white"] .socials a,
+body[data-theme="light-white"] .action-btn {
+  background: rgba(245,248,255,.14) !important;
+  border-color: rgba(245,248,255,.58);
+}
+
+body[data-theme="light-white"] .video-box {
+  background: linear-gradient(145deg,#626b78,#171b22);
+  border-color: rgba(245,248,255,.68);
+  box-shadow:
+    inset 0 1px 6px rgba(255,255,255,.25),
+    inset 0 -3px 10px rgba(0,0,0,.25),
+    0 0 0 2px rgba(220,230,245,.16),
+    0 0 25px rgba(220,230,245,.20),
+    0 10px 32px rgba(0,0,0,.40);
+}
+
+body[data-theme="black-glass"] .socials a,
+body[data-theme="black-glass"] .action-btn {
+  background: rgba(120,130,145,.12) !important;
+  border-color: rgba(190,200,215,.40);
+}
+
+body[data-theme="black-glass"] .video-box {
+  background: linear-gradient(145deg,#343a44,#050607);
+  border-color: rgba(190,200,215,.55);
+  box-shadow:
+    inset 0 1px 6px rgba(255,255,255,.18),
+    inset 0 -3px 10px rgba(0,0,0,.25),
+    0 0 0 2px rgba(160,175,195,.14),
+    0 0 25px rgba(160,175,195,.18),
+    0 10px 32px rgba(0,0,0,.40);
+}
+
+body[data-theme="professional-red"] .socials a,
+body[data-theme="professional-red"] .action-btn {
+  background: rgba(100,0,20,.12) !important;
+  border-color: rgba(255,145,165,.48);
+}
+
 </style>
 </head>
 
@@ -639,14 +840,25 @@ const YOUTUBE_CHANNEL_URL =
 
 function makeInstagramSVG(id) {
   return `
-  <svg viewBox="0 0 24 24" fill="none"
+  <svg viewBox="0 0 24 24" role="img" aria-label="Instagram"
        xmlns="http://www.w3.org/2000/svg">
-    <rect x="3" y="3" width="18" height="18" rx="5"
-          stroke="#FFFFFF" stroke-width="2"/>
-    <circle cx="12" cy="12" r="4"
-            stroke="#FFFFFF" stroke-width="2"/>
-    <circle cx="17.5" cy="6.5" r="1"
-            fill="#FFFFFF"/>
+    <defs>
+      <linearGradient id="instagramSocialGradient"
+        x1="3" y1="21" x2="21" y2="3"
+        gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#FFD600"/>
+        <stop offset=".32" stop-color="#FF7A00"/>
+        <stop offset=".65" stop-color="#FF0169"/>
+        <stop offset="1" stop-color="#7638FA"/>
+      </linearGradient>
+    </defs>
+    <rect x="2" y="2" width="20" height="20" rx="6"
+          fill="url(#instagramSocialGradient)"/>
+    <rect x="6" y="6" width="12" height="12" rx="3.5"
+          fill="none" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="12" cy="12" r="3"
+            fill="none" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="16.3" cy="7.8" r="1.15" fill="#FFFFFF"/>
   </svg>`;
 }
 
@@ -679,8 +891,9 @@ function makeInstagramButtonSVG() {
 /* SOCIAL ICONS */
 
 const socialIcons = {
-  facebook: `<svg viewBox="0 0 24 24" fill="#1877F2">
-    <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.6V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.2v3h2.8v8z"/>
+  facebook: `<svg viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="12" r="11" fill="#1877F2"/>
+    <path fill="#FFFFFF" d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.6V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.2v3h2.8v8z"/>
   </svg>`,
 
   instagram: makeInstagramSVG('instagramSocial'),
@@ -916,6 +1129,38 @@ function renderVideo(data) {
   videoSection.hidden = false;
 }
 
+/* IMMEDIATE FIRST-VISIT CONTENT: known public social links */
+
+function showImmediateSocials() {
+  const socials = document.getElementById('socials');
+  if (!socials || socials.children.length) return;
+
+  addSocial('facebook', 'https://www.facebook.com/oonlinetv420');
+  addSocial('instagram', 'https://www.instagram.com/oonlinetv420/');
+  addSocial('youtube', 'https://www.youtube.com/@oonlinetb420');
+  addSocial('whatsapp', 'https://wa.me/8801805205471');
+}
+
+/* APPLY SAVED ADMIN THEME */
+
+function applySelectedTheme(value) {
+  const allowedThemes = [
+    'default-blue',
+    'professional-red',
+    'green-fresh',
+    'purple-elegant',
+    'orange-premium',
+    'light-white',
+    'black-glass'
+  ];
+
+  const theme = allowedThemes.includes(String(value || '').trim())
+    ? String(value).trim()
+    : 'professional-red';
+
+  document.body.setAttribute('data-theme', theme);
+}
+
 /* PROFILE RENDER */
 
 function renderProfile(data) {
@@ -923,6 +1168,8 @@ function renderProfile(data) {
     showError('সঠিক তথ্য পাওয়া যায়নি।');
     return;
   }
+
+  applySelectedTheme(data.selectedTheme);
 
   document.title =
     (data.title || 'ONLINE TV') + ' | Official';
@@ -980,6 +1227,77 @@ function renderProfile(data) {
   }
 }
 
+/* LOAD THE LATEST YOUTUBE VIDEO SEPARATELY */
+
+let latestVideoRequestInProgress = false;
+
+function loadLatestVideo() {
+  if (latestVideoRequestInProgress) return;
+
+  latestVideoRequestInProgress = true;
+
+  const callbackName =
+    'onlineTVVideoCallback_' + Date.now() + '_' +
+    Math.random().toString(36).slice(2);
+
+  const script = document.createElement('script');
+  let finished = false;
+
+  const finish = function() {
+    if (finished) return;
+
+    finished = true;
+    latestVideoRequestInProgress = false;
+
+    delete window[callbackName];
+    script.remove();
+  };
+
+  const timeout = setTimeout(finish, 12000);
+
+  window[callbackName] = function(data) {
+    if (finished) return;
+
+    clearTimeout(timeout);
+
+    const videoUrl = data && safeUrl(data.latestVideoUrl);
+
+    if (videoUrl) {
+      renderVideo({ latestVideoUrl: videoUrl });
+
+      try {
+        const cached = JSON.parse(
+          localStorage.getItem('onlineTVProfileCache') || '{}'
+        );
+
+        cached.latestVideoUrl = videoUrl;
+
+        localStorage.setItem(
+          'onlineTVProfileCache',
+          JSON.stringify(cached)
+        );
+
+      } catch (error) {
+        console.warn('Video cache update error:', error);
+      }
+    }
+
+    finish();
+  };
+
+  script.onerror = function() {
+    clearTimeout(timeout);
+    finish();
+  };
+
+  script.src = APPS_SCRIPT_URL +
+    '?action=latestVideo&callback=' +
+    encodeURIComponent(callbackName) +
+    '&t=' + Date.now();
+
+  document.body.appendChild(script);
+}
+
 /* FAST CACHE + GOOGLE APPS SCRIPT */
 
 let profileRequestInProgress = false;
@@ -1003,6 +1321,7 @@ function loadProfile() {
         hasCachedData = true;
       }
     }
+
   } catch (error) {
     console.warn('Profile cache error:', error);
   }
@@ -1012,6 +1331,7 @@ function loadProfile() {
     Math.random().toString(36).slice(2);
 
   let finished = false;
+
   const script = document.createElement('script');
 
   const timeout = setTimeout(function() {
@@ -1019,18 +1339,21 @@ function loadProfile() {
 
     finished = true;
     profileRequestInProgress = false;
+
     delete window[callbackName];
     script.remove();
 
     if (!hasCachedData) {
       showError('তথ্য লোড হয়নি। আবার চেষ্টা করুন।');
     }
+
   }, 20000);
 
   window[callbackName] = function(data) {
     if (finished) return;
 
     finished = true;
+
     clearTimeout(timeout);
     profileRequestInProgress = false;
 
@@ -1042,6 +1365,7 @@ function loadProfile() {
           CACHE_KEY,
           JSON.stringify(data)
         );
+
       } else if (!hasCachedData) {
         showError('সঠিক তথ্য পাওয়া যায়নি।');
       }
@@ -1062,8 +1386,10 @@ function loadProfile() {
     if (finished) return;
 
     finished = true;
+
     clearTimeout(timeout);
     profileRequestInProgress = false;
+
     delete window[callbackName];
 
     if (!hasCachedData) {
@@ -1082,12 +1408,15 @@ function loadProfile() {
 
 /* FIRST LOAD */
 
+showImmediateSocials();
+loadLatestVideo();
 loadProfile();
 
-/* CHECK FOR NEW YOUTUBE VIDEO EVERY 2 MINUTES */
+/* CHECK PROFILE AND NEW YOUTUBE VIDEO EVERY 2 MINUTES */
 
 setInterval(function() {
   loadProfile();
+  loadLatestVideo();
 }, 120000);
 
 </script>
