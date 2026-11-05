@@ -177,8 +177,6 @@ h1 {
 .socials a.social-facebook { color: #1877F2; }
 .socials a.social-facebook svg { fill: #1877F2; }
 
-/* INSTAGRAM OUTER CIRCLE: ORIGINAL GLASS STYLE */
-
 .socials a.social-instagram {
   width: 42px !important;
   height: 42px !important;
@@ -469,7 +467,7 @@ h1 {
   box-shadow: none !important;
 }
 
-/* FACEBOOK */
+/* FACEBOOK - UNCHANGED */
 
 .btn-icon-facebook svg { fill: none; }
 .btn-icon-facebook svg .facebook-circle { fill: #1877F2; }
@@ -485,16 +483,54 @@ h1 {
   filter: none;
 }
 
+/* INSTAGRAM - ONLY ADD ROUND BACKGROUND */
+
+.btn-icon-instagram {
+  background: linear-gradient(
+    145deg,
+    rgba(125,0,42,.75),
+    rgba(7,0,10,.92)
+  ) !important;
+  border: 1px solid rgba(255,145,165,.48) !important;
+  border-radius: 50% !important;
+  box-shadow:
+    inset 0 1px 5px rgba(255,255,255,.20),
+    inset 0 -2px 5px rgba(0,0,0,.20),
+    0 5px 16px rgba(0,0,0,.30) !important;
+}
+
+/* WHATSAPP - ONLY ADD ROUND BACKGROUND */
+
+.btn-icon-whatsapp {
+  background: #075E54 !important;
+  border: 1px solid rgba(255,255,255,.35) !important;
+  border-radius: 50% !important;
+  box-shadow:
+    inset 0 1px 5px rgba(255,255,255,.20),
+    0 5px 16px rgba(0,0,0,.30) !important;
+}
+
 .btn-icon::after {
   content: none !important;
   display: none !important;
 }
 
+/* HOVER - KEEP BRAND BACKGROUNDS */
+
 .action-btn:hover .btn-icon {
   transform: none;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
+}
+
+.action-btn:hover .btn-icon-instagram {
+  background: linear-gradient(
+    145deg,
+    rgba(125,0,42,.75),
+    rgba(7,0,10,.92)
+  ) !important;
+}
+
+.action-btn:hover .btn-icon-whatsapp {
+  background: #075E54 !important;
 }
 
 /* BUTTON LABEL */
@@ -883,7 +919,6 @@ const socialIcons = {
 
   instagram: makeInstagramSVG('instagramSocial'),
 
-  /* RED YOUTUBE ICON + WHITE PLAY TRIANGLE */
   youtube: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path fill="#FF0033" d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0-.5 5 31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 .5-5 31 31 0 0 0-.5-5z"/>
     <path d="M9.6 8.5v7l6-3.5z" fill="#FFFFFF"/>
@@ -1225,7 +1260,6 @@ function renderProfile(data) {
     showError('কাস্টম বাটন এখনো যোগ করা হয়নি।', false);
   }
 
-  /* আগের image wait বাদ: তথ্য পাওয়ার সঙ্গে সঙ্গে প্রোফাইল দেখাবে */
   finishProfileLoading();
 }
 
