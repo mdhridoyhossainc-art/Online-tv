@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -7,8 +6,6 @@
 <meta name="theme-color" content="#120006">
 <title>ONLINE TV | Official</title>
 <meta name="description" content="সংবাদ, বিনোদন ও মানুষের গল্পের বিশ্বস্ত ঠিকানা।">
-<link rel="preconnect" href="https://script.google.com">
-<link rel="preconnect" href="https://script.googleusercontent.com" crossorigin>
 
 <style>
 :root {
@@ -178,22 +175,13 @@ h1 {
 .socials a.social-facebook svg { fill: #1877F2; }
 
 .socials a.social-instagram {
-  width: 42px !important;
-  height: 42px !important;
-  min-width: 42px;
-  min-height: 42px;
-  padding: 0 !important;
-  flex: 0 0 42px;
-  border-radius: 50% !important;
-}
-
-.socials a.social-instagram svg {
-  width: 23px !important;
-  height: 23px !important;
-  min-width: 23px;
-  min-height: 23px;
-  flex: 0 0 23px;
-  display: block;
+  color: #fff;
+  background: linear-gradient(
+    145deg,
+    rgba(125,0,42,.75),
+    rgba(7,0,10,.92)
+  );
+  border-color: rgba(255,145,165,.48);
 }
 
 .socials a.social-youtube { color: #FF0033; }
@@ -283,6 +271,8 @@ h1 {
   transform: scale(1.04);
 }
 
+/* GLASS PLAY ICON */
+
 .play-button {
   position: absolute;
   left: 50%;
@@ -355,7 +345,7 @@ h1 {
   text-align: center;
 }
 
-/* PREMIUM RED GLASS BUTTONS */
+/* BUTTONS */
 
 .buttons {
   width: 100%;
@@ -380,8 +370,8 @@ h1 {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: .45px;
-  background: rgba(100, 0, 20, 0.12) !important;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(100,0,20,.12) !important;
+  border: 1px solid rgba(255,255,255,.35);
   border-radius: 21px;
   backdrop-filter: blur(14px) saturate(130%);
   -webkit-backdrop-filter: blur(14px) saturate(130%);
@@ -398,8 +388,8 @@ h1 {
   border-radius: 20px;
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.12),
-    rgba(255, 255, 255, 0.025) 35%,
+    rgba(255,255,255,.12),
+    rgba(255,255,255,.025) 35%,
     transparent 70%
   );
   pointer-events: none;
@@ -427,7 +417,7 @@ h1 {
 .action-btn:hover::after { left: 130%; }
 
 .action-btn:hover {
-  background: rgba(100, 0, 20, 0.18) !important;
+  background: rgba(100,0,20,.18) !important;
   border-color: rgba(255,255,255,.48);
   box-shadow: none !important;
   text-shadow: none !important;
@@ -467,13 +457,9 @@ h1 {
   box-shadow: none !important;
 }
 
-/* FACEBOOK - UNCHANGED */
-
 .btn-icon-facebook svg { fill: none; }
 .btn-icon-facebook svg .facebook-circle { fill: #1877F2; }
 .btn-icon-facebook svg .facebook-letter { fill: #FFFFFF; }
-
-/* OTHER BRAND COLOURS */
 
 .btn-icon-youtube svg { fill: #FF0033; }
 .btn-icon-whatsapp svg { fill: #25D366; }
@@ -483,57 +469,17 @@ h1 {
   filter: none;
 }
 
-/* INSTAGRAM - ONLY ADD ROUND BACKGROUND */
-
-.btn-icon-instagram {
-  background: linear-gradient(
-    145deg,
-    rgba(125,0,42,.75),
-    rgba(7,0,10,.92)
-  ) !important;
-  border: 1px solid rgba(255,145,165,.48) !important;
-  border-radius: 50% !important;
-  box-shadow:
-    inset 0 1px 5px rgba(255,255,255,.20),
-    inset 0 -2px 5px rgba(0,0,0,.20),
-    0 5px 16px rgba(0,0,0,.30) !important;
-}
-
-/* WHATSAPP - ONLY ADD ROUND BACKGROUND */
-
-.btn-icon-whatsapp {
-  background: #075E54 !important;
-  border: 1px solid rgba(255,255,255,.35) !important;
-  border-radius: 50% !important;
-  box-shadow:
-    inset 0 1px 5px rgba(255,255,255,.20),
-    0 5px 16px rgba(0,0,0,.30) !important;
-}
-
 .btn-icon::after {
   content: none !important;
   display: none !important;
 }
 
-/* HOVER - KEEP BRAND BACKGROUNDS */
-
 .action-btn:hover .btn-icon {
   transform: none;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
-
-.action-btn:hover .btn-icon-instagram {
-  background: linear-gradient(
-    145deg,
-    rgba(125,0,42,.75),
-    rgba(7,0,10,.92)
-  ) !important;
-}
-
-.action-btn:hover .btn-icon-whatsapp {
-  background: #075E54 !important;
-}
-
-/* BUTTON LABEL */
 
 .btn-label {
   position: relative;
@@ -572,26 +518,6 @@ h1 {
   color: #ffe0e7;
   font-size: 13px;
   text-align: center;
-}
-
-/* FIRST VISIT LOADING ANIMATION */
-
-body.profile-loading .container {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  max-width: none;
-  min-height: 100svh;
-  justify-content: center;
-  pointer-events: none;
-}
-
-body.profile-loading .container > :not(.profile) {
-  display: none !important;
-}
-
-body.profile-loading .profile img {
-  visibility: hidden;
 }
 
 /* RESPONSIVE */
@@ -637,90 +563,157 @@ body.profile-loading .profile img {
   }
 }
 
-/* SELECTABLE COLOR THEMES */
+/* SEVEN THEMES */
 
 body[data-theme="default-blue"] {
   background:
     radial-gradient(ellipse at 15% 15%, rgba(0,92,210,.35), transparent 48%),
     radial-gradient(ellipse at 85% 25%, rgba(0,55,145,.28), transparent 48%),
     radial-gradient(ellipse at 50% 100%, rgba(0,85,190,.22), transparent 50%),
-    linear-gradient(135deg, #05070c, #071a35 48%, #03060c);
+    linear-gradient(135deg,#05070c,#071a35 48%,#03060c);
 }
+
 body[data-theme="default-blue"]::before {
   background:
-    radial-gradient(circle at 20% 25%, rgba(0,115,255,.16), transparent 32%),
-    radial-gradient(circle at 80% 35%, rgba(0,75,190,.18), transparent 32%),
-    radial-gradient(circle at 50% 85%, rgba(0,105,220,.12), transparent 35%);
+    radial-gradient(circle at 20% 25%,rgba(0,115,255,.16),transparent 32%),
+    radial-gradient(circle at 80% 35%,rgba(0,75,190,.18),transparent 32%),
+    radial-gradient(circle at 50% 85%,rgba(0,105,220,.12),transparent 35%);
 }
 
 body[data-theme="green-fresh"] {
   background:
-    radial-gradient(ellipse at 15% 15%, rgba(0,145,75,.34), transparent 48%),
-    radial-gradient(ellipse at 85% 25%, rgba(0,95,55,.27), transparent 48%),
-    radial-gradient(ellipse at 50% 100%, rgba(0,120,65,.20), transparent 50%),
-    linear-gradient(135deg, #030806, #062719 48%, #020805);
+    radial-gradient(ellipse at 15% 15%,rgba(0,145,75,.34),transparent 48%),
+    radial-gradient(ellipse at 85% 25%,rgba(0,95,55,.27),transparent 48%),
+    radial-gradient(ellipse at 50% 100%,rgba(0,120,65,.20),transparent 50%),
+    linear-gradient(135deg,#030806,#062719 48%,#020805);
 }
+
 body[data-theme="green-fresh"]::before {
   background:
-    radial-gradient(circle at 20% 25%, rgba(0,190,100,.16), transparent 32%),
-    radial-gradient(circle at 80% 35%, rgba(0,125,75,.18), transparent 32%),
-    radial-gradient(circle at 50% 85%, rgba(0,155,85,.12), transparent 35%);
+    radial-gradient(circle at 20% 25%,rgba(0,190,100,.16),transparent 32%),
+    radial-gradient(circle at 80% 35%,rgba(0,125,75,.18),transparent 32%),
+    radial-gradient(circle at 50% 85%,rgba(0,155,85,.12),transparent 35%);
 }
 
 body[data-theme="purple-elegant"] {
   background:
-    radial-gradient(ellipse at 15% 15%, rgba(115,45,210,.34), transparent 48%),
-    radial-gradient(ellipse at 85% 25%, rgba(75,20,145,.28), transparent 48%),
-    radial-gradient(ellipse at 50% 100%, rgba(105,35,180,.22), transparent 50%),
-    linear-gradient(135deg, #07050b, #211035 48%, #08040d);
+    radial-gradient(ellipse at 15% 15%,rgba(115,45,210,.34),transparent 48%),
+    radial-gradient(ellipse at 85% 25%,rgba(75,20,145,.28),transparent 48%),
+    radial-gradient(ellipse at 50% 100%,rgba(105,35,180,.22),transparent 50%),
+    linear-gradient(135deg,#07050b,#211035 48%,#08040d);
 }
+
 body[data-theme="purple-elegant"]::before {
   background:
-    radial-gradient(circle at 20% 25%, rgba(150,75,255,.16), transparent 32%),
-    radial-gradient(circle at 80% 35%, rgba(100,40,190,.18), transparent 32%),
-    radial-gradient(circle at 50% 85%, rgba(135,55,220,.12), transparent 35%);
+    radial-gradient(circle at 20% 25%,rgba(150,75,255,.16),transparent 32%),
+    radial-gradient(circle at 80% 35%,rgba(100,40,190,.18),transparent 32%),
+    radial-gradient(circle at 50% 85%,rgba(135,55,220,.12),transparent 35%);
 }
 
 body[data-theme="orange-premium"] {
   background:
-    radial-gradient(ellipse at 15% 15%, rgba(190,90,0,.34), transparent 48%),
-    radial-gradient(ellipse at 85% 25%, rgba(130,55,0,.28), transparent 48%),
-    radial-gradient(ellipse at 50% 100%, rgba(165,75,0,.20), transparent 50%),
-    linear-gradient(135deg, #090603, #2b1605 48%, #090501);
-}
-body[data-theme="orange-premium"]::before {
-  background:
-    radial-gradient(circle at 20% 25%, rgba(255,145,20,.16), transparent 32%),
-    radial-gradient(circle at 80% 35%, rgba(185,85,0,.18), transparent 32%),
-    radial-gradient(circle at 50% 85%, rgba(225,110,0,.12), transparent 35%);
+    radial-gradient(ellipse at 15% 15%,rgba(190,90,0,.34),transparent 48%),
+    radial-gradient(ellipse at 85% 25%,rgba(130,55,0,.28),transparent 48%),
+    radial-gradient(ellipse at 50% 100%,rgba(165,75,0,.20),transparent 50%),
+    linear-gradient(135deg,#090603,#2b1605 48%,#090501);
 }
 
-body[data-theme="light-white"] {
+body[data-theme="orange-premium"]::before {
   background:
-    radial-gradient(ellipse at 15% 15%, rgba(255,255,255,.18), transparent 48%),
-    radial-gradient(ellipse at 85% 25%, rgba(205,215,230,.16), transparent 48%),
-    radial-gradient(ellipse at 50% 100%, rgba(235,240,248,.10), transparent 50%),
-    linear-gradient(135deg, #111318, #30343d 48%, #111318);
+    radial-gradient(circle at 20% 25%,rgba(255,145,20,.16),transparent 32%),
+    radial-gradient(circle at 80% 35%,rgba(185,85,0,.18),transparent 32%),
+    radial-gradient(circle at 50% 85%,rgba(225,110,0,.12),transparent 35%);
 }
+
+/* REAL LIGHT WHITE THEME */
+
+body[data-theme="light-white"] {
+  color: #20242b;
+  background:
+    radial-gradient(ellipse at 15% 15%,rgba(255,255,255,.95),transparent 48%),
+    radial-gradient(ellipse at 85% 25%,rgba(220,230,245,.85),transparent 48%),
+    linear-gradient(135deg,#ffffff,#edf1f7 48%,#ffffff);
+}
+
 body[data-theme="light-white"]::before {
   background:
-    radial-gradient(circle at 20% 25%, rgba(255,255,255,.16), transparent 32%),
-    radial-gradient(circle at 80% 35%, rgba(225,232,245,.14), transparent 32%),
-    radial-gradient(circle at 50% 85%, rgba(255,255,255,.10), transparent 35%);
+    radial-gradient(circle at 20% 25%,rgba(255,255,255,.65),transparent 32%),
+    radial-gradient(circle at 80% 35%,rgba(190,205,225,.25),transparent 32%);
+}
+
+body[data-theme="light-white"] .tagline {
+  color: #424b59;
+}
+
+body[data-theme="light-white"] .section-label {
+  color: #555e6c;
+  text-shadow: none;
+}
+
+body[data-theme="light-white"] .action-btn {
+  color: #252b35 !important;
+  background: rgba(255,255,255,.65) !important;
+  border-color: rgba(90,105,125,.32);
+}
+
+body[data-theme="light-white"] .btn-label {
+  color: #252b35 !important;
+}
+
+body[data-theme="light-white"] .action-btn::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,.75),
+    rgba(255,255,255,.15) 45%,
+    transparent 75%
+  );
+}
+
+body[data-theme="light-white"] .action-btn:hover {
+  background: rgba(255,255,255,.88) !important;
+  border-color: rgba(80,95,115,.55);
+}
+
+body[data-theme="light-white"] .socials a {
+  background: rgba(255,255,255,.82);
+  border-color: rgba(90,105,125,.30);
+  box-shadow: 0 4px 15px rgba(30,45,65,.12);
+}
+
+body[data-theme="light-white"] .video-box {
+  background: linear-gradient(145deg,#dce2eb,#aab4c3);
+  border-color: rgba(90,105,125,.48);
+  box-shadow:
+    inset 0 1px 6px rgba(255,255,255,.45),
+    0 0 0 2px rgba(100,115,135,.08),
+    0 8px 28px rgba(30,45,65,.15);
+}
+
+body[data-theme="light-white"] .footer strong {
+  color: #333d4c;
+}
+
+body[data-theme="light-white"] .footer small {
+  color: #68768a;
+}
+
+body[data-theme="light-white"] .loading {
+  color: #424b59;
 }
 
 body[data-theme="black-glass"] {
   background:
-    radial-gradient(ellipse at 15% 15%, rgba(160,170,185,.16), transparent 48%),
-    radial-gradient(ellipse at 85% 25%, rgba(100,110,125,.13), transparent 48%),
-    radial-gradient(ellipse at 50% 100%, rgba(135,145,160,.10), transparent 50%),
-    linear-gradient(135deg, #020304, #171a20 48%, #030405);
+    radial-gradient(ellipse at 15% 15%,rgba(160,170,185,.16),transparent 48%),
+    radial-gradient(ellipse at 85% 25%,rgba(100,110,125,.13),transparent 48%),
+    radial-gradient(ellipse at 50% 100%,rgba(135,145,160,.10),transparent 50%),
+    linear-gradient(135deg,#020304,#171a20 48%,#030405);
 }
+
 body[data-theme="black-glass"]::before {
   background:
-    radial-gradient(circle at 20% 25%, rgba(210,220,235,.12), transparent 32%),
-    radial-gradient(circle at 80% 35%, rgba(135,145,160,.14), transparent 32%),
-    radial-gradient(circle at 50% 85%, rgba(185,195,210,.09), transparent 35%);
+    radial-gradient(circle at 20% 25%,rgba(210,220,235,.12),transparent 32%),
+    radial-gradient(circle at 80% 35%,rgba(135,145,160,.14),transparent 32%),
+    radial-gradient(circle at 50% 85%,rgba(185,195,210,.09),transparent 35%);
 }
 
 /* THEME GLASS SURFACES */
@@ -730,10 +723,11 @@ body[data-theme="default-blue"] .action-btn {
   background: rgba(0,65,150,.16) !important;
   border-color: rgba(125,185,255,.42);
 }
+
 body[data-theme="default-blue"] .video-box {
   background: linear-gradient(145deg,#06366d,#050a14);
   border-color: rgba(125,185,255,.62);
-  box-shadow: inset 0 1px 6px rgba(255,255,255,.18), inset 0 -3px 10px rgba(0,0,0,.25), 0 0 0 2px rgba(0,110,255,.16), 0 0 25px rgba(0,110,255,.25), 0 10px 32px rgba(0,0,0,.40);
+  box-shadow: 0 0 25px rgba(0,110,255,.25),0 10px 32px rgba(0,0,0,.40);
 }
 
 body[data-theme="green-fresh"] .socials a,
@@ -741,10 +735,11 @@ body[data-theme="green-fresh"] .action-btn {
   background: rgba(0,100,55,.16) !important;
   border-color: rgba(125,230,175,.42);
 }
+
 body[data-theme="green-fresh"] .video-box {
   background: linear-gradient(145deg,#07502e,#030b07);
   border-color: rgba(125,230,175,.62);
-  box-shadow: inset 0 1px 6px rgba(255,255,255,.18), inset 0 -3px 10px rgba(0,0,0,.25), 0 0 0 2px rgba(0,190,95,.16), 0 0 25px rgba(0,190,95,.25), 0 10px 32px rgba(0,0,0,.40);
+  box-shadow: 0 0 25px rgba(0,190,95,.25),0 10px 32px rgba(0,0,0,.40);
 }
 
 body[data-theme="purple-elegant"] .socials a,
@@ -752,10 +747,11 @@ body[data-theme="purple-elegant"] .action-btn {
   background: rgba(85,35,145,.17) !important;
   border-color: rgba(195,155,255,.44);
 }
+
 body[data-theme="purple-elegant"] .video-box {
   background: linear-gradient(145deg,#45206e,#090511);
   border-color: rgba(195,155,255,.62);
-  box-shadow: inset 0 1px 6px rgba(255,255,255,.18), inset 0 -3px 10px rgba(0,0,0,.25), 0 0 0 2px rgba(140,70,255,.16), 0 0 25px rgba(140,70,255,.25), 0 10px 32px rgba(0,0,0,.40);
+  box-shadow: 0 0 25px rgba(140,70,255,.25),0 10px 32px rgba(0,0,0,.40);
 }
 
 body[data-theme="orange-premium"] .socials a,
@@ -763,21 +759,11 @@ body[data-theme="orange-premium"] .action-btn {
   background: rgba(125,55,0,.17) !important;
   border-color: rgba(255,190,120,.44);
 }
+
 body[data-theme="orange-premium"] .video-box {
   background: linear-gradient(145deg,#6b3508,#100800);
   border-color: rgba(255,190,120,.62);
-  box-shadow: inset 0 1px 6px rgba(255,255,255,.18), inset 0 -3px 10px rgba(0,0,0,.25), 0 0 0 2px rgba(235,115,0,.16), 0 0 25px rgba(235,115,0,.25), 0 10px 32px rgba(0,0,0,.40);
-}
-
-body[data-theme="light-white"] .socials a,
-body[data-theme="light-white"] .action-btn {
-  background: rgba(245,248,255,.14) !important;
-  border-color: rgba(245,248,255,.58);
-}
-body[data-theme="light-white"] .video-box {
-  background: linear-gradient(145deg,#626b78,#171b22);
-  border-color: rgba(245,248,255,.68);
-  box-shadow: inset 0 1px 6px rgba(255,255,255,.25), inset 0 -3px 10px rgba(0,0,0,.25), 0 0 0 2px rgba(220,230,245,.16), 0 0 25px rgba(220,230,245,.20), 0 10px 32px rgba(0,0,0,.40);
+  box-shadow: 0 0 25px rgba(235,115,0,.25),0 10px 32px rgba(0,0,0,.40);
 }
 
 body[data-theme="black-glass"] .socials a,
@@ -785,10 +771,11 @@ body[data-theme="black-glass"] .action-btn {
   background: rgba(120,130,145,.12) !important;
   border-color: rgba(190,200,215,.40);
 }
+
 body[data-theme="black-glass"] .video-box {
   background: linear-gradient(145deg,#343a44,#050607);
   border-color: rgba(190,200,215,.55);
-  box-shadow: inset 0 1px 6px rgba(255,255,255,.18), inset 0 -3px 10px rgba(0,0,0,.25), 0 0 0 2px rgba(160,175,195,.14), 0 0 25px rgba(160,175,195,.18), 0 10px 32px rgba(0,0,0,.40);
+  box-shadow: 0 0 25px rgba(160,175,195,.18),0 10px 32px rgba(0,0,0,.40);
 }
 
 body[data-theme="professional-red"] .socials a,
@@ -796,10 +783,11 @@ body[data-theme="professional-red"] .action-btn {
   background: rgba(100,0,20,.12) !important;
   border-color: rgba(255,145,165,.48);
 }
+
 </style>
 </head>
 
-<body class="profile-loading">
+<body>
 <main class="container">
 
   <div class="profile">
@@ -823,7 +811,7 @@ body[data-theme="professional-red"] .action-btn {
          href="https://www.youtube.com/@oonlinetb420"
          target="_blank"
          rel="noopener noreferrer"
-         aria-label="ONLINE TV YouTube চ্যানেলে যান">
+         aria-label="ONLINE TV-এর সর্বশেষ ভিডিও দেখুন">
 
         <img id="videoThumbnail"
              class="video-thumbnail"
@@ -856,16 +844,16 @@ const DEFAULT_VIDEO_ID = 'AepReMI-ecU';
 const YOUTUBE_CHANNEL_URL =
 'https://www.youtube.com/@oonlinetb420';
 
-/* INSTAGRAM SVG: COLOURFUL BRAND GLYPH */
+let currentLatestVideoUrl = '';
 
-function makeInstagramSVG(id) {
-  const gradientId = id + '-gradient';
+/* INSTAGRAM SVG */
 
+function makeInstagramSVG() {
   return `
-  <svg viewBox="0 0 24 24" fill="none"
+  <svg viewBox="0 0 24 24" role="img" aria-label="Instagram"
        xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <linearGradient id="${gradientId}"
+      <linearGradient id="instagramSocialGradient"
         x1="3" y1="21" x2="21" y2="3"
         gradientUnits="userSpaceOnUse">
         <stop offset="0" stop-color="#FFD600"/>
@@ -874,21 +862,19 @@ function makeInstagramSVG(id) {
         <stop offset="1" stop-color="#7638FA"/>
       </linearGradient>
     </defs>
-    <rect x="3" y="3" width="18" height="18" rx="5"
-          stroke="url(#${gradientId})" stroke-width="2"/>
-    <circle cx="12" cy="12" r="4"
-            stroke="url(#${gradientId})" stroke-width="2"/>
-    <circle cx="17.5" cy="6.5" r="1"
-            fill="url(#${gradientId})"/>
+    <rect x="2" y="2" width="20" height="20" rx="6"
+          fill="url(#instagramSocialGradient)"/>
+    <rect x="6" y="6" width="12" height="12" rx="3.5"
+          fill="none" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="12" cy="12" r="3"
+            fill="none" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="16.3" cy="7.8" r="1.15" fill="#FFFFFF"/>
   </svg>`;
 }
 
-/* INSTAGRAM BUTTON SVG */
-
 function makeInstagramButtonSVG() {
   return `
-  <svg viewBox="0 0 24 24"
-       xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="instagramGradientButton"
         x1="3" y1="21" x2="21" y2="3"
@@ -912,16 +898,15 @@ function makeInstagramButtonSVG() {
 /* SOCIAL ICONS */
 
 const socialIcons = {
-  facebook: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="12" r="12" fill="#1877F2"/>
+  facebook: `<svg viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="12" r="11" fill="#1877F2"/>
     <path fill="#FFFFFF" d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.6V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.2v3h2.8v8z"/>
   </svg>`,
 
-  instagram: makeInstagramSVG('instagramSocial'),
+  instagram: makeInstagramSVG(),
 
-  youtube: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#FF0033" d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0-.5 5 31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 .5-5 31 31 0 0 0-.5-5z"/>
-    <path d="M9.6 8.5v7l6-3.5z" fill="#FFFFFF"/>
+  youtube: `<svg viewBox="0 0 24 24" fill="#FF0033">
+    <path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0-.5 5 31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 .5-5 31 31 0 0 0-.5-5zM9.6 15.5v-7l6 3.5z"/>
   </svg>`,
 
   whatsapp: `<svg viewBox="0 0 24 24" fill="#25D366">
@@ -1031,9 +1016,7 @@ function detectBrand(label, url) {
 
 function makeFacebookButtonSVG() {
   return `
-  <svg viewBox="0 0 48 48"
-       xmlns="http://www.w3.org/2000/svg"
-       aria-hidden="true">
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
     <circle class="facebook-circle" cx="24" cy="24" r="23"/>
     <path class="facebook-letter"
       d="M27.2 41V26.1h5l.8-5.8h-5.8v-3.7c0-1.7.5-2.9 2.9-2.9h3.1V8.5c-.5-.1-2.4-.2-4.5-.2-4.5 0-7.6 2.7-7.6 7.8v4.2H16v5.8h5.1V41h6.1z"/>
@@ -1085,22 +1068,9 @@ function addButton(icon, label, url) {
   document.getElementById('buttons').appendChild(link);
 }
 
-/* FAST LOADING RELEASE */
-
-let profileIsReady = false;
-
-function finishProfileLoading() {
-  if (profileIsReady) return;
-
-  profileIsReady = true;
-  document.body.classList.remove('profile-loading');
-}
-
 /* ERROR MESSAGE */
 
-function showError(message, releaseLoading) {
-  if (releaseLoading !== false) finishProfileLoading();
-
+function showError(message) {
   const buttons = document.getElementById('buttons');
   buttons.innerHTML = '';
 
@@ -1111,31 +1081,39 @@ function showError(message, releaseLoading) {
   buttons.appendChild(messageElement);
 }
 
-/* LATEST VIDEO THUMBNAIL */
+/* LATEST VIDEO DISPLAY */
 
 function renderVideo(data) {
-  const videoUrl = safeUrl(
-    data.latestVideoUrl || data.videoUrl
+  const suppliedUrl = safeUrl(
+    data && (data.latestVideoUrl || data.videoUrl)
   );
 
+  if (suppliedUrl) {
+    currentLatestVideoUrl = suppliedUrl;
+  }
+
+  const videoUrl = currentLatestVideoUrl;
   const videoId =
     (videoUrl ? getYouTubeVideoId(videoUrl) : '') ||
     DEFAULT_VIDEO_ID;
 
-  const videoSection =
-    document.getElementById('videoSection');
-
-  const thumbnail =
-    document.getElementById('videoThumbnail');
-
+  const videoSection = document.getElementById('videoSection');
+  const thumbnail = document.getElementById('videoThumbnail');
   const videoLink = document.getElementById('videoLink');
 
-  videoLink.href = YOUTUBE_CHANNEL_URL;
+  const actualVideoUrl =
+    videoUrl ||
+    'https://www.youtube.com/watch?v=' + videoId;
 
-  if (videoLink.dataset.videoId === videoId) {
-    videoSection.hidden = false;
-    return;
-  }
+  videoLink.href = actualVideoUrl;
+  videoLink.setAttribute(
+    'aria-label',
+    'ONLINE TV-এর সর্বশেষ ভিডিও দেখুন'
+  );
+
+  videoSection.hidden = false;
+
+  if (videoLink.dataset.videoId === videoId) return;
 
   videoLink.dataset.videoId = videoId;
 
@@ -1155,16 +1133,14 @@ function renderVideo(data) {
       thumbnail.src = thumbnailOptions[thumbnailIndex];
     } else {
       thumbnail.onerror = null;
-      thumbnail.alt = 'ভিডিওটি দেখতে ONLINE TV YouTube চ্যানেলে যান';
+      thumbnail.alt = 'ভিডিওটি দেখতে ক্লিক করুন';
     }
   };
 
   thumbnail.src = thumbnailOptions[0];
-
-  videoSection.hidden = false;
 }
 
-/* IMMEDIATE FIRST-VISIT CONTENT */
+/* IMMEDIATE SOCIAL LINKS */
 
 function showImmediateSocials() {
   const socials = document.getElementById('socials');
@@ -1176,12 +1152,17 @@ function showImmediateSocials() {
   addSocial('whatsapp', 'https://wa.me/8801805205471');
 }
 
-/* APPLY SAVED ADMIN THEME */
+/* APPLY SAVED THEME */
 
 function applySelectedTheme(value) {
   const allowedThemes = [
-    'default-blue', 'professional-red', 'green-fresh',
-    'purple-elegant', 'orange-premium', 'light-white', 'black-glass'
+    'default-blue',
+    'professional-red',
+    'green-fresh',
+    'purple-elegant',
+    'orange-premium',
+    'light-white',
+    'black-glass'
   ];
 
   const theme = allowedThemes.includes(String(value || '').trim())
@@ -1201,8 +1182,7 @@ function renderProfile(data) {
 
   applySelectedTheme(data.selectedTheme);
 
-  document.title =
-    (data.title || 'ONLINE TV') + ' | Official';
+  document.title = (data.title || 'ONLINE TV') + ' | Official';
 
   const titleText =
     String(data.title || 'ONLINE TV').replace(/:$/, '').trim();
@@ -1220,29 +1200,24 @@ function renderProfile(data) {
   document.getElementById('tagline').textContent =
     data.tagline || '';
 
-  const imageUrl = safeUrl(
-    data.profileImage || data.logoText
-  );
+  const imageUrl = safeUrl(data.profileImage);
 
-  const profileImage = document.getElementById('profileImage');
-
-  if (imageUrl && profileImage.getAttribute('src') !== imageUrl) {
-    profileImage.fetchPriority = 'high';
-    profileImage.loading = 'eager';
-    profileImage.src = imageUrl;
+  if (imageUrl) {
+    document.getElementById('profileImage').src = imageUrl;
   }
 
   document.getElementById('socials').innerHTML = '';
 
-  [
-    'facebook',
-    'instagram',
-    'youtube',
-    'whatsapp'
-  ].forEach(function(name) {
-    addSocial(name, data[name]);
-  });
+  ['facebook', 'instagram', 'youtube', 'whatsapp'].forEach(
+    function(name) {
+      addSocial(name, data[name]);
+    }
+  );
 
+  /*
+   * ভিডিওর অনুরোধ আলাদা।
+   * আগে পাওয়া সর্বশেষ ভিডিও এখানে সংরক্ষিত থাকবে।
+   */
   renderVideo(data);
 
   const buttons = document.getElementById('buttons');
@@ -1257,13 +1232,78 @@ function renderProfile(data) {
   }
 
   if (!buttons.children.length) {
-    showError('কাস্টম বাটন এখনো যোগ করা হয়নি।', false);
+    showError('কাস্টম বাটন এখনো যোগ করা হয়নি।');
   }
-
-  finishProfileLoading();
 }
 
-/* FAST CACHE + GOOGLE APPS SCRIPT */
+/* LOAD LATEST VIDEO SEPARATELY */
+
+let latestVideoRequestInProgress = false;
+
+function loadLatestVideo() {
+  if (latestVideoRequestInProgress) return;
+
+  latestVideoRequestInProgress = true;
+
+  const callbackName =
+    'onlineTVVideoCallback_' + Date.now() + '_' +
+    Math.random().toString(36).slice(2);
+
+  const script = document.createElement('script');
+  let finished = false;
+  let timeout;
+
+  function finish() {
+    if (finished) return;
+
+    finished = true;
+    latestVideoRequestInProgress = false;
+
+    clearTimeout(timeout);
+    delete window[callbackName];
+    script.remove();
+  }
+
+  timeout = setTimeout(finish, 12000);
+
+  window[callbackName] = function(data) {
+    if (finished) return;
+
+    const videoUrl = data && safeUrl(data.latestVideoUrl);
+
+    if (videoUrl) {
+      renderVideo({ latestVideoUrl: videoUrl });
+
+      try {
+        const cached = JSON.parse(
+          localStorage.getItem('onlineTVProfileCache') || '{}'
+        );
+
+        cached.latestVideoUrl = videoUrl;
+
+        localStorage.setItem(
+          'onlineTVProfileCache',
+          JSON.stringify(cached)
+        );
+      } catch (error) {
+        console.warn('Video cache update error:', error);
+      }
+    }
+
+    finish();
+  };
+
+  script.onerror = finish;
+
+  script.src = APPS_SCRIPT_URL +
+    '?action=latestVideo&callback=' +
+    encodeURIComponent(callbackName) +
+    '&t=' + Date.now();
+
+  document.body.appendChild(script);
+}
+
+/* LOAD PROFILE */
 
 let profileRequestInProgress = false;
 
@@ -1282,6 +1322,12 @@ function loadProfile() {
       const parsedData = JSON.parse(cachedData);
 
       if (parsedData && typeof parsedData === 'object') {
+        if (parsedData.latestVideoUrl) {
+          currentLatestVideoUrl = safeUrl(
+            parsedData.latestVideoUrl
+          );
+        }
+
         renderProfile(parsedData);
         hasCachedData = true;
       }
@@ -1302,6 +1348,7 @@ function loadProfile() {
 
     finished = true;
     profileRequestInProgress = false;
+
     delete window[callbackName];
     script.remove();
 
@@ -1314,21 +1361,30 @@ function loadProfile() {
     if (finished) return;
 
     finished = true;
+
     clearTimeout(timeout);
     profileRequestInProgress = false;
 
     try {
       if (data && typeof data === 'object' && !data.error) {
+        /*
+         * আলাদা ভিডিও API থেকে পাওয়া URL
+         * প্রোফাইলের নতুন ডেটা দিয়ে মুছে যাবে না।
+         */
+        if (currentLatestVideoUrl) {
+          data.latestVideoUrl = currentLatestVideoUrl;
+        }
+
         renderProfile(data);
 
         localStorage.setItem(
           CACHE_KEY,
           JSON.stringify(data)
         );
+
       } else if (!hasCachedData) {
         showError('সঠিক তথ্য পাওয়া যায়নি।');
       }
-
     } catch (error) {
       console.error('Profile display error:', error);
 
@@ -1345,8 +1401,10 @@ function loadProfile() {
     if (finished) return;
 
     finished = true;
+
     clearTimeout(timeout);
     profileRequestInProgress = false;
+
     delete window[callbackName];
 
     if (!hasCachedData) {
@@ -1367,11 +1425,13 @@ function loadProfile() {
 
 showImmediateSocials();
 loadProfile();
+loadLatestVideo();
 
-/* REFRESH PROFILE EVERY 2 MINUTES */
+/* BACKGROUND UPDATE: NO PAGE RELOAD */
 
 setInterval(function() {
   loadProfile();
+  loadLatestVideo();
 }, 120000);
 
 </script>
