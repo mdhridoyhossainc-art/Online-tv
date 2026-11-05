@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -177,6 +178,13 @@ h1 {
 .socials a.social-facebook svg { fill: #1877F2; }
 
 .socials a.social-instagram {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px;
+  min-height: 42px;
+  padding: 0 !important;
+  flex: 0 0 42px;
+  border-radius: 50% !important;
   color: #fff;
   background: linear-gradient(
     135deg,
@@ -190,6 +198,15 @@ h1 {
     inset 0 1px 5px rgba(255,255,255,.30),
     0 0 14px rgba(255,60,140,.30),
     0 5px 15px rgba(0,0,0,.30);
+}
+
+.socials a.social-instagram svg {
+  width: 23px !important;
+  height: 23px !important;
+  min-width: 23px;
+  min-height: 23px;
+  flex: 0 0 23px;
+  display: block;
 }
 
 .socials a.social-youtube { color: #FF0033; }
@@ -1324,3 +1341,4 @@ setInterval(function() {
 
 </body>
 </html>
+```
