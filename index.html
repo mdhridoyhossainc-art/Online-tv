@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -176,6 +177,8 @@ h1 {
 .socials a.social-facebook { color: #1877F2; }
 .socials a.social-facebook svg { fill: #1877F2; }
 
+/* INSTAGRAM OUTER CIRCLE: ORIGINAL GLASS STYLE */
+
 .socials a.social-instagram {
   width: 42px !important;
   height: 42px !important;
@@ -184,19 +187,6 @@ h1 {
   padding: 0 !important;
   flex: 0 0 42px;
   border-radius: 50% !important;
-  color: #fff;
-  background: linear-gradient(
-    135deg,
-    #FFD600,
-    #FF7A00 30%,
-    #FF0169 65%,
-    #315bff
-  );
-  border-color: rgba(255,255,255,.65);
-  box-shadow:
-    inset 0 1px 5px rgba(255,255,255,.30),
-    0 0 14px rgba(255,60,140,.30),
-    0 5px 15px rgba(0,0,0,.30);
 }
 
 .socials a.social-instagram svg {
@@ -699,7 +689,7 @@ body[data-theme="black-glass"]::before {
 
 /* THEME GLASS SURFACES */
 
-body[data-theme="default-blue"] .socials a:not(.social-instagram),
+body[data-theme="default-blue"] .socials a,
 body[data-theme="default-blue"] .action-btn {
   background: rgba(0,65,150,.16) !important;
   border-color: rgba(125,185,255,.42);
@@ -710,7 +700,7 @@ body[data-theme="default-blue"] .video-box {
   box-shadow: inset 0 1px 6px rgba(255,255,255,.18), inset 0 -3px 10px rgba(0,0,0,.25), 0 0 0 2px rgba(0,110,255,.16), 0 0 25px rgba(0,110,255,.25), 0 10px 32px rgba(0,0,0,.40);
 }
 
-body[data-theme="green-fresh"] .socials a:not(.social-instagram),
+body[data-theme="green-fresh"] .socials a,
 body[data-theme="green-fresh"] .action-btn {
   background: rgba(0,100,55,.16) !important;
   border-color: rgba(125,230,175,.42);
@@ -721,7 +711,7 @@ body[data-theme="green-fresh"] .video-box {
   box-shadow: inset 0 1px 6px rgba(255,255,255,.18), inset 0 -3px 10px rgba(0,0,0,.25), 0 0 0 2px rgba(0,190,95,.16), 0 0 25px rgba(0,190,95,.25), 0 10px 32px rgba(0,0,0,.40);
 }
 
-body[data-theme="purple-elegant"] .socials a:not(.social-instagram),
+body[data-theme="purple-elegant"] .socials a,
 body[data-theme="purple-elegant"] .action-btn {
   background: rgba(85,35,145,.17) !important;
   border-color: rgba(195,155,255,.44);
@@ -732,7 +722,7 @@ body[data-theme="purple-elegant"] .video-box {
   box-shadow: inset 0 1px 6px rgba(255,255,255,.18), inset 0 -3px 10px rgba(0,0,0,.25), 0 0 0 2px rgba(140,70,255,.16), 0 0 25px rgba(140,70,255,.25), 0 10px 32px rgba(0,0,0,.40);
 }
 
-body[data-theme="orange-premium"] .socials a:not(.social-instagram),
+body[data-theme="orange-premium"] .socials a,
 body[data-theme="orange-premium"] .action-btn {
   background: rgba(125,55,0,.17) !important;
   border-color: rgba(255,190,120,.44);
@@ -743,7 +733,7 @@ body[data-theme="orange-premium"] .video-box {
   box-shadow: inset 0 1px 6px rgba(255,255,255,.18), inset 0 -3px 10px rgba(0,0,0,.25), 0 0 0 2px rgba(235,115,0,.16), 0 0 25px rgba(235,115,0,.25), 0 10px 32px rgba(0,0,0,.40);
 }
 
-body[data-theme="light-white"] .socials a:not(.social-instagram),
+body[data-theme="light-white"] .socials a,
 body[data-theme="light-white"] .action-btn {
   background: rgba(245,248,255,.14) !important;
   border-color: rgba(245,248,255,.58);
@@ -754,7 +744,7 @@ body[data-theme="light-white"] .video-box {
   box-shadow: inset 0 1px 6px rgba(255,255,255,.25), inset 0 -3px 10px rgba(0,0,0,.25), 0 0 0 2px rgba(220,230,245,.16), 0 0 25px rgba(220,230,245,.20), 0 10px 32px rgba(0,0,0,.40);
 }
 
-body[data-theme="black-glass"] .socials a:not(.social-instagram),
+body[data-theme="black-glass"] .socials a,
 body[data-theme="black-glass"] .action-btn {
   background: rgba(120,130,145,.12) !important;
   border-color: rgba(190,200,215,.40);
@@ -765,7 +755,7 @@ body[data-theme="black-glass"] .video-box {
   box-shadow: inset 0 1px 6px rgba(255,255,255,.18), inset 0 -3px 10px rgba(0,0,0,.25), 0 0 0 2px rgba(160,175,195,.14), 0 0 25px rgba(160,175,195,.18), 0 10px 32px rgba(0,0,0,.40);
 }
 
-body[data-theme="professional-red"] .socials a:not(.social-instagram),
+body[data-theme="professional-red"] .socials a,
 body[data-theme="professional-red"] .action-btn {
   background: rgba(100,0,20,.12) !important;
   border-color: rgba(255,145,165,.48);
@@ -830,18 +820,30 @@ const DEFAULT_VIDEO_ID = 'AepReMI-ecU';
 const YOUTUBE_CHANNEL_URL =
 'https://www.youtube.com/@oonlinetb420';
 
-/* INSTAGRAM SVG */
+/* INSTAGRAM SVG: COLOURFUL BRAND GLYPH */
 
 function makeInstagramSVG(id) {
+  const gradientId = id + '-gradient';
+
   return `
   <svg viewBox="0 0 24 24" fill="none"
        xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="${gradientId}"
+        x1="3" y1="21" x2="21" y2="3"
+        gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#FFD600"/>
+        <stop offset=".32" stop-color="#FF7A00"/>
+        <stop offset=".65" stop-color="#FF0169"/>
+        <stop offset="1" stop-color="#7638FA"/>
+      </linearGradient>
+    </defs>
     <rect x="3" y="3" width="18" height="18" rx="5"
-          stroke="#FFFFFF" stroke-width="2"/>
+          stroke="url(#${gradientId})" stroke-width="2"/>
     <circle cx="12" cy="12" r="4"
-            stroke="#FFFFFF" stroke-width="2"/>
+            stroke="url(#${gradientId})" stroke-width="2"/>
     <circle cx="17.5" cy="6.5" r="1"
-            fill="#FFFFFF"/>
+            fill="url(#${gradientId})"/>
   </svg>`;
 }
 
@@ -881,8 +883,10 @@ const socialIcons = {
 
   instagram: makeInstagramSVG('instagramSocial'),
 
-  youtube: `<svg viewBox="0 0 24 24" fill="#FF0033">
-    <path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0-.5 5 31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 .5-5 31 31 0 0 0-.5-5zM9.6 15.5v-7l6 3.5z"/>
+  /* RED YOUTUBE ICON + WHITE PLAY TRIANGLE */
+  youtube: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#FF0033" d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0-.5 5 31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 .5-5 31 31 0 0 0-.5-5z"/>
+    <path d="M9.6 8.5v7l6-3.5z" fill="#FFFFFF"/>
   </svg>`,
 
   whatsapp: `<svg viewBox="0 0 24 24" fill="#25D366">
