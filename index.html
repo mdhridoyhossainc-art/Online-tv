@@ -943,9 +943,71 @@ body[data-theme="light-white"] .action-btn{background:linear-gradient(135deg,rgb
 .video-thumbnail{transition:transform .4s ease,opacity .35s ease;}
 .video-thumbnail:not([src]),.video-thumbnail[src=""]{opacity:0;}
 </style>
+
+<script>
+/* PREVENT WRONG THEME FLASH: wait for server theme on a device without a valid cache */
+(function () {
+  var allowedThemes = [
+    'default-blue',
+    'professional-red',
+    'green-fresh',
+    'purple-elegant',
+    'orange-premium',
+    'light-white',
+    'black-glass'
+  ];
+
+  try {
+    var cached = JSON.parse(
+      localStorage.getItem('onlineTVProfileCache') || 'null'
+    );
+
+    if (!cached || !allowedThemes.includes(String(cached.selectedTheme || ''))) {
+      document.documentElement.classList.add('theme-pending');
+    }
+  } catch (error) {
+    document.documentElement.classList.add('theme-pending');
+  }
+})();
+</script>
+<style>
+/* A new device stays hidden until the real saved theme arrives */
+html.theme-pending body {
+  visibility: hidden;
+}
+</style>
+
 </head>
 
 <body>
+
+<script>
+/* Apply the last saved theme before the page content can paint */
+(function () {
+  var allowedThemes = [
+    'default-blue',
+    'professional-red',
+    'green-fresh',
+    'purple-elegant',
+    'orange-premium',
+    'light-white',
+    'black-glass'
+  ];
+
+  try {
+    var cached = JSON.parse(
+      localStorage.getItem('onlineTVProfileCache') || 'null'
+    );
+
+    if (cached && allowedThemes.includes(String(cached.selectedTheme || ''))) {
+      document.body.setAttribute('data-theme', cached.selectedTheme);
+    }
+  } catch (error) {
+    /* The normal profile loader will fetch the saved theme */
+  }
+})();
+</script>
+
 <main class="container">
 
   <div class="profile">
@@ -1023,7 +1085,12 @@ function renderIfChanged(d, animate) {
   if (key === lastRenderedKey) return;
   const first = !lastRenderedKey;
   lastRenderedKey = key;
-  if (animate && !first && document.startViewTransition) {
+  if (
+    animate &&
+    !first &&
+    document.startViewTransition &&
+    !document.documentElement.classList.contains('theme-pending')
+  ) {
     try { document.startViewTransition(function() { renderProfile(d); }); return; } catch (e) {}
   }
   renderProfile(d);
@@ -1563,6 +1630,7 @@ function loadProfile() {
     if (!hasCachedData) {
       showError('তথ্য লোড হয়নি। আবার চেষ্টা করুন।');
     }
+    document.documentElement.classList.remove('theme-pending');
   }, 20000);
 
   window[callbackName] = function(data) {
@@ -1585,6 +1653,7 @@ function loadProfile() {
 
         renderIfChanged(data, true);
         document.body.classList.remove('locked');
+        document.documentElement.classList.remove('theme-pending');
 
         localStorage.setItem(
           CACHE_KEY,
@@ -1602,6 +1671,7 @@ function loadProfile() {
       }
     }
 
+    document.documentElement.classList.remove('theme-pending');
     delete window[callbackName];
     script.remove();
   };
@@ -1619,6 +1689,7 @@ function loadProfile() {
     if (!hasCachedData) {
       showError('Google Apps Script-এর সঙ্গে সংযোগ হয়নি।');
     }
+    document.documentElement.classList.remove('theme-pending');
 
     script.remove();
   };
