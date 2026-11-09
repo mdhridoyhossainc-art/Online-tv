@@ -7,6 +7,11 @@
 <title>ONLINE TV | Official</title>
 <meta name="description" content="সংবাদ, বিনোদন ও মানুষের গল্পের বিশ্বস্ত ঠিকানা।">
 
+<script>
+/* পেজের পেছনের রং প্রথম মুহূর্ত থেকেই ঠিক রাখে: নতুন ডিভাইসে নিরপেক্ষ, আগে দেখা ডিভাইসে জমা থাকা থিমের রং */
+window.THEME_BASE={'professional-red':'#100003','default-blue':'#02050b','green-fresh':'#010604','purple-elegant':'#05030a','orange-premium':'#070401','light-white':'#f4f7fc','black-glass':'#020203'};
+(function(){var bg='#0b0b10';try{var c=localStorage.getItem('onlineTVProfileCache');if(c){var t=JSON.parse(c).selectedTheme;if(window.THEME_BASE[t])bg=window.THEME_BASE[t];}}catch(e){}document.documentElement.style.backgroundColor=bg;})();
+</script>
 <link rel="preconnect" href="https://script.google.com">
 <link rel="preconnect" href="https://script.googleusercontent.com">
 <link rel="preconnect" href="https://img.youtube.com">
@@ -956,12 +961,59 @@ body[data-theme="light-white"] .action-btn{background:linear-gradient(135deg,rgb
 @keyframes splashSpin{to{transform:rotate(360deg)}}
 @keyframes splashBreath{0%,100%{opacity:.55;transform:scale(.94)}50%{opacity:1;transform:scale(1.06)}}
 @keyframes splashIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+
+/* DEFAULT LOOK (before any theme is applied) = neutral black, never red */
+body:not([data-theme]) {
+  background:
+    radial-gradient(ellipse at 15% 15%,rgba(160,170,185,.16),transparent 48%),
+    radial-gradient(ellipse at 85% 25%,rgba(100,110,125,.13),transparent 48%),
+    radial-gradient(ellipse at 50% 100%,rgba(135,145,160,.10),transparent 50%),
+    linear-gradient(135deg,#020304,#171a20 48%,#030405);
+}
+body:not([data-theme])::before {
+  background:
+    radial-gradient(circle at 20% 25%,rgba(210,220,235,.12),transparent 32%),
+    radial-gradient(circle at 80% 35%,rgba(135,145,160,.14),transparent 32%),
+    radial-gradient(circle at 50% 85%,rgba(185,195,210,.09),transparent 35%);
+}
+body:not([data-theme]) .socials a,
+body:not([data-theme]) .action-btn {
+  background: rgba(120,130,145,.12) !important;
+  border-color: rgba(190,200,215,.40);
+}
+body:not([data-theme]) .video-box {
+  background: linear-gradient(145deg,#343a44,#050607);
+  border-color: rgba(190,200,215,.55);
+  box-shadow: 0 0 25px rgba(160,175,195,.18),0 10px 32px rgba(0,0,0,.40);
+}
+body:not([data-theme]) {background:radial-gradient(ellipse at 15% 12%,rgba(175,185,200,.40),transparent 50%),radial-gradient(ellipse at 88% 30%,rgba(110,120,135,.34),transparent 50%),radial-gradient(ellipse at 50% 105%,rgba(175,185,200,.24),transparent 52%),linear-gradient(135deg,#010102,#15181d 50%,#020203);}
+body:not([data-theme])::before {background:radial-gradient(circle at 22% 22%,rgba(210,218,230,.20),transparent 32%),radial-gradient(circle at 80% 38%,rgba(175,185,200,.22),transparent 32%),radial-gradient(circle at 50% 88%,rgba(210,218,230,.12),transparent 35%);}
+body:not([data-theme]) h1 {text-shadow:0 0 18px rgba(175,185,200,.35);}
+body:not([data-theme]) .tagline {color:#eef1f6;}
+body:not([data-theme]) .section-label {color:#d5dbe5;text-shadow:0 0 12px rgba(175,185,200,.35);}
+body:not([data-theme]) .socials a {background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(175,185,200,.14));border-color:rgba(210,218,230,.50);box-shadow:inset 0 1px 5px rgba(255,255,255,.22),0 5px 16px rgba(0,0,0,.28),0 0 14px rgba(175,185,200,.22);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);}
+body:not([data-theme]) .action-btn {background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(175,185,200,.16)) !important;border-color:rgba(210,218,230,.45);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);}
+body:not([data-theme]) .action-btn:hover {background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(175,185,200,.22)) !important;border-color:rgba(210,218,230,.65);}
+body:not([data-theme]) .video-box {background:linear-gradient(145deg,#3a404a,#040405);border-color:rgba(210,218,230,.60);box-shadow:inset 0 1px 6px rgba(255,255,255,.18),0 0 26px rgba(175,185,200,.28),0 10px 32px rgba(0,0,0,.40);}
+body:not([data-theme]) .video-box::after {border-color:rgba(210,218,230,.28);}
+body:not([data-theme]) .footer strong {color:#edf0f5;}
+body:not([data-theme]) .footer small {color:#9aa5b6;}
+body:not([data-theme]) .loading {color:#eef1f6;}
+body:not([data-theme])::after {content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;filter:blur(12px);
+background:linear-gradient(115deg,transparent 16%,rgba(255,255,255,.13) 25%,transparent 34%),linear-gradient(115deg,transparent 50%,rgba(255,255,255,.08) 59%,transparent 67%),
+radial-gradient(circle at 12% 9%,rgba(255,255,255,.30),transparent 22%),radial-gradient(circle at 92% 16%,rgba(255,255,255,.16),transparent 16%),
+radial-gradient(circle at 28% 42%,rgba(255,255,255,.14) 0,rgba(255,255,255,.14) 3%,transparent 4%),radial-gradient(circle at 78% 52%,rgba(255,255,255,.12) 0,rgba(255,255,255,.12) 4%,transparent 5%),
+radial-gradient(circle at 60% 78%,rgba(255,255,255,.12) 0,rgba(255,255,255,.12) 3%,transparent 4%),radial-gradient(circle at 15% 85%,rgba(255,255,255,.10) 0,rgba(255,255,255,.10) 5%,transparent 6%),
+radial-gradient(circle at 85% 90%,rgba(175,185,200,.30),transparent 22%);}
+body:not([data-theme]) .socials a {border-color:rgba(255,255,255,.45);}
+body:not([data-theme]) .action-btn {background:linear-gradient(135deg,rgba(255,255,255,.20),rgba(175,185,200,.14)) !important;border-color:rgba(255,255,255,.42);backdrop-filter:blur(22px) saturate(165%);-webkit-backdrop-filter:blur(22px) saturate(165%);}
+body:not([data-theme]) .action-btn::before {background:linear-gradient(135deg,rgba(255,255,255,.36),rgba(255,255,255,.06) 36%,transparent 68%);}
 </style>
 </head>
 
 <body>
 <div id="splash" aria-hidden="true"><div class="splash-box"><div class="splash-glow"></div><div class="splash-ring"></div><div class="splash-logo"><img src="https://i.ibb.co.com/4kDHT4p/Code-Generated-Image-1.webp" alt=""></div></div></div>
-<script>try{if(localStorage.getItem('onlineTVProfileCache')){document.getElementById('splash').remove();}}catch(e){}</script>
+<script>try{var c=localStorage.getItem('onlineTVProfileCache');if(c){var t=JSON.parse(c).selectedTheme;if(t){document.body.setAttribute('data-theme',t);}document.getElementById('splash').remove();}}catch(e){}</script>
 <main class="container">
 
   <div class="profile">
@@ -1014,7 +1066,7 @@ body[data-theme="light-white"] .action-btn{background:linear-gradient(135deg,rgb
    এডমিনে থিম বদলালে এখানে সেই থিমের নামটা বসান:
    professional-red=লাল, default-blue=নীল, green-fresh=সবুজ,
    purple-elegant=বেগুনি, orange-premium=কমলা, light-white=সাদা, black-glass=কালো */
-const SITE_THEME = 'professional-red';
+const SITE_THEME = 'black-glass';
 
 const APPS_SCRIPT_URL =
 'https://script.google.com/macros/s/AKfycbzA5VHTZL0Izp_9yi3_eI99Ju0Fwz_Eb8KHYY-ENXR8GKbcfRL7uBDVu_yju_nBw4mX/exec';
@@ -1039,14 +1091,14 @@ function canonKey(d) {
 
 let lastRenderedKey = '';
 
-/* Splash: new device only. Hidden when all data is ready (max 4 seconds). */
+/* Splash: new device only. Hidden when all data is ready (max 10 seconds). */
 function hideSplash() {
   const splash = document.getElementById('splash');
   if (!splash) return;
   splash.classList.add('hide');
   setTimeout(function() { splash.remove(); }, 500);
 }
-setTimeout(hideSplash, 4000);
+setTimeout(hideSplash, 10000);
 let allowDefaultVideo = false; /* old default thumbnail only as a last resort */
 
 /* Re-draw only when the data really changed: no flicker, no jumping */
@@ -1401,6 +1453,9 @@ function applySelectedTheme(value) {
     : 'professional-red';
 
   document.body.setAttribute('data-theme', theme);
+  if (window.THEME_BASE && window.THEME_BASE[theme]) {
+    document.documentElement.style.backgroundColor = window.THEME_BASE[theme];
+  }
 }
 
 /* PROFILE RENDER */
